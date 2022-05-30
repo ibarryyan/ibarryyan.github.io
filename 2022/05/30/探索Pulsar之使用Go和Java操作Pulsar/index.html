@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.3.2">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="index,follow">
-  <link rel="canonical" href="http://example.com/"/>
+  
+  <link rel="canonical" href="http://example.com/2022/05/30/探索pulsar之使用go和java操作pulsar/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,17 +31,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>Barry Yan's Blog</title>
+  <title>探索Pulsar之使用Go和Java操作Pulsar - Barry Yan's Blog</title>
   <meta name="keywords" content="Java,Go,SQL">
   <meta desc name="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等 - Barry Yan - Barry Yan's Blog">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="Barry Yan&#39;s Blog">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="探索Pulsar之使用Go和Java操作Pulsar">
+<meta property="og:url" content="http://example.com/2022/05/30/%E6%8E%A2%E7%B4%A2Pulsar%E4%B9%8B%E4%BD%BF%E7%94%A8Go%E5%92%8CJava%E6%93%8D%E4%BD%9CPulsar/index.html">
 <meta property="og:site_name" content="Barry Yan&#39;s Blog">
-<meta property="og:description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
+<meta property="og:description" content="1 前言Pulsar官方支持的客户端库：  C++ Python WebSocket Go client Node.js C#  Java  GitHub中三方的客户端库：  Go Haskell Scala Rust .NET Node.js  具体可参看：https:&#x2F;&#x2F;pulsar.apache.org&#x2F;docs&#x2F;zh-CN&#x2F;next&#x2F;client-libraries&#x2F; 本次仅演示Go和Ja">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2022-05-30T09:33:28.000Z">
+<meta property="article:modified_time" content="2022-05-30T09:33:41.540Z">
 <meta property="article:author" content="Barry Yan">
 <meta property="article:tag" content="Java,Go,SQL">
 <meta name="twitter:card" content="summary">
@@ -2175,7 +2177,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin begin-->
     
     <!-- Custom Files bodyBegin end-->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2444,7 +2446,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="full" class='cover-wrapper  dock' style="display: ;">
+      <div id="none" class='cover-wrapper post dock' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://images.unsplash.com/photo-1474533883693-59a44dbb964e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"></div>
 
@@ -2511,7 +2513,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 </div>
 
-        <div id="scroll-down" style="display: ;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+        <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
       </div>
     
   
@@ -2521,33 +2523,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  
-  <section class="post-list">
-    
-      
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
   <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/30/%E6%8E%A2%E7%B4%A2Pulsar%E4%B9%8B%E4%BD%BF%E7%94%A8Go%E5%92%8CJava%E6%93%8D%E4%BD%9CPulsar/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Barry Yan's Blog">
@@ -2557,416 +2533,299 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/05/30/%E6%8E%A2%E7%B4%A2Pulsar%E4%B9%8B%E4%BD%BF%E7%94%A8Go%E5%92%8CJava%E6%93%8D%E4%BD%9CPulsar/"  itemprop="url">
+    
+    
+      <h1 class="title" itemprop="name headline">
         探索Pulsar之使用Go和Java操作Pulsar
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">请设置文章作者</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-05-30T17:33:28+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2022年5月30日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
       
-        1 前言Pulsar官方支持的客户端库：
+      <span>次浏览</span>
+    </p>
+  </a>
+</div>
 
-C++
-Python
-WebSocket
-Go client
-Node.js
-C# 
-Java
 
-GitHub中三方的客户端库：
-
-Go
-Haskell
-Scala
-Rust
-.NET
-Node.js
-
-具体可参看：https://pulsar.apache.org/docs/zh-CN/next/client-libraries/
-本次仅演示Go...
-      
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
     
   </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <div class="story post-story"><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1 前言"></a>1 前言</h2><p><strong>Pulsar官方支持的客户端库</strong>：</p>
+<ul>
+<li>C++</li>
+<li>Python</li>
+<li>WebSocket</li>
+<li>Go client</li>
+<li>Node.js</li>
+<li>C# </li>
+<li>Java</li>
+</ul>
+<p><strong>GitHub中三方的客户端库</strong>：</p>
+<ul>
+<li>Go</li>
+<li>Haskell</li>
+<li>Scala</li>
+<li>Rust</li>
+<li>.NET</li>
+<li>Node.js</li>
+</ul>
+<p>具体可参看：<a target="_blank" rel="noopener" href="https://pulsar.apache.org/docs/zh-CN/next/client-libraries/">https://pulsar.apache.org/docs/zh-CN/next/client-libraries/</a></p>
+<p>本次仅演示Go和Java的客户端操作。</p>
+</div><div class="story post-story"><h2 id="2-单机模式运行Pulsar"><a href="#2-单机模式运行Pulsar" class="headerlink" title="2 单机模式运行Pulsar"></a>2 单机模式运行Pulsar</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@iZ2ze4m2 bin]# pwd</span><br><span class="line">/root/apache-pulsar-2.10.0/bin</span><br><span class="line">[root@iZ2ze4m2 bin]# ./pulsar standalone</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>PS:针对单机启动报错问题，如下面的</strong>：</p>
+<p><img src="https://img-blog.csdnimg.cn/6b00dd404f254867879182df7c0d51c5.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/6b00dd404f254867879182df7c0d51c5.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-bWI2jbMB-1651490859257)(Apache Pulsar 2.assets/image-20220502124604132.png)]"></p>
+<p><strong>可以尝试使用该命令进行启动：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./pulsar standalone -nss</span><br></pre></td></tr></table></figure>
+</blockquote>
+</div><div class="story post-story"><h2 id="3-Go客户端操作Pulsar"><a href="#3-Go客户端操作Pulsar" class="headerlink" title="3 Go客户端操作Pulsar"></a>3 Go客户端操作Pulsar</h2><p><strong>（1）添加依赖</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go get -u &quot;github.com/apache/pulsar-client-go/pulsar&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>（2）生产者</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">   <span class="string">&quot;context&quot;</span></span><br><span class="line">   <span class="string">&quot;fmt&quot;</span></span><br><span class="line">   <span class="string">&quot;github.com/apache/pulsar-client-go/pulsar&quot;</span></span><br><span class="line">   <span class="string">&quot;log&quot;</span></span><br><span class="line">   <span class="string">&quot;time&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   client, err := pulsar.NewClient(pulsar.ClientOptions&#123;</span><br><span class="line">      URL:               <span class="string">&quot;pulsar://192.168.71.143:6650&quot;</span>, <span class="comment">//支持：&quot;pulsar://localhost:6650,localhost:6651,localhost:6652&quot;</span></span><br><span class="line">      OperationTimeout:  <span class="number">60</span> * time.Second,</span><br><span class="line">      ConnectionTimeout: <span class="number">60</span> * time.Second,</span><br><span class="line">   &#125;)</span><br><span class="line"></span><br><span class="line">   <span class="keyword">defer</span> client.Close()</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">      log.Fatalf(<span class="string">&quot;Could not instantiate Pulsar client: %v&quot;</span>, err)</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   producer, err := client.CreateProducer(pulsar.ProducerOptions&#123;</span><br><span class="line">      Topic: <span class="string">&quot;my-topic&quot;</span>,</span><br><span class="line">   &#125;)</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">      log.Fatal(err)</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   _, err = producer.Send(context.Background(), &amp;pulsar.ProducerMessage&#123;</span><br><span class="line">      Payload: []<span class="type">byte</span>(<span class="string">&quot;hello&quot;</span>),</span><br><span class="line">   &#125;)</span><br><span class="line"></span><br><span class="line">   <span class="keyword">defer</span> producer.Close()</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">      fmt.Println(<span class="string">&quot;Failed to publish message&quot;</span>, err)</span><br><span class="line">   &#125;</span><br><span class="line">   fmt.Println(<span class="string">&quot;Published message&quot;</span>)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>（3）消费者</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">   <span class="string">&quot;context&quot;</span></span><br><span class="line">   <span class="string">&quot;fmt&quot;</span></span><br><span class="line">   <span class="string">&quot;github.com/apache/pulsar-client-go/pulsar&quot;</span></span><br><span class="line">   <span class="string">&quot;log&quot;</span></span><br><span class="line">   <span class="string">&quot;time&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   client, err := pulsar.NewClient(pulsar.ClientOptions&#123;</span><br><span class="line">      URL:               <span class="string">&quot;pulsar://192.168.71.143:6650&quot;</span>, <span class="comment">//支持：&quot;pulsar://localhost:6650,localhost:6651,localhost:6652&quot;</span></span><br><span class="line">      OperationTimeout:  <span class="number">60</span> * time.Second,</span><br><span class="line">      ConnectionTimeout: <span class="number">60</span> * time.Second,</span><br><span class="line">   &#125;)</span><br><span class="line"></span><br><span class="line">   <span class="keyword">defer</span> client.Close()</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">      log.Fatalf(<span class="string">&quot;Could not instantiate Pulsar client: %v&quot;</span>, err)</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   consumer, err := client.Subscribe(pulsar.ConsumerOptions&#123;</span><br><span class="line">      Topic:            <span class="string">&quot;my-topic&quot;</span>,</span><br><span class="line">      SubscriptionName: <span class="string">&quot;my-sub&quot;</span>,</span><br><span class="line">      Type:             pulsar.Shared,</span><br><span class="line">   &#125;)</span><br><span class="line">   <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">      log.Fatal(err)</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">defer</span> consumer.Close()</span><br><span class="line"></span><br><span class="line">   <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">10</span>; i++ &#123;</span><br><span class="line">      msg, err := consumer.Receive(context.Background())</span><br><span class="line">      <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">         log.Fatal(err)</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      fmt.Printf(<span class="string">&quot;Received message msgId: %#v -- content: &#x27;%s&#x27;\n&quot;</span>,</span><br><span class="line">         msg.ID(), <span class="type">string</span>(msg.Payload()))</span><br><span class="line"></span><br><span class="line">      consumer.Ack(msg)</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span> err := consumer.Unsubscribe(); err != <span class="literal">nil</span> &#123;</span><br><span class="line">      log.Fatal(err)</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</div><div class="story post-story"><h2 id="4-Java-amp-Spring客户端操作Pulsar"><a href="#4-Java-amp-Spring客户端操作Pulsar" class="headerlink" title="4 Java&amp;Spring客户端操作Pulsar"></a>4 Java&amp;Spring客户端操作Pulsar</h2><h3 id="4-1-Java客户端"><a href="#4-1-Java客户端" class="headerlink" title="4.1 Java客户端"></a>4.1 Java客户端</h3><p><strong>（1）pom依赖</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">pulsar.version</span>&gt;</span>2.9.1<span class="tag">&lt;/<span class="name">pulsar.version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.pulsar<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>pulsar-client<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;pulsar.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>（2）生产者和消费者</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">SbPursarApplicationTests</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> PulsarClient client;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">()</span> <span class="keyword">throws</span> PulsarClientException &#123;</span><br><span class="line">        client = PulsarClient.builder()</span><br><span class="line">                .serviceUrl(<span class="string">&quot;pulsar://192.168.71.147:6650&quot;</span>)</span><br><span class="line">                .build();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">producer</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        init();</span><br><span class="line">        Producer&lt;<span class="type">byte</span>[]&gt; producer = client.newProducer()</span><br><span class="line">                .topic(<span class="string">&quot;my-topic&quot;</span>)</span><br><span class="line">                .create();</span><br><span class="line">        <span class="comment">// 然后你就可以发送消息到指定的broker 和topic上：</span></span><br><span class="line">        producer.send(<span class="string">&quot;My message&quot;</span>.getBytes());</span><br><span class="line">        client.close();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">consumer</span><span class="params">()</span> <span class="keyword">throws</span> PulsarClientException &#123;</span><br><span class="line">        init();</span><br><span class="line">        <span class="type">Consumer</span> <span class="variable">consumer</span> <span class="operator">=</span> client.newConsumer()</span><br><span class="line">                .topic(<span class="string">&quot;my-topic&quot;</span>)</span><br><span class="line">                .subscriptionName(<span class="string">&quot;my-subscription&quot;</span>)</span><br><span class="line">                .subscribe();</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="type">Message</span> <span class="variable">msg</span> <span class="operator">=</span> consumer.receive();</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;Message received: &quot;</span> + <span class="keyword">new</span> <span class="title class_">String</span>(msg.getData()));</span><br><span class="line">                <span class="comment">//消息确认</span></span><br><span class="line">                consumer.acknowledge(msg);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                consumer.negativeAcknowledge(msg);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-Spring客户端"><a href="#4-2-Spring客户端" class="headerlink" title="4.2 Spring客户端"></a>4.2 Spring客户端</h3><p><strong>（1）依赖</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">java.version</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- in your &lt;properties&gt; block --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">pulsar.version</span>&gt;</span>2.9.1<span class="tag">&lt;/<span class="name">pulsar.version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- in your &lt;dependencies&gt; block --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.pulsar<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>pulsar-client<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;pulsar.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>（2）项目结构</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/cdad67f5f16b462aad64ef5e5dac66f7.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/cdad67f5f16b462aad64ef5e5dac66f7.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-FsWvdVEp-1651490859260)(Apache Pulsar 2.assets/image-20220502125120250.png)]"></p>
+<p><strong>（3）配置类</strong></p>
+<p>主要用于将自定义Bean放入Spring中</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">PulsarConfig</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> Producer <span class="title function_">pulsarProducer</span><span class="params">()</span> <span class="keyword">throws</span> PulsarClientException &#123;</span><br><span class="line">        <span class="type">PulsarClient</span> <span class="variable">client</span> <span class="operator">=</span> PulsarClient.builder()</span><br><span class="line">                .serviceUrl(<span class="string">&quot;pulsar://192.168.71.147:6650&quot;</span>)</span><br><span class="line">                .build();</span><br><span class="line">        Producer&lt;<span class="type">byte</span>[]&gt; producer = client</span><br><span class="line">                .newProducer()</span><br><span class="line">                .topic(<span class="string">&quot;my-topic&quot;</span>)</span><br><span class="line">                .create();</span><br><span class="line">        <span class="keyword">return</span> producer;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> Consumer <span class="title function_">pulsarConsumer</span><span class="params">()</span> <span class="keyword">throws</span> PulsarClientException &#123;</span><br><span class="line">        <span class="type">PulsarClient</span> <span class="variable">client</span> <span class="operator">=</span> PulsarClient.builder()</span><br><span class="line">                .serviceUrl(<span class="string">&quot;pulsar://192.168.71.147:6650&quot;</span>)</span><br><span class="line">                .build();</span><br><span class="line">        <span class="type">Consumer</span> <span class="variable">consumer</span> <span class="operator">=</span> client.newConsumer()</span><br><span class="line">                .topic(<span class="string">&quot;my-topic&quot;</span>)</span><br><span class="line">                .subscriptionName(<span class="string">&quot;my-subscription&quot;</span>)</span><br><span class="line">                .subscribe();</span><br><span class="line">        <span class="keyword">return</span> consumer;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>（4）控制器类：生产者</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloPulsarController</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> Producer pulsarProducer;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/hello/&#123;msg&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">hello</span><span class="params">(<span class="meta">@PathVariable(&quot;msg&quot;)</span> String msg)</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            pulsarProducer.send(msg.getBytes());</span><br><span class="line">        &#125; <span class="keyword">catch</span> (PulsarClientException e) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;发送失败&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;发送成功&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>（3）消费者</strong></p>
+<p>直接使用自定义Bean，并在Spring Boot启动后自动调用该方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">PulsarConsumerService</span> <span class="keyword">implements</span> <span class="title class_">ApplicationRunner</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> Consumer pulsarConsumer;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">consumer</span><span class="params">()</span> <span class="keyword">throws</span> PulsarClientException &#123;</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="type">Message</span> <span class="variable">msg</span> <span class="operator">=</span> pulsarConsumer.receive();</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;Message received: &quot;</span> + <span class="keyword">new</span> <span class="title class_">String</span>(msg.getData()));</span><br><span class="line">                pulsarConsumer.acknowledge(msg);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                pulsarConsumer.negativeAcknowledge(msg);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">(ApplicationArguments args)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        consumer();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</div><div class="story post-story"><h2 id="5-通过pulsar-manager搭建可视化管理界面"><a href="#5-通过pulsar-manager搭建可视化管理界面" class="headerlink" title="5 通过pulsar-manager搭建可视化管理界面"></a>5 通过pulsar-manager搭建可视化管理界面</h2><h3 id="5-1-下载链接"><a href="#5-1-下载链接" class="headerlink" title="5.1 下载链接"></a>5.1 下载链接</h3><p><a target="_blank" rel="noopener" href="https://github.com/apache/pulsar-manager#access-pulsar-manager">https://github.com/apache/pulsar-manager#access-pulsar-manager</a></p>
+<p>或</p>
+<p><a target="_blank" rel="noopener" href="https://pulsar.apache.org/en/download/">https://pulsar.apache.org/en/download/</a></p>
+<h3 id="5-2-启动并配置"><a href="#5-2-启动并配置" class="headerlink" title="5.2 启动并配置"></a>5.2 启动并配置</h3><p><strong>启动</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">wget https://dist.apache.org/repos/dist/release/pulsar/pulsar-manager/pulsar-manager-0.2.0/apache-pulsar-manager-0.2.0-bin.tar.gz</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">tar -zxvf apache-pulsar-manager-0.2.0-bin.tar.gz</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> pulsar-manager</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">tar -xvf pulsar-manager.tar</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> pulsar-manager</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cp</span> -r ../dist ui</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">./bin/pulsar-manager</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>配置账号密码</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">CSRF_TOKEN=$(curl http://127.0.0.1:7750/pulsar-manager/csrf-token)</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">curl \</span></span><br><span class="line"><span class="language-bash">    -H <span class="string">&quot;X-XSRF-TOKEN: <span class="variable">$CSRF_TOKEN</span>&quot;</span> \</span></span><br><span class="line"><span class="language-bash">    -H <span class="string">&quot;Cookie: XSRF-TOKEN=<span class="variable">$CSRF_TOKEN</span>;&quot;</span> \</span></span><br><span class="line"><span class="language-bash">    -H <span class="string">&#x27;Content-Type: application/json&#x27;</span> \</span></span><br><span class="line"><span class="language-bash">    -X PUT http://127.0.0.1:7750/pulsar-manager/users/superuser \</span></span><br><span class="line"><span class="language-bash">    -d <span class="string">&#x27;&#123;&quot;name&quot;: &quot;admin&quot;, &quot;password&quot;: &quot;apachepulsar&quot;, &quot;description&quot;: &quot;test&quot;, &quot;email&quot;: &quot;username@test.org&quot;&#125;&#x27;</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-3-使用"><a href="#5-3-使用" class="headerlink" title="5.3 使用"></a>5.3 使用</h3><p>访问<code>http://localhost:9527</code>就可以打开pulsar-manager界面：</p>
+<p><img src="https://img-blog.csdnimg.cn/83d261c8be8b4836afe19b6607821932.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/83d261c8be8b4836afe19b6607821932.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-KpVG1fzF-1651490859261)(Apache Pulsar 2.assets/image-20220502153256105.png)]"></p>
+<blockquote>
+<p>参考：</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://pulsar.apache.org/docs/zh-CN/client-libraries-go/">https://pulsar.apache.org/docs/zh-CN/client-libraries-go/</a></p>
+<p><a target="_blank" rel="noopener" href="https://pulsar.apache.org/docs/zh-CN/client-libraries-java/">https://pulsar.apache.org/docs/zh-CN/client-libraries-java/</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ycf921244819/article/details/120907372">https://blog.csdn.net/ycf921244819/article/details/120907372</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/apache/pulsar-manager#access-pulsar-manager">https://github.com/apache/pulsar-manager#access-pulsar-manager</a></p>
+
+</div>
+  </div>
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-05-30T17:33:28+08:00">2022-05-30</time>
-        
-      </div>
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2022/05/30/%E6%8E%A2%E7%B4%A2Pulsar%E4%B9%8B%E4%BD%BF%E7%94%A8Go%E5%92%8CJava%E6%93%8D%E4%BD%9CPulsar/' itemprop="url">
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://example.com/2022/05/30/%E6%8E%A2%E7%B4%A2Pulsar%E4%B9%8B%E4%BD%BF%E7%94%A8Go%E5%92%8CJava%E6%93%8D%E4%BD%9CPulsar/>http://example.com/2022/05/30/%E6%8E%A2%E7%B4%A2Pulsar%E4%B9%8B%E4%BD%BF%E7%94%A8Go%E5%92%8CJava%E6%93%8D%E4%BD%9CPulsar/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-05-30T17:33:41+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2022年5月30日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/30/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%81%AD%E9%81%87SYN%E6%B3%9B%E6%B4%AA%E6%94%BB%E5%87%BB%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/05/30/%E6%8E%A2%E7%B4%A2Pulsar%E4%B9%8B%E4%BD%BF%E7%94%A8Go%E5%92%8CJava%E6%93%8D%E4%BD%9CPulsar/&title=探索Pulsar之使用Go和Java操作Pulsar - Barry Yan's Blog&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/05/30/%E6%8E%A2%E7%B4%A2Pulsar%E4%B9%8B%E4%BD%BF%E7%94%A8Go%E5%92%8CJava%E6%93%8D%E4%BD%9CPulsar/&title=探索Pulsar之使用Go和Java操作Pulsar - Barry Yan's Blog&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/05/30/%E6%8E%A2%E7%B4%A2Pulsar%E4%B9%8B%E4%BD%BF%E7%94%A8Go%E5%92%8CJava%E6%93%8D%E4%BD%9CPulsar/&title=探索Pulsar之使用Go和Java操作Pulsar - Barry Yan's Blog&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
   
   
+
   
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2022/05/30/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%81%AD%E9%81%87SYN%E6%B3%9B%E6%B4%AA%E6%94%BB%E5%87%BB%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/'>
+          <p class='title'>记录一次云服务器遭遇SYN泛洪攻击的处理方式<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>1 场景再现今天上午刚想用云服务器传输下文件，当打开finalshell连接服务器时突然发现服务器的系统指标很异常，而且在终端输入命令的时候都非常的卡，图示：很明显我们可以看出服务器的异常状态：...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="discussionUrl" content="/2022/05/30/%E6%8E%A2%E7%B4%A2Pulsar%E4%B9%8B%E4%BD%BF%E7%94%A8Go%E5%92%8CJava%E6%93%8D%E4%BD%9CPulsar/index.html#comments">
     </span>
-  
-  
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/05/30/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%81%AD%E9%81%87SYN%E6%B3%9B%E6%B4%AA%E6%94%BB%E5%87%BB%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/"  itemprop="url">
-        记录一次云服务器遭遇SYN泛洪攻击的处理方式
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1 场景再现今天上午刚想用云服务器传输下文件，当打开finalshell连接服务器时突然发现服务器的系统指标很异常，而且在终端输入命令的时候都非常的卡，图示：很明显我们可以看出服务器的异常状态：
 
-CPU高负载
-内存高利用率
-网络高出口带宽
+    <div id="layoutHelper-comments"></div>
 
-2 尝试解决2.1 尝试使用netstat命令检查网络连接状态首先使用最基本的netstat命令查看网络的连接状态
-1234567891011####...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-05-30T17:32:26+08:00">2022-05-30</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/05/30/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%81%AD%E9%81%87SYN%E6%B3%9B%E6%B4%AA%E6%94%BB%E5%87%BB%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
+  </article>
 
-</div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/30/SQL/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/05/30/SQL/"  itemprop="url">
-        SQL
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
 
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-05-30T08:31:43+08:00">2022-05-30</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/05/30/SQL/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
 
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/30/SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/05/30/SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0/"  itemprop="url">
-        2022年5月30日
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        玩转SQL窗口函数
-说明：MySQL8.0 之后才支持窗口函数
-
-1 提前准备在MySQL8.0版本数据库下新建数据表，插入数据
-12345678910111213141516CREATE TABLE `student`(   `id`      int(10) DEFAULT NULL,    `name`    varchar(20) DEFAULT NULL,    `age`    ...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-05-30T08:28:11+08:00">2022-05-30</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/05/30/SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/28/%E7%8E%A9%E8%BD%ACSpring-%E8%87%AA%E5%AE%9A%E4%B9%89Spring%20Starter/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/05/28/%E7%8E%A9%E8%BD%ACSpring-%E8%87%AA%E5%AE%9A%E4%B9%89Spring%20Starter/"  itemprop="url">
-        2022年5月28日
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        玩转Spring-自定义Spring Starter1 什么是Spring Starter
-摘自官网
-
-Starters are a set of convenient dependency descriptors that you can include in your application. You get a one-stop shop for all the Spring and ...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-05-28T20:42:46+08:00">2022-05-28</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/05/28/%E7%8E%A9%E8%BD%ACSpring-%E8%87%AA%E5%AE%9A%E4%B9%89Spring%20Starter/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/28/My-New-Post/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/05/28/My-New-Post/"  itemprop="url">
-        My New Post
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-05-28T20:36:11+08:00">2022-05-28</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/05/28/My-New-Post/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/28/hello-world/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/05/28/hello-world/"  itemprop="url">
-        Hello World
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Qu...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-05-28T20:17:31+08:00">2022-05-28</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/05/28/hello-world/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
 
 
 </div>
@@ -2976,89 +2835,34 @@ Qu...
     
     
 
-<section class="widget blogger shadow floatable blur desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://images.unsplash.com/photo-1443304895043-ef30921332c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Barry Yan</h2>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Barry Yan's Blog</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fa-solid fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:1712229564@qq.com"
-              class="social fa-solid fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/ibarryyan"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fa-solid fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
+  <section class="widget toc-wrapper shadow floatable blur desktop mobile pjax" id="toc-div" >
     
+  <header>
     
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
 
-  
 
-  
-    
-    
-
-  
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%89%8D%E8%A8%80"><span class="toc-text">1 前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%8D%95%E6%9C%BA%E6%A8%A1%E5%BC%8F%E8%BF%90%E8%A1%8CPulsar"><span class="toc-text">2 单机模式运行Pulsar</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Go%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%93%8D%E4%BD%9CPulsar"><span class="toc-text">3 Go客户端操作Pulsar</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Java-amp-Spring%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%93%8D%E4%BD%9CPulsar"><span class="toc-text">4 Java&amp;Spring客户端操作Pulsar</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-Java%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-text">4.1 Java客户端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-Spring%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-text">4.2 Spring客户端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E9%80%9A%E8%BF%87pulsar-manager%E6%90%AD%E5%BB%BA%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2"><span class="toc-text">5 通过pulsar-manager搭建可视化管理界面</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-%E4%B8%8B%E8%BD%BD%E9%93%BE%E6%8E%A5"><span class="toc-text">5.1 下载链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E5%90%AF%E5%8A%A8%E5%B9%B6%E9%85%8D%E7%BD%AE"><span class="toc-text">5.2 启动并配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-%E4%BD%BF%E7%94%A8"><span class="toc-text">5.3 使用</span></a></li></ol></li></ol>
+    </div>
+  </section>
 
   
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -3094,7 +2898,7 @@ Qu...
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3103,15 +2907,15 @@ Qu...
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.remove("show");
+    l_header.classList.add("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="full";
-      cover_wrapper.style.display="";
-      scroll_down.style.display="";
+      cover_wrapper.id="none";
+      cover_wrapper.style.display="none";
+      scroll_down.style.display="none";
     
   
 </script>
@@ -4060,7 +3864,7 @@ Qu...
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Barry Yan's Blog"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Barry Yan's Blog","url":"http://example.com/","keywords":"Java,Go,SQL","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Barry Yan's Blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/05/30/探索Pulsar之使用Go和Java操作Pulsar/","name":"探索Pulsar之使用Go和Java操作Pulsar"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Barry Yan's Blog","url":"http://example.com/","keywords":"Java,Go,SQL","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"探索Pulsar之使用Go和Java操作Pulsar","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/05/30/%E6%8E%A2%E7%B4%A2Pulsar%E4%B9%8B%E4%BD%BF%E7%94%A8Go%E5%92%8CJava%E6%93%8D%E4%BD%9CPulsar/"},"author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/05/30/%E6%8E%A2%E7%B4%A2Pulsar%E4%B9%8B%E4%BD%BF%E7%94%A8Go%E5%92%8CJava%E6%93%8D%E4%BD%9CPulsar/","wordCount":0,"datePublished":"2022-05-30T09:33:28.000Z","dateModified":"2022-05-30T09:33:41.540Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.3.2">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="index,follow">
-  <link rel="canonical" href="http://example.com/"/>
+  
+  <link rel="canonical" href="http://example.com/2022/05/30/记录一次云服务器遭遇syn泛洪攻击的处理方式/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,17 +31,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>Barry Yan's Blog</title>
+  <title>记录一次云服务器遭遇SYN泛洪攻击的处理方式 - Barry Yan's Blog</title>
   <meta name="keywords" content="Java,Go,SQL">
   <meta desc name="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等 - Barry Yan - Barry Yan's Blog">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="Barry Yan&#39;s Blog">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记录一次云服务器遭遇SYN泛洪攻击的处理方式">
+<meta property="og:url" content="http://example.com/2022/05/30/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%81%AD%E9%81%87SYN%E6%B3%9B%E6%B4%AA%E6%94%BB%E5%87%BB%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Barry Yan&#39;s Blog">
-<meta property="og:description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
+<meta property="og:description" content="1 场景再现今天上午刚想用云服务器传输下文件，当打开finalshell连接服务器时突然发现服务器的系统指标很异常，而且在终端输入命令的时候都非常的卡，图示：很明显我们可以看出服务器的异常状态：  CPU高负载 内存高利用率 网络高出口带宽  2 尝试解决2.1 尝试使用netstat命令检查网络连接状态首先使用最基本的netstat命令查看网络的连接状态 1234567891011####  命">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2022-05-30T09:32:26.000Z">
+<meta property="article:modified_time" content="2022-05-30T09:33:03.607Z">
 <meta property="article:author" content="Barry Yan">
 <meta property="article:tag" content="Java,Go,SQL">
 <meta name="twitter:card" content="summary">
@@ -2175,7 +2177,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin begin-->
     
     <!-- Custom Files bodyBegin end-->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2444,7 +2446,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="full" class='cover-wrapper  dock' style="display: ;">
+      <div id="none" class='cover-wrapper post dock' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://images.unsplash.com/photo-1474533883693-59a44dbb964e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"></div>
 
@@ -2511,7 +2513,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 </div>
 
-        <div id="scroll-down" style="display: ;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+        <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
       </div>
     
   
@@ -2521,34 +2523,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  
-  <section class="post-list">
-    
-      
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/30/%E6%8E%A2%E7%B4%A2Pulsar%E4%B9%8B%E4%BD%BF%E7%94%A8Go%E5%92%8CJava%E6%93%8D%E4%BD%9CPulsar/">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/30/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%81%AD%E9%81%87SYN%E6%B3%9B%E6%B4%AA%E6%94%BB%E5%87%BB%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Barry Yan's Blog">
   </span>
@@ -2557,24 +2533,228 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title" itemprop="name headline">
+        记录一次云服务器遭遇SYN泛洪攻击的处理方式
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">请设置文章作者</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-05-30T17:32:26+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2022年5月30日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span>次浏览</span>
+    </p>
+  </a>
+</div>
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h3 id="1-场景再现"><a href="#1-场景再现" class="headerlink" title="1 场景再现"></a>1 场景再现</h3><p>今天上午刚想用云服务器传输下文件，当打开finalshell连接服务器时突然发现服务器的系统指标很异常，而且在终端输入命令的时候都非常的卡，图示：<br><img src="https://img-blog.csdnimg.cn/5e7254f9101d490c9caa86d7391fcd9f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_14,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/5e7254f9101d490c9caa86d7391fcd9f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_14,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>很明显我们可以看出服务器的异常状态：</p>
+<ul>
+<li>CPU高负载</li>
+<li>内存高利用率</li>
+<li>网络高出口带宽</li>
+</ul>
+<h3 id="2-尝试解决"><a href="#2-尝试解决" class="headerlink" title="2 尝试解决"></a>2 尝试解决</h3><h4 id="2-1-尝试使用netstat命令检查网络连接状态"><a href="#2-1-尝试使用netstat命令检查网络连接状态" class="headerlink" title="2.1 尝试使用netstat命令检查网络连接状态"></a>2.1 尝试使用netstat命令检查网络连接状态</h4><p>首先使用最基本的netstat命令查看网络的连接状态</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">###  命令</span></span></span><br><span class="line">netstat</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">###  输出字段含义</span></span></span><br><span class="line">Proto   #</span><br><span class="line">Recv-Q  #</span><br><span class="line">Send-Q  #</span><br><span class="line">Local   #</span><br><span class="line">Address  #</span><br><span class="line">Foreign Address #</span><br><span class="line">State #</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/c0d0a97e508a4681893dfeab0d45d89a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_20,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/c0d0a97e508a4681893dfeab0d45d89a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h4 id="2-2-回顾TCP三次握手"><a href="#2-2-回顾TCP三次握手" class="headerlink" title="2.2 回顾TCP三次握手"></a>2.2 回顾TCP三次握手</h4><p><img src="https://img-blog.csdnimg.cn/f03f7e5c47cc4da9a0a16e08b648cdf2.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_17,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/f03f7e5c47cc4da9a0a16e08b648cdf2.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_17,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>由TCP三次握手的流程和各自的状态我们可以看出，当客户端向服务器发送玩syn&#x3D;1，seq&#x3D;n时，客户端会处于SYN_SEND状态，并等待服务端ACK。</p>
+<p>由上图得知我们的服务器TCP连接大量的处于SYN_SEND状态，因此可以判断是被黑客当成了肉机对其他服务器进行拒绝服务攻击，我们自己服务器攻击的类似则属于SYN泛洪攻击。</p>
+<h4 id="2-3-netstat命令搭配参数查看更多网络状态信息"><a href="#2-3-netstat命令搭配参数查看更多网络状态信息" class="headerlink" title="2.3 netstat命令搭配参数查看更多网络状态信息"></a>2.3 netstat命令搭配参数查看更多网络状态信息</h4><p>接下来我们使用更复杂一点的netstat参数来查看详细一点的网络信息，首先是</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">###  命令</span></span></span><br><span class="line">netstst -p</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">###  参数作用</span></span></span><br><span class="line">-p 显示建立相关链接的程序名</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">## 其他参数</span></span></span><br><span class="line">-a (all)显示所有选项，默认不显示LISTEN相关</span><br><span class="line">-t (tcp)仅显示tcp相关选项</span><br><span class="line">-u (udp)仅显示udp相关选项</span><br><span class="line">-n 拒绝显示别名，能显示数字的全部转化成数字。</span><br><span class="line">-l 仅列出有在 Listen (监听) 的服務状态</span><br><span class="line"></span><br><span class="line">-p 显示建立相关链接的程序名</span><br><span class="line">-r 显示路由信息，路由表</span><br><span class="line">-e 显示扩展信息，例如uid等</span><br><span class="line">-s 按各个协议进行统计</span><br><span class="line">-c 每隔一个固定时间，执行该netstat命令。</span><br><span class="line"></span><br><span class="line">提示：LISTEN和LISTENING的状态只有用-a或者-l才能看到</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">###  -p输出字段含义</span></span></span><br><span class="line">Proto   #</span><br><span class="line">Recv-Q  #</span><br><span class="line">Send-Q  #</span><br><span class="line">Local   #</span><br><span class="line">Address  #</span><br><span class="line">Foreign Address #</span><br><span class="line">State #</span><br><span class="line">PID/Program name #</span><br></pre></td></tr></table></figure>
+
+<p>我们使用netstat -p命令进行对网络连接所处程序的查询，发现无法正确的查看，因此我们可以断定攻击者的水平还算是可以的，并且我们通过这些简单的命令很难查出背后的原因了。</p>
+<p><img src="https://img-blog.csdnimg.cn/9b328b93f1664409b960444241bd181d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_20,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/9b328b93f1664409b960444241bd181d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>发现TCP的连接数如此之多，而且状态多为正在打开并未连接的TCP报文<br><img src="https://img-blog.csdnimg.cn/eaa6c88a10464435b4f3c558b502c376.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_13,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/eaa6c88a10464435b4f3c558b502c376.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_13,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h4 id="2-4-发现异常TCP连接"><a href="#2-4-发现异常TCP连接" class="headerlink" title="2.4 发现异常TCP连接"></a>2.4 发现异常TCP连接</h4><p>下一步排查当前服务器的TCP已连接情况：</p>
+<p>22端口的都是我在本机使用三方工具进行对服务器的远程连接，22端口和我本机的公网IP，因此这一部分TCP连接不需要质疑，但是唯独有几个不知名端口号和不知名IP的连接，因此我们可以断定这些连接多半为黑客攻击时的异常连接，并且隐藏了连接的进程。<br><img src="https://img-blog.csdnimg.cn/ce4f7caf01aa414f9224b796af481b47.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_20,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/ce4f7caf01aa414f9224b796af481b47.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>因为只有一个异常连接能够看到进程名，于是我们顺藤摸瓜找到该程序的位置<br><img src="https://img-blog.csdnimg.cn/4f1a455c18c14761ba3c636550ad9397.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/4f1a455c18c14761ba3c636550ad9397.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>该程序的位置在&#x2F;tmp目录下，但是这个服务器只有我一个人使用，并未下载和添加该程序，因此该程序来源不明，对于该程序的介绍（来自GitHub）：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/tmate-io/tmate">https://github.com/tmate-io/tmate</a></p>
+<p>tmate 的意思是 teammates，它是 tmux 的一个分支，并且使用相同的配置信息（例如快捷键配置，配色方案等）。它是一个终端多路复用器，同时具有即时分享终端的能力。它允许在单个屏幕中创建并操控多个终端，同时这些终端还能与其他同事分享。</p>
+<p>你可以分离会话，让作业在后台运行，然后在想要查看状态时重新连接会话。tmate 提供了一个即时配对的方案，让你可以与一个或多个队友共享一个终端。</p>
+<p>在屏幕的底部有一个状态栏，显示了当前会话的一些诸如 ssh 命令之类的共享信息。<br><img src="https://img-blog.csdnimg.cn/f7e4a32209bd436d8be81dc8d1c68ea8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_20,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/f7e4a32209bd436d8be81dc8d1c68ea8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>因此我们大致可以断定<code>黑客就是通过tmate来对我们的服务器进行控制，让服务器出去SYN泛红状态并启动了挖矿程序进行挖矿。</code></p>
+<h3 id="3-偶遇大神指点"><a href="#3-偶遇大神指点" class="headerlink" title="3 偶遇大神指点"></a>3 偶遇大神指点</h3><p>由于服务器的用途有限，并且针对服务器异常情况的应对经验也有限，因此先在微信的一个技术群中进行询问，以下是处理过程。</p>
+<h4 id="3-1-ps命令查找恶意进程并终止"><a href="#3-1-ps命令查找恶意进程并终止" class="headerlink" title="3.1 ps命令查找恶意进程并终止"></a>3.1 ps命令查找恶意进程并终止</h4><p>什么都没说，一位很有经验的老前辈上来就让我执行这几部操作</p>
+<ul>
+<li><code>ps -ef|egrep &quot;mass|scan&quot; </code></li>
+<li>停止相关进程</li>
+<li>找到对应的文件，删除</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/b959ff89e66348a481b1aeea11d548aa.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_20,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/b959ff89e66348a481b1aeea11d548aa.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/7fda5af1bc6b4f5bbe969a0b1fb5146d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_18,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/7fda5af1bc6b4f5bbe969a0b1fb5146d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_18,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>虽然不知道为什么，但是还是照做了，当停止进程的时候，发现网络和内存的情况一下子就好了<br><img src="https://img-blog.csdnimg.cn/e8cb90f4bb354cc5916c0f5727950311.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_11,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/e8cb90f4bb354cc5916c0f5727950311.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_11,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h4 id="3-2-删除异常用户和文件"><a href="#3-2-删除异常用户和文件" class="headerlink" title="3.2 删除异常用户和文件"></a>3.2 删除异常用户和文件</h4><p>按照前辈说的，再将黑客创建的用户和用户目录都删除掉<br><img src="https://img-blog.csdnimg.cn/bcc529d59666425b9de6e1d337965bf8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_17,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/bcc529d59666425b9de6e1d337965bf8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_17,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>还有异常的脚本也都删除掉<br><img src="https://img-blog.csdnimg.cn/4b948617248748a889adcce64926ca04.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/4b948617248748a889adcce64926ca04.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h4 id="3-3-缘由探究"><a href="#3-3-缘由探究" class="headerlink" title="3.3 缘由探究"></a>3.3 缘由探究</h4><p>在那位老前辈的指引下，服务器的网络和内存情况已经得到修复，但是CPU占用情况仍然没有缓解，而且多半是被挖矿程序占用，因此很不容易被发现。</p>
+<p>在操作完成后，向老前辈请教本次异常出现的原因，老前辈直接就说肯定是端口开太多了，我回头一想，当初确实是为了方便做实验，开放了很多端口，因此被黑客利用，对服务器发起了攻击。</p>
+<h3 id="4-回顾总结"><a href="#4-回顾总结" class="headerlink" title="4 回顾总结"></a>4 回顾总结</h3><p>对TCP连接过程比较熟悉的同学应该都知道，TCP的SYN泛洪攻击以及DOS、DDOS攻击等都是基于TCP三次握手来进行的，因此很难完全避免，我们要做的就是在公网服务器上尽量少放开不常用的端口，以免遭受黑客攻击。还有就是加深自己的计算机网络知识，遇到问题要知道是什么原因，并且尝试着去解决。</p>
+<p>当然因为有挖矿程序很难清理，最后还是备份数据，重装了服务器的操作系统来解决的，但是内存和网络的异常得以被修复就是很值得学习和记录的，继续加油~</p>
+
+
+  </div>
+  
   
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/05/30/%E6%8E%A2%E7%B4%A2Pulsar%E4%B9%8B%E4%BD%BF%E7%94%A8Go%E5%92%8CJava%E6%93%8D%E4%BD%9CPulsar/"  itemprop="url">
-        探索Pulsar之使用Go和Java操作Pulsar
-      </a>
-    </h2>
+    <div class='footer'>
+      
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://example.com/2022/05/30/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%81%AD%E9%81%87SYN%E6%B3%9B%E6%B4%AA%E6%94%BB%E5%87%BB%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/>http://example.com/2022/05/30/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%81%AD%E9%81%87SYN%E6%B3%9B%E6%B4%AA%E6%94%BB%E5%87%BB%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/</a></p>
+              
+            
+          </blockquote>
+        </div>
+      
+      
+    </div>
   
-  <div class='md article-desc' itemprop="articleBody">
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-05-30T17:33:03+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2022年5月30日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        1 前言Pulsar官方支持的客户端库：
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/05/30/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%81%AD%E9%81%87SYN%E6%B3%9B%E6%B4%AA%E6%94%BB%E5%87%BB%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/&title=记录一次云服务器遭遇SYN泛洪攻击的处理方式 - Barry Yan's Blog&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/05/30/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%81%AD%E9%81%87SYN%E6%B3%9B%E6%B4%AA%E6%94%BB%E5%87%BB%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/&title=记录一次云服务器遭遇SYN泛洪攻击的处理方式 - Barry Yan's Blog&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/05/30/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%81%AD%E9%81%87SYN%E6%B3%9B%E6%B4%AA%E6%94%BB%E5%87%BB%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/&title=记录一次云服务器遭遇SYN泛洪攻击的处理方式 - Barry Yan's Blog&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2022/05/30/%E6%8E%A2%E7%B4%A2Pulsar%E4%B9%8B%E4%BD%BF%E7%94%A8Go%E5%92%8CJava%E6%93%8D%E4%BD%9CPulsar/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>探索Pulsar之使用Go和Java操作Pulsar</p>
+          <p class='content'>1 前言Pulsar官方支持的客户端库：
 
 C++
 Python
@@ -2587,386 +2767,41 @@ Java
 GitHub中三方的客户端库：
 
 Go
-Haskell
-Scala
-Rust
-.NET
-Node.js
-
-具体可参看：https://pulsar.apache.org/docs/zh-CN/next/client-libraries/
-本次仅演示Go...
+Haskel...</p>
+        </a>
       
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-05-30T17:33:28+08:00">2022-05-30</time>
-        
-      </div>
       
-        <div>
-          <a class='readmore' href='/2022/05/30/%E6%8E%A2%E7%B4%A2Pulsar%E4%B9%8B%E4%BD%BF%E7%94%A8Go%E5%92%8CJava%E6%93%8D%E4%BD%9CPulsar/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
+        <a class='next' href='/2022/05/30/SQL/'>
+          <p class='title'>SQL<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>
+</p>
+        </a>
       
     </div>
   
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
 
-</div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/30/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%81%AD%E9%81%87SYN%E6%B3%9B%E6%B4%AA%E6%94%BB%E5%87%BB%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
   
-  
-  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="discussionUrl" content="/2022/05/30/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%81%AD%E9%81%87SYN%E6%B3%9B%E6%B4%AA%E6%94%BB%E5%87%BB%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/index.html#comments">
     </span>
-  
-  
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/05/30/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%81%AD%E9%81%87SYN%E6%B3%9B%E6%B4%AA%E6%94%BB%E5%87%BB%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/"  itemprop="url">
-        记录一次云服务器遭遇SYN泛洪攻击的处理方式
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1 场景再现今天上午刚想用云服务器传输下文件，当打开finalshell连接服务器时突然发现服务器的系统指标很异常，而且在终端输入命令的时候都非常的卡，图示：很明显我们可以看出服务器的异常状态：
 
-CPU高负载
-内存高利用率
-网络高出口带宽
+    <div id="layoutHelper-comments"></div>
 
-2 尝试解决2.1 尝试使用netstat命令检查网络连接状态首先使用最基本的netstat命令查看网络的连接状态
-1234567891011####...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-05-30T17:32:26+08:00">2022-05-30</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/05/30/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%81%AD%E9%81%87SYN%E6%B3%9B%E6%B4%AA%E6%94%BB%E5%87%BB%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
+  </article>
 
-</div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/30/SQL/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/05/30/SQL/"  itemprop="url">
-        SQL
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
 
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-05-30T08:31:43+08:00">2022-05-30</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/05/30/SQL/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
 
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/30/SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/05/30/SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0/"  itemprop="url">
-        2022年5月30日
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        玩转SQL窗口函数
-说明：MySQL8.0 之后才支持窗口函数
-
-1 提前准备在MySQL8.0版本数据库下新建数据表，插入数据
-12345678910111213141516CREATE TABLE `student`(   `id`      int(10) DEFAULT NULL,    `name`    varchar(20) DEFAULT NULL,    `age`    ...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-05-30T08:28:11+08:00">2022-05-30</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/05/30/SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/28/%E7%8E%A9%E8%BD%ACSpring-%E8%87%AA%E5%AE%9A%E4%B9%89Spring%20Starter/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/05/28/%E7%8E%A9%E8%BD%ACSpring-%E8%87%AA%E5%AE%9A%E4%B9%89Spring%20Starter/"  itemprop="url">
-        2022年5月28日
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        玩转Spring-自定义Spring Starter1 什么是Spring Starter
-摘自官网
-
-Starters are a set of convenient dependency descriptors that you can include in your application. You get a one-stop shop for all the Spring and ...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-05-28T20:42:46+08:00">2022-05-28</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/05/28/%E7%8E%A9%E8%BD%ACSpring-%E8%87%AA%E5%AE%9A%E4%B9%89Spring%20Starter/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/28/My-New-Post/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/05/28/My-New-Post/"  itemprop="url">
-        My New Post
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-05-28T20:36:11+08:00">2022-05-28</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/05/28/My-New-Post/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/28/hello-world/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/05/28/hello-world/"  itemprop="url">
-        Hello World
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Qu...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-05-28T20:17:31+08:00">2022-05-28</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/05/28/hello-world/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
 
 
 </div>
@@ -2976,89 +2811,34 @@ Qu...
     
     
 
-<section class="widget blogger shadow floatable blur desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://images.unsplash.com/photo-1443304895043-ef30921332c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Barry Yan</h2>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Barry Yan's Blog</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fa-solid fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:1712229564@qq.com"
-              class="social fa-solid fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/ibarryyan"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fa-solid fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
+  <section class="widget toc-wrapper shadow floatable blur desktop mobile pjax" id="toc-div" >
     
+  <header>
     
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
 
-  
 
-  
-    
-    
-
-  
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9C%BA%E6%99%AF%E5%86%8D%E7%8E%B0"><span class="toc-text">1 场景再现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%B0%9D%E8%AF%95%E8%A7%A3%E5%86%B3"><span class="toc-text">2 尝试解决</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E5%B0%9D%E8%AF%95%E4%BD%BF%E7%94%A8netstat%E5%91%BD%E4%BB%A4%E6%A3%80%E6%9F%A5%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E7%8A%B6%E6%80%81"><span class="toc-text">2.1 尝试使用netstat命令检查网络连接状态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E5%9B%9E%E9%A1%BETCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B"><span class="toc-text">2.2 回顾TCP三次握手</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-netstat%E5%91%BD%E4%BB%A4%E6%90%AD%E9%85%8D%E5%8F%82%E6%95%B0%E6%9F%A5%E7%9C%8B%E6%9B%B4%E5%A4%9A%E7%BD%91%E7%BB%9C%E7%8A%B6%E6%80%81%E4%BF%A1%E6%81%AF"><span class="toc-text">2.3 netstat命令搭配参数查看更多网络状态信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-%E5%8F%91%E7%8E%B0%E5%BC%82%E5%B8%B8TCP%E8%BF%9E%E6%8E%A5"><span class="toc-text">2.4 发现异常TCP连接</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%81%B6%E9%81%87%E5%A4%A7%E7%A5%9E%E6%8C%87%E7%82%B9"><span class="toc-text">3 偶遇大神指点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-ps%E5%91%BD%E4%BB%A4%E6%9F%A5%E6%89%BE%E6%81%B6%E6%84%8F%E8%BF%9B%E7%A8%8B%E5%B9%B6%E7%BB%88%E6%AD%A2"><span class="toc-text">3.1 ps命令查找恶意进程并终止</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E5%88%A0%E9%99%A4%E5%BC%82%E5%B8%B8%E7%94%A8%E6%88%B7%E5%92%8C%E6%96%87%E4%BB%B6"><span class="toc-text">3.2 删除异常用户和文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-%E7%BC%98%E7%94%B1%E6%8E%A2%E7%A9%B6"><span class="toc-text">3.3 缘由探究</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%9B%9E%E9%A1%BE%E6%80%BB%E7%BB%93"><span class="toc-text">4 回顾总结</span></a></li></ol>
+    </div>
+  </section>
 
   
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -3094,7 +2874,7 @@ Qu...
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3103,15 +2883,15 @@ Qu...
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.remove("show");
+    l_header.classList.add("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="full";
-      cover_wrapper.style.display="";
-      scroll_down.style.display="";
+      cover_wrapper.id="none";
+      cover_wrapper.style.display="none";
+      scroll_down.style.display="none";
     
   
 </script>
@@ -4060,7 +3840,7 @@ Qu...
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Barry Yan's Blog"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Barry Yan's Blog","url":"http://example.com/","keywords":"Java,Go,SQL","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Barry Yan's Blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/05/30/记录一次云服务器遭遇SYN泛洪攻击的处理方式/","name":"记录一次云服务器遭遇SYN泛洪攻击的处理方式"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Barry Yan's Blog","url":"http://example.com/","keywords":"Java,Go,SQL","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"记录一次云服务器遭遇SYN泛洪攻击的处理方式","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/05/30/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%81%AD%E9%81%87SYN%E6%B3%9B%E6%B4%AA%E6%94%BB%E5%87%BB%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/"},"author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/05/30/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%81%AD%E9%81%87SYN%E6%B3%9B%E6%B4%AA%E6%94%BB%E5%87%BB%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/","wordCount":0,"datePublished":"2022-05-30T09:32:26.000Z","dateModified":"2022-05-30T09:33:03.607Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
