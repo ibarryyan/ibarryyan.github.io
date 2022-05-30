@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2022/05/28/玩转spring-自定义spring starter/"/>
+  <link rel="canonical" href="http://example.com/2022/05/30/sql/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,19 +31,17 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>Barry Yan's Blog</title>
+  <title>SQL - Barry Yan's Blog</title>
   <meta name="keywords" content="Java,Go,SQL">
   <meta desc name="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等 - Barry Yan - Barry Yan's Blog">
-  
-<meta property="og:type" content="article">
-<meta property="og:title" content="Barry Yan&#39;s Blog">
-<meta property="og:url" content="http://example.com/2022/05/28/%E7%8E%A9%E8%BD%ACSpring-%E8%87%AA%E5%AE%9A%E4%B9%89Spring%20Starter/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="SQL">
+<meta property="og:url" content="http://example.com/2022/05/30/SQL/index.html">
 <meta property="og:site_name" content="Barry Yan&#39;s Blog">
-<meta property="og:description" content="玩转Spring-自定义Spring Starter1 什么是Spring Starter 摘自官网  Starters are a set of convenient dependency descriptors that you can include in your application. You get a one-stop shop for all the Spring and rel">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2022-05-28T12:42:46.200Z">
-<meta property="article:modified_time" content="2022-01-09T05:26:09.476Z">
+<meta property="article:published_time" content="2022-05-30T00:31:43.000Z">
+<meta property="article:modified_time" content="2022-05-30T00:31:43.367Z">
 <meta property="article:author" content="Barry Yan">
 <meta property="article:tag" content="Java,Go,SQL">
 <meta name="twitter:card" content="summary">
@@ -2524,7 +2522,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/28/%E7%8E%A9%E8%BD%ACSpring-%E8%87%AA%E5%AE%9A%E4%B9%89Spring%20Starter/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/30/SQL/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Barry Yan's Blog">
   </span>
@@ -2544,96 +2542,65 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
     
-      <span hidden itemprop="name headline">
+      <h1 class="title" itemprop="name headline">
+        SQL
+      </h1>
+      <div class='new-meta-box'>
         
-      </span>
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">请设置文章作者</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-05-30T08:31:43+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2022年5月30日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span>次浏览</span>
+    </p>
+  </a>
+</div>
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
     
   </div>
 
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="玩转Spring-自定义Spring-Starter"><a href="#玩转Spring-自定义Spring-Starter" class="headerlink" title="玩转Spring-自定义Spring Starter"></a>玩转Spring-自定义Spring Starter</h2><h3 id="1-什么是Spring-Starter"><a href="#1-什么是Spring-Starter" class="headerlink" title="1 什么是Spring Starter"></a>1 什么是Spring Starter</h3><blockquote>
-<p>摘自官网</p>
-</blockquote>
-<p>Starters are a set of convenient dependency descriptors that you can include in your application. You get a one-stop shop for all the Spring and related technologies that you need without having to hunt through sample code and copy-paste loads of dependency descriptors. For example, if you want to get started using Spring and JPA for database access, include the spring-boot-starter-data-jpa dependency in your project.</p>
-<p>翻译下：</p>
-<p>启动器是一组方便的依赖项描述符，您可以在应用程序中包含它们。您可以获得所需的所有Spring和相关技术的一站式服务，而无需查找示例代码和复制-粘贴大量依赖描述符。例如，如果您想开始使用Spring和JPA进行数据库访问，请在您的项目中包含Spring -boot-starter-data- JPA依赖项。</p>
-<h3 id="2-自定义Starter的Hello-World"><a href="#2-自定义Starter的Hello-World" class="headerlink" title="2 自定义Starter的Hello World"></a>2 自定义Starter的Hello World</h3><h4 id="2-1-自定义Spring-Starter的一般流程"><a href="#2-1-自定义Spring-Starter的一般流程" class="headerlink" title="2.1 自定义Spring Starter的一般流程"></a>2.1 自定义Spring Starter的一般流程</h4><p>（1）新建Spring Boot项目</p>
-<p>（2）添加依赖</p>
-<p>（3）调整项目结构</p>
-<p>（4）自定义Configuration配置类</p>
-<p>（5）增加spring.factories文件，指定自动配置类</p>
-<p>（6）maven install安装到本地仓库</p>
-<p>（7）其他项目引入使用</p>
-<p>下面我们就来一一的实现下：</p>
-<h4 id="2-2-具体流程"><a href="#2-2-具体流程" class="headerlink" title="2.2 具体流程"></a>2.2 具体流程</h4><h5 id="2-2-1-新建Spring-Boot项目"><a href="#2-2-1-新建Spring-Boot项目" class="headerlink" title="2.2.1 新建Spring Boot项目"></a>2.2.1 新建Spring Boot项目</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.4.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">relativePath</span>/&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.ymx<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>go-kafka-log-spring-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="2-2-2-添加依赖"><a href="#2-2-2-添加依赖" class="headerlink" title="2.2.2 添加依赖"></a>2.2.2 添加依赖</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--引入web依赖，下文自定义拦截器使用--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--自定义starter需要的依赖 autoconfigure--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-autoconfigure<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--自定义starter需要的依赖 configuration-processor--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-configuration-processor<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">optional</span>&gt;</span>true<span class="tag">&lt;/<span class="name">optional</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- lombok--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">optional</span>&gt;</span>true<span class="tag">&lt;/<span class="name">optional</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="2-2-3-调整项目结构"><a href="#2-2-3-调整项目结构" class="headerlink" title="2.2.3 调整项目结构"></a>2.2.3 调整项目结构</h5><p>一般就是：</p>
-<ul>
-<li>删除主启动类</li>
-<li>删除test包</li>
-<li>删除主配置文件</li>
-</ul>
-<p>![image-20220108155000726](玩转Spring-自定义Spring Starter.assets&#x2F;image-20220108155000726.png)</p>
-<h5 id="2-2-4-自定义Configuration配置类"><a href="#2-2-4-自定义Configuration配置类" class="headerlink" title="2.2.4 自定义Configuration配置类"></a>2.2.4 自定义Configuration配置类</h5><p>LogAutoConfig.java</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableConfigurationProperties(&#123;ConfigProperties.class&#125;)</span></span><br><span class="line"><span class="meta">@ConditionalOnProperty(prefix = &quot;go.kafka.log&quot;, name = &quot;enable&quot;, havingValue = &quot;true&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LogAutoConfig</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> ConfigProperties configProperties;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean(name = &quot;logService&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> LogService <span class="title function_">getLogService</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">LogService</span> <span class="variable">logService</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">LogService</span>();</span><br><span class="line">        logService.setConfigProperties(configProperties);</span><br><span class="line">        <span class="keyword">return</span> logService;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>ConfigProperties.java</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@ConfigurationProperties(&quot;go.kafka.log&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ConfigProperties</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>LogService.java</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LogService</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> ConfigProperties configProperties;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> configProperties.getName();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setConfigProperties</span><span class="params">(ConfigProperties configProperties)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.configProperties = configProperties;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">hello</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Hello &quot;</span> + getName() + <span class="string">&quot;!&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="2-2-5-增加spring-factories文件，指定自动配置类"><a href="#2-2-5-增加spring-factories文件，指定自动配置类" class="headerlink" title="2.2.5 增加spring.factories文件，指定自动配置类"></a>2.2.5 增加spring.factories文件，指定自动配置类</h5><p>spring.factories</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">org.springframework.boot.autoconfigure.EnableAutoConfiguration=\</span><br><span class="line">org.ymx.log.config.LogAutoConfig</span><br></pre></td></tr></table></figure>
-
-<h5 id="2-2-6-maven-install安装到本地仓库"><a href="#2-2-6-maven-install安装到本地仓库" class="headerlink" title="2.2.6 maven install安装到本地仓库"></a>2.2.6 maven install安装到本地仓库</h5><p>![image-20220108155919282](玩转Spring-自定义Spring Starter.assets&#x2F;image-20220108155919282.png)</p>
-<h5 id="2-2-7-测试"><a href="#2-2-7-测试" class="headerlink" title="2.2.7 测试"></a>2.2.7 测试</h5><p> 新建Spring Boot项目</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.ymx<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>go-kafka-log-spring-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>application.properties</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server.port</span>=<span class="string">8888</span></span><br><span class="line"><span class="attr">go.kafka.log.name</span>=<span class="string">Spring Starter</span></span><br><span class="line"><span class="attr">go.kafka.log.enable</span>=<span class="string">true</span></span><br></pre></td></tr></table></figure>
-
-<p>HelloController.java</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloController</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> LogService logService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/hello&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">hello</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> logService.hello();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>测试</p>
-<p>![image-20220108155759610](玩转Spring-自定义Spring Starter.assets&#x2F;image-20220108155759610.png)</p>
-<h3 id="3-自定义Starter实现拦截器"><a href="#3-自定义Starter实现拦截器" class="headerlink" title="3 自定义Starter实现拦截器"></a>3 自定义Starter实现拦截器</h3><h4 id="3-1-编写自定义拦截器"><a href="#3-1-编写自定义拦截器" class="headerlink" title="3.1  编写自定义拦截器"></a>3.1  编写自定义拦截器</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LogInterceptor</span> <span class="keyword">implements</span> <span class="title class_">HandlerInterceptor</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">preHandle</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;----------------------&quot;</span>+request.getMethod()+<span class="string">&quot;----------------------&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">postHandle</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;----------------------&quot;</span>+request.getMethod()+<span class="string">&quot;----------------------&quot;</span>);</span><br><span class="line">        HandlerInterceptor.<span class="built_in">super</span>.postHandle(request, response, handler, modelAndView);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">afterCompletion</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        HandlerInterceptor.<span class="built_in">super</span>.afterCompletion(request, response, handler, ex);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-2-starter增加配置类"><a href="#3-2-starter增加配置类" class="headerlink" title="3.2 starter增加配置类"></a>3.2 starter增加配置类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@ConditionalOnProperty(prefix = &quot;go.kafka.log.interception&quot;, name = &quot;enable&quot;, havingValue = &quot;true&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LogInterceptorConfig</span> <span class="keyword">implements</span> <span class="title class_">WebMvcConfigurer</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addInterceptors</span><span class="params">(InterceptorRegistry registry)</span> &#123;</span><br><span class="line">        registry.addInterceptor(<span class="keyword">new</span> <span class="title class_">LogInterceptor</span>())</span><br><span class="line">                .addPathPatterns(<span class="string">&quot;/**&quot;</span>) ;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-3-调用方增加配置文件内容，主启动类增加注解"><a href="#3-3-调用方增加配置文件内容，主启动类增加注解" class="headerlink" title="3.3 调用方增加配置文件内容，主启动类增加注解"></a>3.3 调用方增加配置文件内容，主启动类增加注解</h4><p>配置文件：</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">go.kafka.log.enable</span>=<span class="string">true</span></span><br></pre></td></tr></table></figure>
-
-<p>主启动类：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@ComponentScans(value = &#123;@ComponentScan(&quot;org.ymx.log&quot;),@ComponentScan(&quot;com.example.demo&quot;)&#125;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DemoApplication</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        SpringApplication.run(DemoApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-4-测试"><a href="#3-4-测试" class="headerlink" title="3.4 测试"></a>3.4 测试</h4><p>访问任意url</p>
-<p>![image-20220109113403343](玩转Spring-自定义Spring Starter.assets&#x2F;image-20220109113403343.png)</p>
-<h3 id="4-自定义Starter实现全局异常处理"><a href="#4-自定义Starter实现全局异常处理" class="headerlink" title="4 自定义Starter实现全局异常处理"></a>4 自定义Starter实现全局异常处理</h3><h4 id="4-1-编写starter全局异常处理类"><a href="#4-1-编写starter全局异常处理类" class="headerlink" title="4.1 编写starter全局异常处理类"></a>4.1 编写starter全局异常处理类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestControllerAdvice</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LogAdviceHandler</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ExceptionHandler(value = NullPointerException.class)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">exceptionHandlerJwt</span><span class="params">(NullPointerException e)</span> &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;error----NullPointerException&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ExceptionHandler(value = Exception.class)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">exceptionHandler</span><span class="params">(Exception e)</span> &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;error----Exception&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-2-调用方制造异常测试"><a href="#4-2-调用方制造异常测试" class="headerlink" title="4.2 调用方制造异常测试"></a>4.2 调用方制造异常测试</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/ex&quot;)</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">ex</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    str.equals(<span class="string">&quot;2&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;22&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>测试结果：</p>
-<p>![image-20220109113604199](玩转Spring-自定义Spring Starter.assets&#x2F;image-20220109113604199.png)</p>
-<h3 id="5-总结几个重要的注解"><a href="#5-总结几个重要的注解" class="headerlink" title="5 总结几个重要的注解"></a>5 总结几个重要的注解</h3><ul>
-<li><p>@ConditionalOnProperty(prefix &#x3D; “go.kafka.log”, name &#x3D; “enable”, havingValue &#x3D; “true”)</p>
-<p>prefix为配置文件中的前缀,<br>name为配置的名字<br>havingValue是与配置的值对比值,当两个值相同返回true,配置类生效.</p>
-</li>
-<li><p>@EnableConfigurationProperties({ConfigProperties.class})</p>
-<p>使@ConfigurationProperties()注解生效</p>
-</li>
-<li><p>@ConfigurationProperties(“go.kafka.log”)</p>
-<p>见文章：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Mr_YanMingXin/article/details/119249740">https://blog.csdn.net/Mr_YanMingXin/article/details/119249740</a></p>
-</li>
-<li><p>@ComponentScans(value &#x3D; {@ComponentScan(“org.ymx.log”),@ComponentScan(“com.example.demo”)})</p>
-<p>扫描的bean的路径，这里是扫描starter的路径加上本项目的路径</p>
-</li>
-</ul>
+    
 
   </div>
   
@@ -2652,7 +2619,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               
-                <p>本文永久链接是：<a href=http://example.com/2022/05/28/%E7%8E%A9%E8%BD%ACSpring-%E8%87%AA%E5%AE%9A%E4%B9%89Spring%20Starter/>http://example.com/2022/05/28/%E7%8E%A9%E8%BD%ACSpring-%E8%87%AA%E5%AE%9A%E4%B9%89Spring%20Starter/</a></p>
+                <p>本文永久链接是：<a href=http://example.com/2022/05/30/SQL/>http://example.com/2022/05/30/SQL/</a></p>
               
             
           </blockquote>
@@ -2669,10 +2636,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-01-09T13:26:09+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-05-30T08:31:43+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年1月9日</p>
+    <p>更新于：2022年5月30日</p>
   </a>
 </div>
 
@@ -2691,7 +2658,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/05/28/%E7%8E%A9%E8%BD%ACSpring-%E8%87%AA%E5%AE%9A%E4%B9%89Spring%20Starter/&title= - Barry Yan's Blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/05/30/SQL/&title=SQL - Barry Yan's Blog&summary="
           
           >
           
@@ -2703,7 +2670,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/05/28/%E7%8E%A9%E8%BD%ACSpring-%E8%87%AA%E5%AE%9A%E4%B9%89Spring%20Starter/&title= - Barry Yan's Blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/05/30/SQL/&title=SQL - Barry Yan's Blog&summary="
           
           >
           
@@ -2715,7 +2682,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/05/28/%E7%8E%A9%E8%BD%ACSpring-%E8%87%AA%E5%AE%9A%E4%B9%89Spring%20Starter/&title= - Barry Yan's Blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/05/30/SQL/&title=SQL - Barry Yan's Blog&summary="
           
           >
           
@@ -2748,19 +2715,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/05/30/SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>2022年5月28日</p>
+      
+        <a class='next' href='/2022/05/30/SQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0/'>
+          <p class='title'>2022年5月30日<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>玩转SQL窗口函数
 说明：MySQL8.0 之后才支持窗口函数
 
 1 提前准备在MySQL8.0版本数据库下新建数据表，插入数据
 12345678910111213141516CREATE TA...</p>
-        </a>
-      
-      
-        <a class='next' href='/2022/05/28/My-New-Post/'>
-          <p class='title'>My New Post<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'></p>
         </a>
       
     </div>
@@ -2776,7 +2738,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2022/05/28/%E7%8E%A9%E8%BD%ACSpring-%E8%87%AA%E5%AE%9A%E4%B9%89Spring%20Starter/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2022/05/30/SQL/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2799,19 +2761,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-  <section class="widget toc-wrapper shadow floatable blur desktop mobile pjax" id="toc-div" >
-    
-  <header>
-    
-      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
-    
-  </header>
-
-
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%A9%E8%BD%ACSpring-%E8%87%AA%E5%AE%9A%E4%B9%89Spring-Starter"><span class="toc-text">玩转Spring-自定义Spring Starter</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AFSpring-Starter"><span class="toc-text">1 什么是Spring Starter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%87%AA%E5%AE%9A%E4%B9%89Starter%E7%9A%84Hello-World"><span class="toc-text">2 自定义Starter的Hello World</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E8%87%AA%E5%AE%9A%E4%B9%89Spring-Starter%E7%9A%84%E4%B8%80%E8%88%AC%E6%B5%81%E7%A8%8B"><span class="toc-text">2.1 自定义Spring Starter的一般流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E5%85%B7%E4%BD%93%E6%B5%81%E7%A8%8B"><span class="toc-text">2.2 具体流程</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-1-%E6%96%B0%E5%BB%BASpring-Boot%E9%A1%B9%E7%9B%AE"><span class="toc-text">2.2.1 新建Spring Boot项目</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-2-%E6%B7%BB%E5%8A%A0%E4%BE%9D%E8%B5%96"><span class="toc-text">2.2.2 添加依赖</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-3-%E8%B0%83%E6%95%B4%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84"><span class="toc-text">2.2.3 调整项目结构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-4-%E8%87%AA%E5%AE%9A%E4%B9%89Configuration%E9%85%8D%E7%BD%AE%E7%B1%BB"><span class="toc-text">2.2.4 自定义Configuration配置类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-5-%E5%A2%9E%E5%8A%A0spring-factories%E6%96%87%E4%BB%B6%EF%BC%8C%E6%8C%87%E5%AE%9A%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E7%B1%BB"><span class="toc-text">2.2.5 增加spring.factories文件，指定自动配置类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-6-maven-install%E5%AE%89%E8%A3%85%E5%88%B0%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93"><span class="toc-text">2.2.6 maven install安装到本地仓库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-7-%E6%B5%8B%E8%AF%95"><span class="toc-text">2.2.7 测试</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%87%AA%E5%AE%9A%E4%B9%89Starter%E5%AE%9E%E7%8E%B0%E6%8B%A6%E6%88%AA%E5%99%A8"><span class="toc-text">3 自定义Starter实现拦截器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E7%BC%96%E5%86%99%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8B%A6%E6%88%AA%E5%99%A8"><span class="toc-text">3.1  编写自定义拦截器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-starter%E5%A2%9E%E5%8A%A0%E9%85%8D%E7%BD%AE%E7%B1%BB"><span class="toc-text">3.2 starter增加配置类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-%E8%B0%83%E7%94%A8%E6%96%B9%E5%A2%9E%E5%8A%A0%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%EF%BC%8C%E4%B8%BB%E5%90%AF%E5%8A%A8%E7%B1%BB%E5%A2%9E%E5%8A%A0%E6%B3%A8%E8%A7%A3"><span class="toc-text">3.3 调用方增加配置文件内容，主启动类增加注解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-%E6%B5%8B%E8%AF%95"><span class="toc-text">3.4 测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%87%AA%E5%AE%9A%E4%B9%89Starter%E5%AE%9E%E7%8E%B0%E5%85%A8%E5%B1%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="toc-text">4 自定义Starter实现全局异常处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E7%BC%96%E5%86%99starter%E5%85%A8%E5%B1%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E7%B1%BB"><span class="toc-text">4.1 编写starter全局异常处理类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E8%B0%83%E7%94%A8%E6%96%B9%E5%88%B6%E9%80%A0%E5%BC%82%E5%B8%B8%E6%B5%8B%E8%AF%95"><span class="toc-text">4.2 调用方制造异常测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%80%BB%E7%BB%93%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E7%9A%84%E6%B3%A8%E8%A7%A3"><span class="toc-text">5 总结几个重要的注解</span></a></li></ol></li></ol>
-    </div>
-  </section>
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   
 
@@ -2860,7 +2812,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3826,7 +3778,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Barry Yan's Blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/05/28/玩转Spring-自定义Spring Starter/"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Barry Yan's Blog","url":"http://example.com/","keywords":"Java,Go,SQL","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/05/28/%E7%8E%A9%E8%BD%ACSpring-%E8%87%AA%E5%AE%9A%E4%B9%89Spring%20Starter/"},"author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/05/28/%E7%8E%A9%E8%BD%ACSpring-%E8%87%AA%E5%AE%9A%E4%B9%89Spring%20Starter/","wordCount":0,"datePublished":"2022-05-28T12:42:46.200Z","dateModified":"2022-01-09T05:26:09.476Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Barry Yan's Blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/05/30/SQL/","name":"SQL"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Barry Yan's Blog","url":"http://example.com/","keywords":"Java,Go,SQL","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"SQL","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/05/30/SQL/"},"author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/05/30/SQL/","wordCount":0,"datePublished":"2022-05-30T00:31:43.000Z","dateModified":"2022-05-30T00:31:43.367Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
