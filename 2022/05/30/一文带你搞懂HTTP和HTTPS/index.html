@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2022/05/30/玩转spring-自定义spring starter/"/>
+  <link rel="canonical" href="http://example.com/2022/05/30/一文带你搞懂http和https/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,19 +31,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>玩转Spring-自定义Spring Starter - Barry Yan's Blog</title>
+  <title>一文带你搞懂HTTP和HTTPS - Barry Yan's Blog</title>
   <meta name="keywords" content="Java,Go,SQL">
   <meta desc name="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等 - Barry Yan - Barry Yan's Blog">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="玩转Spring-自定义Spring Starter">
-<meta property="og:url" content="http://example.com/2022/05/30/%E7%8E%A9%E8%BD%ACSpring-%E8%87%AA%E5%AE%9A%E4%B9%89Spring%20Starter/index.html">
+<meta property="og:title" content="一文带你搞懂HTTP和HTTPS">
+<meta property="og:url" content="http://example.com/2022/05/30/%E4%B8%80%E6%96%87%E5%B8%A6%E4%BD%A0%E6%90%9E%E6%87%82HTTP%E5%92%8CHTTPS/index.html">
 <meta property="og:site_name" content="Barry Yan&#39;s Blog">
-<meta property="og:description" content="玩转Spring-自定义Spring Starter1 什么是Spring Starter 摘自官网  Starters are a set of convenient dependency descriptors that you can include in your application. You get a one-stop shop for all the Spring and rel">
+<meta property="og:description" content="###  1 二者简单介绍和各自在ISO七层网络模型中的位置 　　HTTP：是互联网上应用最为广泛的一种网络协议，是一个客户端和服务器端请求和应答的标准（TCP），用于从WWW服务器传输超文本到本地浏览器的传输协议，它可以使浏览器更加高效，使网络传输减少。 　　HTTPS：是以安全为目标的HTTP通道，简单讲是HTTP的安全版，即HTTP下加入SSL层，HTTPS的安全基础是SSL，因此加密的详">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-05-30T09:33:28.000Z">
-<meta property="article:modified_time" content="2022-05-30T09:43:58.637Z">
+<meta property="article:modified_time" content="2022-05-31T02:09:54.276Z">
 <meta property="article:author" content="Barry Yan">
 <meta property="article:tag" content="Java,Go,SQL">
 <meta name="twitter:card" content="summary">
@@ -1751,7 +1751,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.cbfd0700.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.311803bb.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1653904504130),
+    lastupdate: new Date(1653963435726),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2526,7 +2526,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/30/%E7%8E%A9%E8%BD%ACSpring-%E8%87%AA%E5%AE%9A%E4%B9%89Spring%20Starter/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/30/%E4%B8%80%E6%96%87%E5%B8%A6%E4%BD%A0%E6%90%9E%E6%87%82HTTP%E5%92%8CHTTPS/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Barry Yan's Blog">
   </span>
@@ -2547,7 +2547,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        玩转Spring-自定义Spring Starter
+        一文带你搞懂HTTP和HTTPS
       </h1>
       <div class='new-meta-box'>
         
@@ -2604,89 +2604,132 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <div class="story post-story"><h2 id="玩转Spring-自定义Spring-Starter"><a href="#玩转Spring-自定义Spring-Starter" class="headerlink" title="玩转Spring-自定义Spring Starter"></a>玩转Spring-自定义Spring Starter</h2><h3 id="1-什么是Spring-Starter"><a href="#1-什么是Spring-Starter" class="headerlink" title="1 什么是Spring Starter"></a>1 什么是Spring Starter</h3><blockquote>
-<p>摘自官网</p>
-</blockquote>
-<p>Starters are a set of convenient dependency descriptors that you can include in your application. You get a one-stop shop for all the Spring and related technologies that you need without having to hunt through sample code and copy-paste loads of dependency descriptors. For example, if you want to get started using Spring and JPA for database access, include the spring-boot-starter-data-jpa dependency in your project.</p>
-<p>翻译下：</p>
-<p>启动器是一组方便的依赖项描述符，您可以在应用程序中包含它们。您可以获得所需的所有Spring和相关技术的一站式服务，而无需查找示例代码和复制-粘贴大量依赖描述符。例如，如果您想开始使用Spring和JPA进行数据库访问，请在您的项目中包含Spring -boot-starter-data- JPA依赖项。</p>
-<h3 id="2-自定义Starter的Hello-World"><a href="#2-自定义Starter的Hello-World" class="headerlink" title="2 自定义Starter的Hello World"></a>2 自定义Starter的Hello World</h3><h4 id="2-1-自定义Spring-Starter的一般流程"><a href="#2-1-自定义Spring-Starter的一般流程" class="headerlink" title="2.1 自定义Spring Starter的一般流程"></a>2.1 自定义Spring Starter的一般流程</h4><p>（1）新建Spring Boot项目</p>
-<p>（2）添加依赖</p>
-<p>（3）调整项目结构</p>
-<p>（4）自定义Configuration配置类</p>
-<p>（5）增加spring.factories文件，指定自动配置类</p>
-<p>（6）maven install安装到本地仓库</p>
-<p>（7）其他项目引入使用</p>
-<p>下面我们就来一一的实现下：</p>
-<h4 id="2-2-具体流程"><a href="#2-2-具体流程" class="headerlink" title="2.2 具体流程"></a>2.2 具体流程</h4><h5 id="2-2-1-新建Spring-Boot项目"><a href="#2-2-1-新建Spring-Boot项目" class="headerlink" title="2.2.1 新建Spring Boot项目"></a>2.2.1 新建Spring Boot项目</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.4.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">relativePath</span>/&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.ymx<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>go-kafka-log-spring-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="2-2-2-添加依赖"><a href="#2-2-2-添加依赖" class="headerlink" title="2.2.2 添加依赖"></a>2.2.2 添加依赖</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--引入web依赖，下文自定义拦截器使用--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--自定义starter需要的依赖 autoconfigure--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-autoconfigure<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--自定义starter需要的依赖 configuration-processor--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-configuration-processor<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">optional</span>&gt;</span>true<span class="tag">&lt;/<span class="name">optional</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- lombok--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">optional</span>&gt;</span>true<span class="tag">&lt;/<span class="name">optional</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="2-2-3-调整项目结构"><a href="#2-2-3-调整项目结构" class="headerlink" title="2.2.3 调整项目结构"></a>2.2.3 调整项目结构</h5><p>一般就是：</p>
+    <p>﻿###  1 二者简单介绍和各自在ISO七层网络模型中的位置</p>
+<p>　　HTTP：是互联网上应用最为广泛的一种网络协议，是一个客户端和服务器端请求和应答的标准（TCP），用于从WWW服务器传输超文本到本地浏览器的传输协议，它可以使浏览器更加高效，使网络传输减少。</p>
+<p>　　HTTPS：是以安全为目标的HTTP通道，简单讲是HTTP的安全版，即HTTP下加入SSL层，HTTPS的安全基础是SSL，因此加密的详细内容就需要SSL。</p>
+<p>两者在七层网络模型中的位置（图片来源于大涛网络神图）：<br><img src="https://img-blog.csdnimg.cn/66ec7cd54b4d422f84201945a16fc8c8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_19,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/66ec7cd54b4d422f84201945a16fc8c8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_19,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h3 id="2-HTTP协议报文详解"><a href="#2-HTTP协议报文详解" class="headerlink" title="2  HTTP协议报文详解"></a>2  HTTP协议报文详解</h3><h4 id="2-1-发展阶段"><a href="#2-1-发展阶段" class="headerlink" title="2.1 发展阶段"></a>2.1 发展阶段</h4><ul>
+<li><p>HTTP&#x2F;0.9</p>
+<p>0.9协议是适用于各种数据信息的简洁快速协议，但是远不能满足日益发展的各种应用的需要。0.9协议就是一个交换信息的无序协议，仅仅限于文字。由于无法进行内容的协商，在双发的握手和协议中，并有规定双发的内容是什么，也就是图片是无法显示和处理的。</p>
+</li>
+<li><p>HTTP&#x2F;1.0</p>
+<p>HTTP1.0 定义了三种请求方法：GET、POST和HEAD方法</p>
+</li>
+<li><p>HTTP&#x2F;1.1(当前主流)</p>
+<p>HTTP1.1 新增了六种请求方法：OPTIONS、PUT、PATCH、DELETE、TRACE和CONNECT方法。</p>
+</li>
+<li><p>HTTP&#x2F;2.0</p>
+<p>HTTP2.0大幅度的提高了web性能，在HTTP1.1完全语义兼容的基础上，进一步减少了网络的延迟。实现低延迟高吞吐量。</p>
+</li>
+</ul>
+<h4 id="2-2-请求方法"><a href="#2-2-请求方法" class="headerlink" title="2.2 请求方法"></a>2.2 请求方法</h4><table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left">GET</td>
+<td align="left">请求指定的页面信息，并返回实体主体。</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">HEAD</td>
+<td align="left">类似于 GET 请求，只不过返回的响应中没有具体的内容，用于获取报头</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">POST</td>
+<td align="left">向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST 请求可能会导致新的资源的建立和&#x2F;或已有资源的修改。</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">PUT</td>
+<td align="left">从客户端向服务器传送的数据取代指定的文档的内容。</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">DELETE</td>
+<td align="left">请求服务器删除指定的页面。</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">CONNECT</td>
+<td align="left">HTTP&#x2F;1.1 协议中预留给能够将连接改为管道方式的代理服务器。</td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left">OPTIONS</td>
+<td align="left">允许客户端查看服务器的性能。</td>
+</tr>
+<tr>
+<td align="left">8</td>
+<td align="left">TRACE</td>
+<td align="left">回显服务器收到的请求，主要用于测试或诊断。</td>
+</tr>
+<tr>
+<td align="left">9</td>
+<td align="left">PATCH</td>
+<td align="left">是对 PUT 方法的补充，用来对已知资源进行局部更新 。</td>
+</tr>
+</tbody></table>
+<h4 id="2-3-报文格式"><a href="#2-3-报文格式" class="headerlink" title="2.3 报文格式"></a>2.3 报文格式</h4><p>wireshark抓取报文：</p>
+<p>请求报文：<br><img src="https://img-blog.csdnimg.cn/5962e284a0ca4b4cbd4266b8d80d71bc.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_20,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/5962e284a0ca4b4cbd4266b8d80d71bc.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>响应报文：<br><img src="https://img-blog.csdnimg.cn/2784f1607d9a4748b827e82e0ee6eb68.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_19,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/2784f1607d9a4748b827e82e0ee6eb68.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_19,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>由此我们可以看出HTTP报文的大致格式：</p>
+<p><img src="https://img-blog.csdnimg.cn/fabdfa727a1049f0955b6f3ddf3d6a4e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_20,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/fabdfa727a1049f0955b6f3ddf3d6a4e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h3 id="3-HTTPS协议报文详解"><a href="#3-HTTPS协议报文详解" class="headerlink" title="3 HTTPS协议报文详解"></a>3 HTTPS协议报文详解</h3><h4 id="3-1-区别于HTTP的主要作用"><a href="#3-1-区别于HTTP的主要作用" class="headerlink" title="3.1 区别于HTTP的主要作用"></a>3.1 区别于HTTP的主要作用</h4><p>HTTPS协议的主要作用可以分为两种：</p>
 <ul>
-<li>删除主启动类</li>
-<li>删除test包</li>
-<li>删除主配置文件</li>
-</ul>
-<p>![image-20220108155000726](玩转Spring-自定义Spring Starter.assets&#x2F;image-20220108155000726.png)</p>
-<h5 id="2-2-4-自定义Configuration配置类"><a href="#2-2-4-自定义Configuration配置类" class="headerlink" title="2.2.4 自定义Configuration配置类"></a>2.2.4 自定义Configuration配置类</h5><p>LogAutoConfig.java</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableConfigurationProperties(&#123;ConfigProperties.class&#125;)</span></span><br><span class="line"><span class="meta">@ConditionalOnProperty(prefix = &quot;go.kafka.log&quot;, name = &quot;enable&quot;, havingValue = &quot;true&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LogAutoConfig</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> ConfigProperties configProperties;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean(name = &quot;logService&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> LogService <span class="title function_">getLogService</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">LogService</span> <span class="variable">logService</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">LogService</span>();</span><br><span class="line">        logService.setConfigProperties(configProperties);</span><br><span class="line">        <span class="keyword">return</span> logService;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>ConfigProperties.java</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@ConfigurationProperties(&quot;go.kafka.log&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ConfigProperties</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>LogService.java</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LogService</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> ConfigProperties configProperties;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> configProperties.getName();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setConfigProperties</span><span class="params">(ConfigProperties configProperties)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.configProperties = configProperties;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">hello</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Hello &quot;</span> + getName() + <span class="string">&quot;!&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="2-2-5-增加spring-factories文件，指定自动配置类"><a href="#2-2-5-增加spring-factories文件，指定自动配置类" class="headerlink" title="2.2.5 增加spring.factories文件，指定自动配置类"></a>2.2.5 增加spring.factories文件，指定自动配置类</h5><p>spring.factories</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">org.springframework.boot.autoconfigure.EnableAutoConfiguration=\</span><br><span class="line">org.ymx.log.config.LogAutoConfig</span><br></pre></td></tr></table></figure>
-
-<h5 id="2-2-6-maven-install安装到本地仓库"><a href="#2-2-6-maven-install安装到本地仓库" class="headerlink" title="2.2.6 maven install安装到本地仓库"></a>2.2.6 maven install安装到本地仓库</h5><p>![image-20220108155919282](玩转Spring-自定义Spring Starter.assets&#x2F;image-20220108155919282.png)</p>
-<h5 id="2-2-7-测试"><a href="#2-2-7-测试" class="headerlink" title="2.2.7 测试"></a>2.2.7 测试</h5><p> 新建Spring Boot项目</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.ymx<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>go-kafka-log-spring-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>application.properties</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server.port</span>=<span class="string">8888</span></span><br><span class="line"><span class="attr">go.kafka.log.name</span>=<span class="string">Spring Starter</span></span><br><span class="line"><span class="attr">go.kafka.log.enable</span>=<span class="string">true</span></span><br></pre></td></tr></table></figure>
-
-<p>HelloController.java</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloController</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> LogService logService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/hello&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">hello</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> logService.hello();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>测试</p>
-<p>![image-20220108155759610](玩转Spring-自定义Spring Starter.assets&#x2F;image-20220108155759610.png)</p>
-<h3 id="3-自定义Starter实现拦截器"><a href="#3-自定义Starter实现拦截器" class="headerlink" title="3 自定义Starter实现拦截器"></a>3 自定义Starter实现拦截器</h3><h4 id="3-1-编写自定义拦截器"><a href="#3-1-编写自定义拦截器" class="headerlink" title="3.1  编写自定义拦截器"></a>3.1  编写自定义拦截器</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LogInterceptor</span> <span class="keyword">implements</span> <span class="title class_">HandlerInterceptor</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">preHandle</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;----------------------&quot;</span>+request.getMethod()+<span class="string">&quot;----------------------&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">postHandle</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;----------------------&quot;</span>+request.getMethod()+<span class="string">&quot;----------------------&quot;</span>);</span><br><span class="line">        HandlerInterceptor.<span class="built_in">super</span>.postHandle(request, response, handler, modelAndView);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">afterCompletion</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        HandlerInterceptor.<span class="built_in">super</span>.afterCompletion(request, response, handler, ex);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-2-starter增加配置类"><a href="#3-2-starter增加配置类" class="headerlink" title="3.2 starter增加配置类"></a>3.2 starter增加配置类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@ConditionalOnProperty(prefix = &quot;go.kafka.log.interception&quot;, name = &quot;enable&quot;, havingValue = &quot;true&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LogInterceptorConfig</span> <span class="keyword">implements</span> <span class="title class_">WebMvcConfigurer</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addInterceptors</span><span class="params">(InterceptorRegistry registry)</span> &#123;</span><br><span class="line">        registry.addInterceptor(<span class="keyword">new</span> <span class="title class_">LogInterceptor</span>())</span><br><span class="line">                .addPathPatterns(<span class="string">&quot;/**&quot;</span>) ;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-3-调用方增加配置文件内容，主启动类增加注解"><a href="#3-3-调用方增加配置文件内容，主启动类增加注解" class="headerlink" title="3.3 调用方增加配置文件内容，主启动类增加注解"></a>3.3 调用方增加配置文件内容，主启动类增加注解</h4><p>配置文件：</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">go.kafka.log.enable</span>=<span class="string">true</span></span><br></pre></td></tr></table></figure>
-
-<p>主启动类：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@ComponentScans(value = &#123;@ComponentScan(&quot;org.ymx.log&quot;),@ComponentScan(&quot;com.example.demo&quot;)&#125;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DemoApplication</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        SpringApplication.run(DemoApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-4-测试"><a href="#3-4-测试" class="headerlink" title="3.4 测试"></a>3.4 测试</h4><p>访问任意url</p>
-<p>![image-20220109113403343](玩转Spring-自定义Spring Starter.assets&#x2F;image-20220109113403343.png)</p>
-<h3 id="4-自定义Starter实现全局异常处理"><a href="#4-自定义Starter实现全局异常处理" class="headerlink" title="4 自定义Starter实现全局异常处理"></a>4 自定义Starter实现全局异常处理</h3><h4 id="4-1-编写starter全局异常处理类"><a href="#4-1-编写starter全局异常处理类" class="headerlink" title="4.1 编写starter全局异常处理类"></a>4.1 编写starter全局异常处理类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestControllerAdvice</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LogAdviceHandler</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ExceptionHandler(value = NullPointerException.class)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">exceptionHandlerJwt</span><span class="params">(NullPointerException e)</span> &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;error----NullPointerException&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ExceptionHandler(value = Exception.class)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">exceptionHandler</span><span class="params">(Exception e)</span> &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;error----Exception&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-2-调用方制造异常测试"><a href="#4-2-调用方制造异常测试" class="headerlink" title="4.2 调用方制造异常测试"></a>4.2 调用方制造异常测试</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/ex&quot;)</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">ex</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    str.equals(<span class="string">&quot;2&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;22&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>测试结果：</p>
-<p>![image-20220109113604199](玩转Spring-自定义Spring Starter.assets&#x2F;image-20220109113604199.png)</p>
-<h3 id="5-总结几个重要的注解"><a href="#5-总结几个重要的注解" class="headerlink" title="5 总结几个重要的注解"></a>5 总结几个重要的注解</h3><ul>
-<li><p>@ConditionalOnProperty(prefix &#x3D; “go.kafka.log”, name &#x3D; “enable”, havingValue &#x3D; “true”)</p>
-<p>prefix为配置文件中的前缀,<br>name为配置的名字<br>havingValue是与配置的值对比值,当两个值相同返回true,配置类生效.</p>
+<li><p>建立一个信息安全通道，来保证数据传输的安全</p>
 </li>
-<li><p>@EnableConfigurationProperties({ConfigProperties.class})</p>
-<p>使@ConfigurationProperties()注解生效</p>
-</li>
-<li><p>@ConfigurationProperties(“go.kafka.log”)</p>
-<p>见文章：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Mr_YanMingXin/article/details/119249740">https://blog.csdn.net/Mr_YanMingXin/article/details/119249740</a></p>
-</li>
-<li><p>@ComponentScans(value &#x3D; {@ComponentScan(“org.ymx.log”),@ComponentScan(“com.example.demo”)})</p>
-<p>扫描的bean的路径，这里是扫描starter的路径加上本项目的路径</p>
+<li><p>确认网站的真实性</p>
 </li>
 </ul>
+<h4 id="3-2-报文格式"><a href="#3-2-报文格式" class="headerlink" title="3.2 报文格式"></a>3.2 报文格式</h4><p>HTTPS的协议名称并不是HTTPS，而是TSL，我们再次利用whireshark进行抓包：<br><img src="https://img-blog.csdnimg.cn/e98e93e5d8fb40dcbeee4edc3a0449a8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_20,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/e98e93e5d8fb40dcbeee4edc3a0449a8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>我们点开一个报文组可以发现，TLS的上层就是HTTP，并且利用了SHA-256加密算法进行了加密。<br><img src="https://img-blog.csdnimg.cn/eaf7987d60db41fbaad840b17b462dec.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_20,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/eaf7987d60db41fbaad840b17b462dec.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h4 id="3-3-TLS和SSL"><a href="#3-3-TLS和SSL" class="headerlink" title="3.3 TLS和SSL"></a>3.3 TLS和SSL</h4><p>我们经常说，HTTPS&#x3D;HTTP+SSL&#x2F;TLS，那么我们就来一探究竟，什么是TLS和SSL</p>
+<ul>
+<li>SSL：（Secure Socket Layer，安全套接字层），位于可靠的面向连接的网络层协议和应用层协议之间的一种协议层。SSL通过互相认证、使用数字签名确保完整性、使用加密确保私密性，以实现客户端和服务器之间的安全通讯。该协议由两层组成：SSL记录协议和SSL握手协议。</li>
+<li>TLS：(Transport Layer Security，传输层安全协议)，用于两个应用程序之间提供保密性和数据完整性。该协议由两层组成：TLS记录协议和TLS握手协议。</li>
+</ul>
+<blockquote>
+<p>两者区别：</p>
+</blockquote>
+<p>最新版本的TLS（Transport Layer Security，传输层安全协议）是IETF（Internet Engineering Task Force，Internet工程任务组）制定的一种新的协议，它建立在SSL 3.0协议规范之上，是SSL 3.0的后续版本。在TLS与SSL3.0之间存在着显著的差别，主要是它们所支持的加密算法不同，所以TLS与SSL3.0不能互操作。</p>
+<p><strong>1．TLS与SSL的差异</strong></p>
+<p>1）版本号：TLS记录格式与SSL记录格式相同，但版本号的值不同，TLS的版本1.0使用的版本号为SSLv3.1。</p>
+<p>2）报文鉴别码：SSLv3.0和TLS的MAC算法及MAC计算的范围不同。TLS使用了RFC-2104定义的HMAC算法。SSLv3.0使用了相似的算法，两者差别在于SSLv3.0中，填充字节与密钥之间采用的是连接运算，而HMAC算法采用的是异或运算。但是两者的安全程度是相同的。</p>
+<p>3）伪随机函数：TLS使用了称为PRF的伪随机函数来将密钥扩展成数据块，是更安全的方式。</p>
+<p>4）报警代码：TLS支持几乎所有的SSLv3.0报警代码，而且TLS还补充定义了很多报警代码，如解密失败（decryption_failed）、记录溢出（record_overflow）、未知CA（unknown_ca）、拒绝访问（access_denied）等。</p>
+<p>5）密文族和客户证书：SSLv3.0和TLS存在少量差别，即TLS不支持Fortezza密钥交换、加密算法和客户证书。</p>
+<p>6）certificate_verify和finished消息：SSLv3.0和TLS在用certificate_verify和finished消息计算MD5和SHA-1散列码时，计算的输入有少许差别，但安全性相当。</p>
+<p>7）加密计算：TLS与SSLv3.0在计算主密值（master secret）时采用的方式不同。</p>
+<p>8）填充：用户数据加密之前需要增加的填充字节。在SSL中，填充后的数据长度要达到密文块长度的最小整数倍。而在TLS中，填充后的数据长度可以是密文块长度的任意整数倍（但填充的最大长度为255字节），这种方式可以防止基于对报文长度进行分析的攻击。</p>
+<p><strong>2．TLS的主要增强内容</strong></p>
+<p>TLS的主要目标是使SSL更安全，并使协议的规范更精确和完善。TLS 在SSL v3.0 的基础上，提供了以下增强内容：</p>
+<p>1）更安全的MAC算法</p>
+<p>2）更严密的警报</p>
+<p>3）“灰色区域”规范的更明确的定义</p>
+<p>3．TLS对于安全性的改进</p>
+<h3 id="4-HTTP和HTTPS两者最终对比"><a href="#4-HTTP和HTTPS两者最终对比" class="headerlink" title="4 HTTP和HTTPS两者最终对比"></a>4 HTTP和HTTPS两者最终对比</h3><h4 id="4-1-相同点"><a href="#4-1-相同点" class="headerlink" title="4.1 相同点"></a>4.1 相同点</h4><ul>
+<li>都是基于TCP的面向连接的应用层协议并且都为无状态连接</li>
+<li>都是主要应用于浏览器端</li>
+</ul>
+<h4 id="4-2-不同点"><a href="#4-2-不同点" class="headerlink" title="4.2 不同点"></a>4.2 不同点</h4><ul>
+<li>HTTP端口默认为80，HTTPS端口默认为443</li>
+<li>HTTP为明文传输，HTTPS为加密传输，因此HTTPS相比HTTP更安全</li>
+<li>HTTP更为简单快速，HTTPS更为复杂</li>
+</ul>
+<blockquote>
+<p>参考文章：</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wqhwe/p/5407468.html">https://www.cnblogs.com/wqhwe/p/5407468.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/http/http-methods.html">https://www.runoob.com/http/http-methods.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/HTTP/243074?fr=aladdin">https://baike.baidu.com/item/HTTP/243074?fr=aladdin</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/klguang/p/4618526.html">https://www.cnblogs.com/klguang/p/4618526.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://kb.cnblogs.com/page/197396/">https://kb.cnblogs.com/page/197396/</a></p>
 
-</div>
+
   </div>
   
   
@@ -2706,10 +2749,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-05-30T17:43:58+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-05-31T10:09:54+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年5月30日</p>
+    <p>更新于：2022年5月31日</p>
   </a>
 </div>
 
@@ -2728,7 +2771,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/05/30/%E7%8E%A9%E8%BD%ACSpring-%E8%87%AA%E5%AE%9A%E4%B9%89Spring%20Starter/&title=玩转Spring-自定义Spring Starter - Barry Yan's Blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/05/30/%E4%B8%80%E6%96%87%E5%B8%A6%E4%BD%A0%E6%90%9E%E6%87%82HTTP%E5%92%8CHTTPS/&title=一文带你搞懂HTTP和HTTPS - Barry Yan's Blog&summary="
           
           >
           
@@ -2740,7 +2783,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/05/30/%E7%8E%A9%E8%BD%ACSpring-%E8%87%AA%E5%AE%9A%E4%B9%89Spring%20Starter/&title=玩转Spring-自定义Spring Starter - Barry Yan's Blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/05/30/%E4%B8%80%E6%96%87%E5%B8%A6%E4%BD%A0%E6%90%9E%E6%87%82HTTP%E5%92%8CHTTPS/&title=一文带你搞懂HTTP和HTTPS - Barry Yan's Blog&summary="
           
           >
           
@@ -2752,7 +2795,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/05/30/%E7%8E%A9%E8%BD%ACSpring-%E8%87%AA%E5%AE%9A%E4%B9%89Spring%20Starter/&title=玩转Spring-自定义Spring Starter - Barry Yan's Blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/05/30/%E4%B8%80%E6%96%87%E5%B8%A6%E4%BD%A0%E6%90%9E%E6%87%82HTTP%E5%92%8CHTTPS/&title=一文带你搞懂HTTP和HTTPS - Barry Yan's Blog&summary="
           
           >
           
@@ -2785,9 +2828,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-      
-        <a class='next' href='/2022/05/30/%E6%8E%A2%E7%B4%A2Pulsar%E4%B9%8B%E4%BD%BF%E7%94%A8Go%E5%92%8CJava%E6%93%8D%E4%BD%9CPulsar/'>
-          <p class='title'>探索Pulsar之使用Go和Java操作Pulsar<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+        <a class='prev' href='/2022/05/30/%E6%8E%A2%E7%B4%A2Pulsar%E4%B9%8B%E4%BD%BF%E7%94%A8Go%E5%92%8CJava%E6%93%8D%E4%BD%9CPulsar/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>探索Pulsar之使用Go和Java操作Pulsar</p>
           <p class='content'>1 前言Pulsar官方支持的客户端库：
 
 C++
@@ -2804,6 +2846,13 @@ Go
 Haskel...</p>
         </a>
       
+      
+        <a class='next' href='/2022/05/30/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E4%B9%8B%E5%85%B1%E8%AF%86%E7%AE%97%E6%B3%95%E2%80%942PC%E3%80%813PC%E3%80%81%20Paxos/'>
+          <p class='title'>分布式系统设计之共识算法-2PC、3PC、Paxos<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>﻿### 分布式共识协议有什么作用？
+共识问题分布式计算中最基本的概念之一，是让分布式系统中的一组节点就某事达成一致的问题的一个价值、一个行动方案或一个决定。达成共识允许分布式系统充当单个实体，...</p>
+        </a>
+      
     </div>
   
   <!-- Custom Files postEnd begin-->
@@ -2817,7 +2866,7 @@ Haskel...</p>
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2022/05/30/%E7%8E%A9%E8%BD%ACSpring-%E8%87%AA%E5%AE%9A%E4%B9%89Spring%20Starter/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2022/05/30/%E4%B8%80%E6%96%87%E5%B8%A6%E4%BD%A0%E6%90%9E%E6%87%82HTTP%E5%92%8CHTTPS/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2850,7 +2899,7 @@ Haskel...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%A9%E8%BD%ACSpring-%E8%87%AA%E5%AE%9A%E4%B9%89Spring-Starter"><span class="toc-text">玩转Spring-自定义Spring Starter</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AFSpring-Starter"><span class="toc-text">1 什么是Spring Starter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%87%AA%E5%AE%9A%E4%B9%89Starter%E7%9A%84Hello-World"><span class="toc-text">2 自定义Starter的Hello World</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E8%87%AA%E5%AE%9A%E4%B9%89Spring-Starter%E7%9A%84%E4%B8%80%E8%88%AC%E6%B5%81%E7%A8%8B"><span class="toc-text">2.1 自定义Spring Starter的一般流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E5%85%B7%E4%BD%93%E6%B5%81%E7%A8%8B"><span class="toc-text">2.2 具体流程</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-1-%E6%96%B0%E5%BB%BASpring-Boot%E9%A1%B9%E7%9B%AE"><span class="toc-text">2.2.1 新建Spring Boot项目</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-2-%E6%B7%BB%E5%8A%A0%E4%BE%9D%E8%B5%96"><span class="toc-text">2.2.2 添加依赖</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-3-%E8%B0%83%E6%95%B4%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84"><span class="toc-text">2.2.3 调整项目结构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-4-%E8%87%AA%E5%AE%9A%E4%B9%89Configuration%E9%85%8D%E7%BD%AE%E7%B1%BB"><span class="toc-text">2.2.4 自定义Configuration配置类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-5-%E5%A2%9E%E5%8A%A0spring-factories%E6%96%87%E4%BB%B6%EF%BC%8C%E6%8C%87%E5%AE%9A%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E7%B1%BB"><span class="toc-text">2.2.5 增加spring.factories文件，指定自动配置类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-6-maven-install%E5%AE%89%E8%A3%85%E5%88%B0%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93"><span class="toc-text">2.2.6 maven install安装到本地仓库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-7-%E6%B5%8B%E8%AF%95"><span class="toc-text">2.2.7 测试</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%87%AA%E5%AE%9A%E4%B9%89Starter%E5%AE%9E%E7%8E%B0%E6%8B%A6%E6%88%AA%E5%99%A8"><span class="toc-text">3 自定义Starter实现拦截器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E7%BC%96%E5%86%99%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8B%A6%E6%88%AA%E5%99%A8"><span class="toc-text">3.1  编写自定义拦截器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-starter%E5%A2%9E%E5%8A%A0%E9%85%8D%E7%BD%AE%E7%B1%BB"><span class="toc-text">3.2 starter增加配置类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-%E8%B0%83%E7%94%A8%E6%96%B9%E5%A2%9E%E5%8A%A0%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%EF%BC%8C%E4%B8%BB%E5%90%AF%E5%8A%A8%E7%B1%BB%E5%A2%9E%E5%8A%A0%E6%B3%A8%E8%A7%A3"><span class="toc-text">3.3 调用方增加配置文件内容，主启动类增加注解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-%E6%B5%8B%E8%AF%95"><span class="toc-text">3.4 测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%87%AA%E5%AE%9A%E4%B9%89Starter%E5%AE%9E%E7%8E%B0%E5%85%A8%E5%B1%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="toc-text">4 自定义Starter实现全局异常处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E7%BC%96%E5%86%99starter%E5%85%A8%E5%B1%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E7%B1%BB"><span class="toc-text">4.1 编写starter全局异常处理类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E8%B0%83%E7%94%A8%E6%96%B9%E5%88%B6%E9%80%A0%E5%BC%82%E5%B8%B8%E6%B5%8B%E8%AF%95"><span class="toc-text">4.2 调用方制造异常测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%80%BB%E7%BB%93%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E7%9A%84%E6%B3%A8%E8%A7%A3"><span class="toc-text">5 总结几个重要的注解</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-HTTP%E5%8D%8F%E8%AE%AE%E6%8A%A5%E6%96%87%E8%AF%A6%E8%A7%A3"><span class="toc-text">2  HTTP协议报文详解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E5%8F%91%E5%B1%95%E9%98%B6%E6%AE%B5"><span class="toc-text">2.1 发展阶段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95"><span class="toc-text">2.2 请求方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-%E6%8A%A5%E6%96%87%E6%A0%BC%E5%BC%8F"><span class="toc-text">2.3 报文格式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-HTTPS%E5%8D%8F%E8%AE%AE%E6%8A%A5%E6%96%87%E8%AF%A6%E8%A7%A3"><span class="toc-text">3 HTTPS协议报文详解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E5%8C%BA%E5%88%AB%E4%BA%8EHTTP%E7%9A%84%E4%B8%BB%E8%A6%81%E4%BD%9C%E7%94%A8"><span class="toc-text">3.1 区别于HTTP的主要作用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E6%8A%A5%E6%96%87%E6%A0%BC%E5%BC%8F"><span class="toc-text">3.2 报文格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-TLS%E5%92%8CSSL"><span class="toc-text">3.3 TLS和SSL</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-HTTP%E5%92%8CHTTPS%E4%B8%A4%E8%80%85%E6%9C%80%E7%BB%88%E5%AF%B9%E6%AF%94"><span class="toc-text">4 HTTP和HTTPS两者最终对比</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E7%9B%B8%E5%90%8C%E7%82%B9"><span class="toc-text">4.1 相同点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E4%B8%8D%E5%90%8C%E7%82%B9"><span class="toc-text">4.2 不同点</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -3867,7 +3916,7 @@ Haskel...</p>
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Barry Yan's Blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/05/30/玩转Spring-自定义Spring Starter/","name":"玩转Spring-自定义Spring Starter"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Barry Yan's Blog","url":"http://example.com/","keywords":"Java,Go,SQL","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"玩转Spring-自定义Spring Starter","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/05/30/%E7%8E%A9%E8%BD%ACSpring-%E8%87%AA%E5%AE%9A%E4%B9%89Spring%20Starter/"},"author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/05/30/%E7%8E%A9%E8%BD%ACSpring-%E8%87%AA%E5%AE%9A%E4%B9%89Spring%20Starter/","wordCount":0,"datePublished":"2022-05-30T09:33:28.000Z","dateModified":"2022-05-30T09:43:58.637Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Barry Yan's Blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/05/30/一文带你搞懂HTTP和HTTPS/","name":"一文带你搞懂HTTP和HTTPS"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Barry Yan's Blog","url":"http://example.com/","keywords":"Java,Go,SQL","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"一文带你搞懂HTTP和HTTPS","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/05/30/%E4%B8%80%E6%96%87%E5%B8%A6%E4%BD%A0%E6%90%9E%E6%87%82HTTP%E5%92%8CHTTPS/"},"author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/05/30/%E4%B8%80%E6%96%87%E5%B8%A6%E4%BD%A0%E6%90%9E%E6%87%82HTTP%E5%92%8CHTTPS/","wordCount":0,"datePublished":"2022-05-30T09:33:28.000Z","dateModified":"2022-05-31T02:09:54.276Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
