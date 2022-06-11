@@ -1749,7 +1749,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.cbfd0700.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.311803bb.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1654917637042),
+    lastupdate: new Date(1654941959955),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","music","tagcloud"],
@@ -2175,7 +2175,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin begin-->
     
     <!-- Custom Files bodyBegin end-->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header always shadow floatable blur "  >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2571,27 +2571,86 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        1 前言Pulsar官方支持的客户端库：
+        <div class="story post-story"><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1 前言"></a>1 前言</h2><p><strong>Pulsar官方支持的客户端库</strong>：</p>
+<ul>
+<li>C++</li>
+<li>Python</li>
+<li>WebSocket</li>
+<li>Go client</li>
+<li>Node.js</li>
+<li>C# </li>
+<li>Java</li>
+</ul>
+<p><strong>GitHub中三方的客户端库</strong>：</p>
+<ul>
+<li>Go</li>
+<li>Haskell</li>
+<li>Scala</li>
+<li>Rust</li>
+<li>.NET</li>
+<li>Node.js</li>
+</ul>
+<p>具体可参看：<a target="_blank" rel="noopener" href="https://pulsar.apache.org/docs/zh-CN/next/client-libraries/">https://pulsar.apache.org/docs/zh-CN/next/client-libraries/</a></p>
+<p>本次仅演示Go和Java的客户端操作。</p>
+</div><div class="story post-story"><h2 id="2-单机模式运行Pulsar"><a href="#2-单机模式运行Pulsar" class="headerlink" title="2 单机模式运行Pulsar"></a>2 单机模式运行Pulsar</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@iZ2ze4m2 bin]# pwd</span><br><span class="line">/root/apache-pulsar-2.10.0/bin</span><br><span class="line">[root@iZ2ze4m2 bin]# ./pulsar standalone</span><br></pre></td></tr></table></figure>
 
-C++
-Python
-WebSocket
-Go client
-Node.js
-C# 
-Java
+<blockquote>
+<p><strong>PS:针对单机启动报错问题，如下面的</strong>：</p>
+<p><img src="https://img-blog.csdnimg.cn/6b00dd404f254867879182df7c0d51c5.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/6b00dd404f254867879182df7c0d51c5.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-bWI2jbMB-1651490859257)(Apache Pulsar 2.assets/image-20220502124604132.png)]"></p>
+<p><strong>可以尝试使用该命令进行启动：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./pulsar standalone -nss</span><br></pre></td></tr></table></figure>
+</blockquote>
+</div><div class="story post-story"><h2 id="3-Go客户端操作Pulsar"><a href="#3-Go客户端操作Pulsar" class="headerlink" title="3 Go客户端操作Pulsar"></a>3 Go客户端操作Pulsar</h2><p><strong>（1）添加依赖</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go get -u &quot;github.com/apache/pulsar-client-go/pulsar&quot;</span><br></pre></td></tr></table></figure>
 
-GitHub中三方的客户端库：
+<p><strong>（2）生产者</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">   <span class="string">&quot;context&quot;</span></span><br><span class="line">   <span class="string">&quot;fmt&quot;</span></span><br><span class="line">   <span class="string">&quot;github.com/apache/pulsar-client-go/pulsar&quot;</span></span><br><span class="line">   <span class="string">&quot;log&quot;</span></span><br><span class="line">   <span class="string">&quot;time&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   client, err := pulsar.NewClient(pulsar.ClientOptions&#123;</span><br><span class="line">      URL:               <span class="string">&quot;pulsar://192.168.71.143:6650&quot;</span>, <span class="comment">//支持：&quot;pulsar://localhost:6650,localhost:6651,localhost:6652&quot;</span></span><br><span class="line">      OperationTimeout:  <span class="number">60</span> * time.Second,</span><br><span class="line">      ConnectionTimeout: <span class="number">60</span> * time.Second,</span><br><span class="line">   &#125;)</span><br><span class="line"></span><br><span class="line">   <span class="keyword">defer</span> client.Close()</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">      log.Fatalf(<span class="string">&quot;Could not instantiate Pulsar client: %v&quot;</span>, err)</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   producer, err := client.CreateProducer(pulsar.ProducerOptions&#123;</span><br><span class="line">      Topic: <span class="string">&quot;my-topic&quot;</span>,</span><br><span class="line">   &#125;)</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">      log.Fatal(err)</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   _, err = producer.Send(context.Background(), &amp;pulsar.ProducerMessage&#123;</span><br><span class="line">      Payload: []<span class="type">byte</span>(<span class="string">&quot;hello&quot;</span>),</span><br><span class="line">   &#125;)</span><br><span class="line"></span><br><span class="line">   <span class="keyword">defer</span> producer.Close()</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">      fmt.Println(<span class="string">&quot;Failed to publish message&quot;</span>, err)</span><br><span class="line">   &#125;</span><br><span class="line">   fmt.Println(<span class="string">&quot;Published message&quot;</span>)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-Go
-Haskell
-Scala
-Rust
-.NET
-Node.js
+<p><strong>（3）消费者</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">   <span class="string">&quot;context&quot;</span></span><br><span class="line">   <span class="string">&quot;fmt&quot;</span></span><br><span class="line">   <span class="string">&quot;github.com/apache/pulsar-client-go/pulsar&quot;</span></span><br><span class="line">   <span class="string">&quot;log&quot;</span></span><br><span class="line">   <span class="string">&quot;time&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   client, err := pulsar.NewClient(pulsar.ClientOptions&#123;</span><br><span class="line">      URL:               <span class="string">&quot;pulsar://192.168.71.143:6650&quot;</span>, <span class="comment">//支持：&quot;pulsar://localhost:6650,localhost:6651,localhost:6652&quot;</span></span><br><span class="line">      OperationTimeout:  <span class="number">60</span> * time.Second,</span><br><span class="line">      ConnectionTimeout: <span class="number">60</span> * time.Second,</span><br><span class="line">   &#125;)</span><br><span class="line"></span><br><span class="line">   <span class="keyword">defer</span> client.Close()</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">      log.Fatalf(<span class="string">&quot;Could not instantiate Pulsar client: %v&quot;</span>, err)</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   consumer, err := client.Subscribe(pulsar.ConsumerOptions&#123;</span><br><span class="line">      Topic:            <span class="string">&quot;my-topic&quot;</span>,</span><br><span class="line">      SubscriptionName: <span class="string">&quot;my-sub&quot;</span>,</span><br><span class="line">      Type:             pulsar.Shared,</span><br><span class="line">   &#125;)</span><br><span class="line">   <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">      log.Fatal(err)</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">defer</span> consumer.Close()</span><br><span class="line"></span><br><span class="line">   <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">10</span>; i++ &#123;</span><br><span class="line">      msg, err := consumer.Receive(context.Background())</span><br><span class="line">      <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">         log.Fatal(err)</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      fmt.Printf(<span class="string">&quot;Received message msgId: %#v -- content: &#x27;%s&#x27;\n&quot;</span>,</span><br><span class="line">         msg.ID(), <span class="type">string</span>(msg.Payload()))</span><br><span class="line"></span><br><span class="line">      consumer.Ack(msg)</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span> err := consumer.Unsubscribe(); err != <span class="literal">nil</span> &#123;</span><br><span class="line">      log.Fatal(err)</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-具体可参看：https://pulsar.apache.org/docs/zh-CN/next/client-libraries/
-本次仅演示Go...
+</div><div class="story post-story"><h2 id="4-Java-amp-Spring客户端操作Pulsar"><a href="#4-Java-amp-Spring客户端操作Pulsar" class="headerlink" title="4 Java&amp;Spring客户端操作Pulsar"></a>4 Java&amp;Spring客户端操作Pulsar</h2><h3 id="4-1-Java客户端"><a href="#4-1-Java客户端" class="headerlink" title="4.1 Java客户端"></a>4.1 Java客户端</h3><p><strong>（1）pom依赖</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">pulsar.version</span>&gt;</span>2.9.1<span class="tag">&lt;/<span class="name">pulsar.version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.pulsar<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>pulsar-client<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;pulsar.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>（2）生产者和消费者</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">SbPursarApplicationTests</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> PulsarClient client;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">()</span> <span class="keyword">throws</span> PulsarClientException &#123;</span><br><span class="line">        client = PulsarClient.builder()</span><br><span class="line">                .serviceUrl(<span class="string">&quot;pulsar://192.168.71.147:6650&quot;</span>)</span><br><span class="line">                .build();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">producer</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        init();</span><br><span class="line">        Producer&lt;<span class="type">byte</span>[]&gt; producer = client.newProducer()</span><br><span class="line">                .topic(<span class="string">&quot;my-topic&quot;</span>)</span><br><span class="line">                .create();</span><br><span class="line">        <span class="comment">// 然后你就可以发送消息到指定的broker 和topic上：</span></span><br><span class="line">        producer.send(<span class="string">&quot;My message&quot;</span>.getBytes());</span><br><span class="line">        client.close();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">consumer</span><span class="params">()</span> <span class="keyword">throws</span> PulsarClientException &#123;</span><br><span class="line">        init();</span><br><span class="line">        <span class="type">Consumer</span> <span class="variable">consumer</span> <span class="operator">=</span> client.newConsumer()</span><br><span class="line">                .topic(<span class="string">&quot;my-topic&quot;</span>)</span><br><span class="line">                .subscriptionName(<span class="string">&quot;my-subscription&quot;</span>)</span><br><span class="line">                .subscribe();</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="type">Message</span> <span class="variable">msg</span> <span class="operator">=</span> consumer.receive();</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;Message received: &quot;</span> + <span class="keyword">new</span> <span class="title class_">String</span>(msg.getData()));</span><br><span class="line">                <span class="comment">//消息确认</span></span><br><span class="line">                consumer.acknowledge(msg);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                consumer.negativeAcknowledge(msg);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-Spring客户端"><a href="#4-2-Spring客户端" class="headerlink" title="4.2 Spring客户端"></a>4.2 Spring客户端</h3><p><strong>（1）依赖</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">java.version</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- in your &lt;properties&gt; block --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">pulsar.version</span>&gt;</span>2.9.1<span class="tag">&lt;/<span class="name">pulsar.version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- in your &lt;dependencies&gt; block --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.pulsar<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>pulsar-client<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;pulsar.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>（2）项目结构</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/cdad67f5f16b462aad64ef5e5dac66f7.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/cdad67f5f16b462aad64ef5e5dac66f7.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-FsWvdVEp-1651490859260)(Apache Pulsar 2.assets/image-20220502125120250.png)]"></p>
+<p><strong>（3）配置类</strong></p>
+<p>主要用于将自定义Bean放入Spring中</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">PulsarConfig</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> Producer <span class="title function_">pulsarProducer</span><span class="params">()</span> <span class="keyword">throws</span> PulsarClientException &#123;</span><br><span class="line">        <span class="type">PulsarClient</span> <span class="variable">client</span> <span class="operator">=</span> PulsarClient.builder()</span><br><span class="line">                .serviceUrl(<span class="string">&quot;pulsar://192.168.71.147:6650&quot;</span>)</span><br><span class="line">                .build();</span><br><span class="line">        Producer&lt;<span class="type">byte</span>[]&gt; producer = client</span><br><span class="line">                .newProducer()</span><br><span class="line">                .topic(<span class="string">&quot;my-topic&quot;</span>)</span><br><span class="line">                .create();</span><br><span class="line">        <span class="keyword">return</span> producer;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> Consumer <span class="title function_">pulsarConsumer</span><span class="params">()</span> <span class="keyword">throws</span> PulsarClientException &#123;</span><br><span class="line">        <span class="type">PulsarClient</span> <span class="variable">client</span> <span class="operator">=</span> PulsarClient.builder()</span><br><span class="line">                .serviceUrl(<span class="string">&quot;pulsar://192.168.71.147:6650&quot;</span>)</span><br><span class="line">                .build();</span><br><span class="line">        <span class="type">Consumer</span> <span class="variable">consumer</span> <span class="operator">=</span> client.newConsumer()</span><br><span class="line">                .topic(<span class="string">&quot;my-topic&quot;</span>)</span><br><span class="line">                .subscriptionName(<span class="string">&quot;my-subscription&quot;</span>)</span><br><span class="line">                .subscribe();</span><br><span class="line">        <span class="keyword">return</span> consumer;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>（4）控制器类：生产者</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloPulsarController</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> Producer pulsarProducer;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/hello/&#123;msg&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">hello</span><span class="params">(<span class="meta">@PathVariable(&quot;msg&quot;)</span> String msg)</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            pulsarProducer.send(msg.getBytes());</span><br><span class="line">        &#125; <span class="keyword">catch</span> (PulsarClientException e) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;发送失败&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;发送成功&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>（3）消费者</strong></p>
+<p>直接使用自定义Bean，并在Spring Boot启动后自动调用该方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">PulsarConsumerService</span> <span class="keyword">implements</span> <span class="title class_">ApplicationRunner</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> Consumer pulsarConsumer;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">consumer</span><span class="params">()</span> <span class="keyword">throws</span> PulsarClientException &#123;</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="type">Message</span> <span class="variable">msg</span> <span class="operator">=</span> pulsarConsumer.receive();</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;Message received: &quot;</span> + <span class="keyword">new</span> <span class="title class_">String</span>(msg.getData()));</span><br><span class="line">                pulsarConsumer.acknowledge(msg);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                pulsarConsumer.negativeAcknowledge(msg);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">(ApplicationArguments args)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        consumer();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</div><div class="story post-story"><h2 id="5-通过pulsar-manager搭建可视化管理界面"><a href="#5-通过pulsar-manager搭建可视化管理界面" class="headerlink" title="5 通过pulsar-manager搭建可视化管理界面"></a>5 通过pulsar-manager搭建可视化管理界面</h2><h3 id="5-1-下载链接"><a href="#5-1-下载链接" class="headerlink" title="5.1 下载链接"></a>5.1 下载链接</h3><p><a target="_blank" rel="noopener" href="https://github.com/apache/pulsar-manager#access-pulsar-manager">https://github.com/apache/pulsar-manager#access-pulsar-manager</a></p>
+<p>或</p>
+<p><a target="_blank" rel="noopener" href="https://pulsar.apache.org/en/download/">https://pulsar.apache.org/en/download/</a></p>
+<h3 id="5-2-启动并配置"><a href="#5-2-启动并配置" class="headerlink" title="5.2 启动并配置"></a>5.2 启动并配置</h3><p><strong>启动</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">wget https://dist.apache.org/repos/dist/release/pulsar/pulsar-manager/pulsar-manager-0.2.0/apache-pulsar-manager-0.2.0-bin.tar.gz</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">tar -zxvf apache-pulsar-manager-0.2.0-bin.tar.gz</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> pulsar-manager</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">tar -xvf pulsar-manager.tar</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> pulsar-manager</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cp</span> -r ../dist ui</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">./bin/pulsar-manager</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>配置账号密码</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">CSRF_TOKEN=$(curl http://127.0.0.1:7750/pulsar-manager/csrf-token)</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">curl \</span></span><br><span class="line"><span class="language-bash">    -H <span class="string">&quot;X-XSRF-TOKEN: <span class="variable">$CSRF_TOKEN</span>&quot;</span> \</span></span><br><span class="line"><span class="language-bash">    -H <span class="string">&quot;Cookie: XSRF-TOKEN=<span class="variable">$CSRF_TOKEN</span>;&quot;</span> \</span></span><br><span class="line"><span class="language-bash">    -H <span class="string">&#x27;Content-Type: application/json&#x27;</span> \</span></span><br><span class="line"><span class="language-bash">    -X PUT http://127.0.0.1:7750/pulsar-manager/users/superuser \</span></span><br><span class="line"><span class="language-bash">    -d <span class="string">&#x27;&#123;&quot;name&quot;: &quot;admin&quot;, &quot;password&quot;: &quot;apachepulsar&quot;, &quot;description&quot;: &quot;test&quot;, &quot;email&quot;: &quot;username@test.org&quot;&#125;&#x27;</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-3-使用"><a href="#5-3-使用" class="headerlink" title="5.3 使用"></a>5.3 使用</h3><p>访问<code>http://localhost:9527</code>就可以打开pulsar-manager界面：</p>
+<p><img src="https://img-blog.csdnimg.cn/83d261c8be8b4836afe19b6607821932.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/83d261c8be8b4836afe19b6607821932.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-KpVG1fzF-1651490859261)(Apache Pulsar 2.assets/image-20220502153256105.png)]"></p>
+<blockquote>
+<p>参考：</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://pulsar.apache.org/docs/zh-CN/client-libraries-go/">https://pulsar.apache.org/docs/zh-CN/client-libraries-go/</a></p>
+<p><a target="_blank" rel="noopener" href="https://pulsar.apache.org/docs/zh-CN/client-libraries-java/">https://pulsar.apache.org/docs/zh-CN/client-libraries-java/</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ycf921244819/article/details/120907372">https://blog.csdn.net/ycf921244819/article/details/120907372</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/apache/pulsar-manager#access-pulsar-manager">https://github.com/apache/pulsar-manager#access-pulsar-manager</a></p>
+
+</div>
       
     
   </div>
@@ -2610,12 +2669,6 @@ Node.js
         <time itemprop="dateCreated datePublished" datetime="2022-05-30T17:33:28+08:00">2022-05-30</time>
         
       </div>
-      
-        <div>
-          <a class='readmore' href='/2022/05/30/%E6%8E%A2%E7%B4%A2Pulsar%E4%B9%8B%E4%BD%BF%E7%94%A8Go%E5%92%8CJava%E6%93%8D%E4%BD%9CPulsar/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
       
     </div>
   
@@ -2654,9 +2707,132 @@ Node.js
   <div class='md article-desc' itemprop="articleBody">
     
       
-        ﻿###  1 二者简单介绍和各自在ISO七层网络模型中的位置
-　　HTTP：是互联网上应用最为广泛的一种网络协议，是一个客户端和服务器端请求和应答的标准（TCP），用于从WWW服务器传输超文本到本地浏览器的传输协议，它可以使浏览器更加高效，使网络传输减少。
-　　HTTPS：是以安全为目标的HTTP通道，简单讲是HTTP的安全版，即HTTP下加入SSL层，HTTPS的安全基础是SSL，因此加...
+        <p>﻿###  1 二者简单介绍和各自在ISO七层网络模型中的位置</p>
+<p>　　HTTP：是互联网上应用最为广泛的一种网络协议，是一个客户端和服务器端请求和应答的标准（TCP），用于从WWW服务器传输超文本到本地浏览器的传输协议，它可以使浏览器更加高效，使网络传输减少。</p>
+<p>　　HTTPS：是以安全为目标的HTTP通道，简单讲是HTTP的安全版，即HTTP下加入SSL层，HTTPS的安全基础是SSL，因此加密的详细内容就需要SSL。</p>
+<p>两者在七层网络模型中的位置（图片来源于大涛网络神图）：<br><img src="https://img-blog.csdnimg.cn/66ec7cd54b4d422f84201945a16fc8c8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_19,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/66ec7cd54b4d422f84201945a16fc8c8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_19,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h3 id="2-HTTP协议报文详解"><a href="#2-HTTP协议报文详解" class="headerlink" title="2  HTTP协议报文详解"></a>2  HTTP协议报文详解</h3><h4 id="2-1-发展阶段"><a href="#2-1-发展阶段" class="headerlink" title="2.1 发展阶段"></a>2.1 发展阶段</h4><ul>
+<li><p>HTTP&#x2F;0.9</p>
+<p>0.9协议是适用于各种数据信息的简洁快速协议，但是远不能满足日益发展的各种应用的需要。0.9协议就是一个交换信息的无序协议，仅仅限于文字。由于无法进行内容的协商，在双发的握手和协议中，并有规定双发的内容是什么，也就是图片是无法显示和处理的。</p>
+</li>
+<li><p>HTTP&#x2F;1.0</p>
+<p>HTTP1.0 定义了三种请求方法：GET、POST和HEAD方法</p>
+</li>
+<li><p>HTTP&#x2F;1.1(当前主流)</p>
+<p>HTTP1.1 新增了六种请求方法：OPTIONS、PUT、PATCH、DELETE、TRACE和CONNECT方法。</p>
+</li>
+<li><p>HTTP&#x2F;2.0</p>
+<p>HTTP2.0大幅度的提高了web性能，在HTTP1.1完全语义兼容的基础上，进一步减少了网络的延迟。实现低延迟高吞吐量。</p>
+</li>
+</ul>
+<h4 id="2-2-请求方法"><a href="#2-2-请求方法" class="headerlink" title="2.2 请求方法"></a>2.2 请求方法</h4><table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left">GET</td>
+<td align="left">请求指定的页面信息，并返回实体主体。</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">HEAD</td>
+<td align="left">类似于 GET 请求，只不过返回的响应中没有具体的内容，用于获取报头</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">POST</td>
+<td align="left">向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST 请求可能会导致新的资源的建立和&#x2F;或已有资源的修改。</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">PUT</td>
+<td align="left">从客户端向服务器传送的数据取代指定的文档的内容。</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">DELETE</td>
+<td align="left">请求服务器删除指定的页面。</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">CONNECT</td>
+<td align="left">HTTP&#x2F;1.1 协议中预留给能够将连接改为管道方式的代理服务器。</td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left">OPTIONS</td>
+<td align="left">允许客户端查看服务器的性能。</td>
+</tr>
+<tr>
+<td align="left">8</td>
+<td align="left">TRACE</td>
+<td align="left">回显服务器收到的请求，主要用于测试或诊断。</td>
+</tr>
+<tr>
+<td align="left">9</td>
+<td align="left">PATCH</td>
+<td align="left">是对 PUT 方法的补充，用来对已知资源进行局部更新 。</td>
+</tr>
+</tbody></table>
+<h4 id="2-3-报文格式"><a href="#2-3-报文格式" class="headerlink" title="2.3 报文格式"></a>2.3 报文格式</h4><p>wireshark抓取报文：</p>
+<p>请求报文：<br><img src="https://img-blog.csdnimg.cn/5962e284a0ca4b4cbd4266b8d80d71bc.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_20,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/5962e284a0ca4b4cbd4266b8d80d71bc.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>响应报文：<br><img src="https://img-blog.csdnimg.cn/2784f1607d9a4748b827e82e0ee6eb68.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_19,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/2784f1607d9a4748b827e82e0ee6eb68.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_19,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>由此我们可以看出HTTP报文的大致格式：</p>
+<p><img src="https://img-blog.csdnimg.cn/fabdfa727a1049f0955b6f3ddf3d6a4e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_20,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/fabdfa727a1049f0955b6f3ddf3d6a4e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h3 id="3-HTTPS协议报文详解"><a href="#3-HTTPS协议报文详解" class="headerlink" title="3 HTTPS协议报文详解"></a>3 HTTPS协议报文详解</h3><h4 id="3-1-区别于HTTP的主要作用"><a href="#3-1-区别于HTTP的主要作用" class="headerlink" title="3.1 区别于HTTP的主要作用"></a>3.1 区别于HTTP的主要作用</h4><p>HTTPS协议的主要作用可以分为两种：</p>
+<ul>
+<li><p>建立一个信息安全通道，来保证数据传输的安全</p>
+</li>
+<li><p>确认网站的真实性</p>
+</li>
+</ul>
+<h4 id="3-2-报文格式"><a href="#3-2-报文格式" class="headerlink" title="3.2 报文格式"></a>3.2 报文格式</h4><p>HTTPS的协议名称并不是HTTPS，而是TSL，我们再次利用whireshark进行抓包：<br><img src="https://img-blog.csdnimg.cn/e98e93e5d8fb40dcbeee4edc3a0449a8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_20,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/e98e93e5d8fb40dcbeee4edc3a0449a8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>我们点开一个报文组可以发现，TLS的上层就是HTTP，并且利用了SHA-256加密算法进行了加密。<br><img src="https://img-blog.csdnimg.cn/eaf7987d60db41fbaad840b17b462dec.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_20,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/eaf7987d60db41fbaad840b17b462dec.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h4 id="3-3-TLS和SSL"><a href="#3-3-TLS和SSL" class="headerlink" title="3.3 TLS和SSL"></a>3.3 TLS和SSL</h4><p>我们经常说，HTTPS&#x3D;HTTP+SSL&#x2F;TLS，那么我们就来一探究竟，什么是TLS和SSL</p>
+<ul>
+<li>SSL：（Secure Socket Layer，安全套接字层），位于可靠的面向连接的网络层协议和应用层协议之间的一种协议层。SSL通过互相认证、使用数字签名确保完整性、使用加密确保私密性，以实现客户端和服务器之间的安全通讯。该协议由两层组成：SSL记录协议和SSL握手协议。</li>
+<li>TLS：(Transport Layer Security，传输层安全协议)，用于两个应用程序之间提供保密性和数据完整性。该协议由两层组成：TLS记录协议和TLS握手协议。</li>
+</ul>
+<blockquote>
+<p>两者区别：</p>
+</blockquote>
+<p>最新版本的TLS（Transport Layer Security，传输层安全协议）是IETF（Internet Engineering Task Force，Internet工程任务组）制定的一种新的协议，它建立在SSL 3.0协议规范之上，是SSL 3.0的后续版本。在TLS与SSL3.0之间存在着显著的差别，主要是它们所支持的加密算法不同，所以TLS与SSL3.0不能互操作。</p>
+<p><strong>1．TLS与SSL的差异</strong></p>
+<p>1）版本号：TLS记录格式与SSL记录格式相同，但版本号的值不同，TLS的版本1.0使用的版本号为SSLv3.1。</p>
+<p>2）报文鉴别码：SSLv3.0和TLS的MAC算法及MAC计算的范围不同。TLS使用了RFC-2104定义的HMAC算法。SSLv3.0使用了相似的算法，两者差别在于SSLv3.0中，填充字节与密钥之间采用的是连接运算，而HMAC算法采用的是异或运算。但是两者的安全程度是相同的。</p>
+<p>3）伪随机函数：TLS使用了称为PRF的伪随机函数来将密钥扩展成数据块，是更安全的方式。</p>
+<p>4）报警代码：TLS支持几乎所有的SSLv3.0报警代码，而且TLS还补充定义了很多报警代码，如解密失败（decryption_failed）、记录溢出（record_overflow）、未知CA（unknown_ca）、拒绝访问（access_denied）等。</p>
+<p>5）密文族和客户证书：SSLv3.0和TLS存在少量差别，即TLS不支持Fortezza密钥交换、加密算法和客户证书。</p>
+<p>6）certificate_verify和finished消息：SSLv3.0和TLS在用certificate_verify和finished消息计算MD5和SHA-1散列码时，计算的输入有少许差别，但安全性相当。</p>
+<p>7）加密计算：TLS与SSLv3.0在计算主密值（master secret）时采用的方式不同。</p>
+<p>8）填充：用户数据加密之前需要增加的填充字节。在SSL中，填充后的数据长度要达到密文块长度的最小整数倍。而在TLS中，填充后的数据长度可以是密文块长度的任意整数倍（但填充的最大长度为255字节），这种方式可以防止基于对报文长度进行分析的攻击。</p>
+<p><strong>2．TLS的主要增强内容</strong></p>
+<p>TLS的主要目标是使SSL更安全，并使协议的规范更精确和完善。TLS 在SSL v3.0 的基础上，提供了以下增强内容：</p>
+<p>1）更安全的MAC算法</p>
+<p>2）更严密的警报</p>
+<p>3）“灰色区域”规范的更明确的定义</p>
+<p>3．TLS对于安全性的改进</p>
+<h3 id="4-HTTP和HTTPS两者最终对比"><a href="#4-HTTP和HTTPS两者最终对比" class="headerlink" title="4 HTTP和HTTPS两者最终对比"></a>4 HTTP和HTTPS两者最终对比</h3><h4 id="4-1-相同点"><a href="#4-1-相同点" class="headerlink" title="4.1 相同点"></a>4.1 相同点</h4><ul>
+<li>都是基于TCP的面向连接的应用层协议并且都为无状态连接</li>
+<li>都是主要应用于浏览器端</li>
+</ul>
+<h4 id="4-2-不同点"><a href="#4-2-不同点" class="headerlink" title="4.2 不同点"></a>4.2 不同点</h4><ul>
+<li>HTTP端口默认为80，HTTPS端口默认为443</li>
+<li>HTTP为明文传输，HTTPS为加密传输，因此HTTPS相比HTTP更安全</li>
+<li>HTTP更为简单快速，HTTPS更为复杂</li>
+</ul>
+<blockquote>
+<p>参考文章：</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wqhwe/p/5407468.html">https://www.cnblogs.com/wqhwe/p/5407468.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/http/http-methods.html">https://www.runoob.com/http/http-methods.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/HTTP/243074?fr=aladdin">https://baike.baidu.com/item/HTTP/243074?fr=aladdin</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/klguang/p/4618526.html">https://www.cnblogs.com/klguang/p/4618526.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://kb.cnblogs.com/page/197396/">https://kb.cnblogs.com/page/197396/</a></p>
+
+
       
     
   </div>
@@ -2675,12 +2851,6 @@ Node.js
         <time itemprop="dateCreated datePublished" datetime="2022-05-30T17:33:28+08:00">2022-05-30</time>
         
       </div>
-      
-        <div>
-          <a class='readmore' href='/2022/05/30/%E4%B8%80%E6%96%87%E5%B8%A6%E4%BD%A0%E6%90%9E%E6%87%82HTTP%E5%92%8CHTTPS/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
       
     </div>
   
@@ -2719,14 +2889,66 @@ Node.js
   <div class='md article-desc' itemprop="articleBody">
     
       
-        ﻿### 分布式共识协议有什么作用？
-共识问题分布式计算中最基本的概念之一，是让分布式系统中的一组节点就某事达成一致的问题的一个价值、一个行动方案或一个决定。达成共识允许分布式系统充当单个实体，每个单独的节点都知道并同意整个网络的行为。
- 例如，共识的一些可能用途是：
+        <p>﻿### 分布式共识协议有什么作用？</p>
+<p><code>共识问题</code>分布式计算中最基本的概念之一，是让分布式系统中的一组节点就某事达成一致的问题的一个价值、一个行动方案或一个决定。达成共识允许分布式系统充当单个实体，每个单独的节点都知道并同意整个网络的行为。</p>
+<p> 例如，共识的一些可能用途是：</p>
+<ul>
+<li>分布式事务处理</li>
+<li>分布式不同节点间同步时钟</li>
+<li>决定分布式算法的下一阶段（这是著名的<strong>复制状态机</strong>方法）</li>
+<li>选举一个领导节点来协调一些更高级别的协议</li>
+</ul>
+<p>Google Chubby Service的发明者 Mike Burrows 说<code>“只有一种共识协议，那就是 Paxos”</code>。</p>
+<h3 id="1-两阶段提交（2PC）协议"><a href="#1-两阶段提交（2PC）协议" class="headerlink" title="1 两阶段提交（2PC）协议"></a>1 两阶段提交（2PC）协议</h3><h4 id="1-1-概念"><a href="#1-1-概念" class="headerlink" title="1.1 概念"></a>1.1 概念</h4><p>两阶段提交又称 <strong>2PC</strong>，是一个非常经典的 <strong>强一致、中心化的原子提交协议</strong>。两阶段提交协议经常用来实现分布式事务，在两阶段协议中，系统一般包含两类节点：一类是 <strong>协调者</strong>，通常一个系统中只有一个；另一类是事务的 <strong>参与者</strong>，一般包含多个，在提交过程中任何节点都能当做协调者发起2PC，不必特别选举。</p>
+<h4 id="1-2-具体流程"><a href="#1-2-具体流程" class="headerlink" title="1.2 具体流程"></a>1.2 具体流程</h4><p><strong>2PC协议的两个步骤</strong>：</p>
+<ol>
+<li>请求(投票)阶段：联系每一位参与者，提出价值并收集他们的回应。</li>
+<li>提交阶段：如果每个人都同意，请再次联系每个参与者，让他们知道。否则，请联系每个参与者以中止共识。<br><img src="https://img-blog.csdnimg.cn/912c4989be0b4d8c85b9e44cb4d2e14e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5LiA5Y-q54m556uL54us6KGM55qEWA==,size_17,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/912c4989be0b4d8c85b9e44cb4d2e14e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5LiA5Y-q54m556uL54us6KGM55qEWA==,size_17,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><h4 id="1-3-问题"><a href="#1-3-问题" class="headerlink" title="1.3 问题"></a>1.3 问题</h4></li>
+</ol>
+<ul>
+<li><p>性能问题</p>
+<p>无论是在第一阶段的过程中，还是在第二阶段，所有的参与者资源和协调者资源都是被锁住的，只有当所有节点准备完毕，事务 协调者 才会通知进行全局提交，参与者 进行本地事务提交后才会释放资源。这样的过程会比较漫长，对性能影响比较大。</p>
+</li>
+<li><p>单节点故障</p>
+<p>由于 协调者 的重要性，一旦 协调者 发生故障。参与者 会一直阻塞下去。尤其在第二阶段，协调者 发生故障，那么所有的 参与者 还都处于锁定事务资源的状态中，而无法继续完成事务操作。</p>
+</li>
+</ul>
+<h3 id="2-三阶段提交（3PC）协议"><a href="#2-三阶段提交（3PC）协议" class="headerlink" title="2 三阶段提交（3PC）协议"></a>2 三阶段提交（3PC）协议</h3><h4 id="2-1-概念"><a href="#2-1-概念" class="headerlink" title="2.1 概念"></a>2.1 概念</h4><p>3PC是2PC的改进版本。3PC主要是为了解决两阶段提交协议的阻塞问题，2PC 存在的问题是当协作者崩溃时，参与者不能做出最后的选择。因此参与者可能在协作者恢复之前保持阻塞。改进措施：</p>
+<p>(1) 引入超时机制，同时在 协调者 和 参与者中都引入超时机制。</p>
+<p>(2) 在 2PC 的第二阶段中插入一个准备阶段，保证了在最后提交阶段之前各参与节点的状态是一致的。</p>
+<p>也就是说，除了引入超时机制之外，3PC 把 2PC 的准备阶段再次一分为二，这样三阶段提交就有 CanCommit、PreCommit、DoCommit 三个阶段。</p>
+<h4 id="2-2-具体步骤"><a href="#2-2-具体步骤" class="headerlink" title="2.2 具体步骤"></a>2.2 具体步骤</h4><p>将 2PC 的第二阶段——“提交”——分成两个子阶段。第一个是“准备提交”阶段。当协调者在第一阶段收到一致的“是”票时，它会将此消息发送给所有副本。收到此消息后，副本进入一种能够提交事务的状态 - 通过获取必要的锁等 - 但至关重要的是，它们不会做任何他们以后无法撤消的工作。然后他们回复协调员，告诉它“准备提交”消息已收到。<br><img src="https://img-blog.csdnimg.cn/2ba5491bb5ae445994d50ef9a87161bc.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5LiA5Y-q54m556uL54us6KGM55qEWA==,size_18,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/2ba5491bb5ae445994d50ef9a87161bc.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5LiA5Y-q54m556uL54us6KGM55qEWA==,size_18,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h4 id="2-3-问题"><a href="#2-3-问题" class="headerlink" title="2.3 问题"></a>2.3 问题</h4><ul>
+<li>依然没有完全解决数据不一致的问题</li>
+</ul>
+<h3 id="3-Paxos协议"><a href="#3-Paxos协议" class="headerlink" title="3 Paxos协议"></a>3 Paxos协议</h3><p>Paxos 起来很像 2PC。提议者向接受者发送“准备”请求。当接受者表示同意接受提案时，提议者向接受者发送提交请求。最后，接受者回复提供者，表明提交请求成功或失败。一旦足够多的接受者提交了价值并通知了提议者，协议就会终止。</p>
+<p>Paxos 为 2PC 添加了两个重要的机制。</p>
+<ul>
+<li>对请求进行排序，以便确定应该接受两个提案中的哪一个。</li>
+<li>当大多数接受者表示他们已经决定时，考虑接受一个提案。这与 2PC 不同，后者只有在每个接受者都同意的情况下才会接受提案。这导致了 2PC 的阻塞特性，其中单个故障节点可能导致协议永远不会终止，而提议者等待永远不会到来的回复。相反，在 Paxos 中，近一半的节点可能无法回复，协议仍将正确继续。</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/bbac5a213fef4f41826e1cd39874ef8d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5LiA5Y-q54m556uL54us6KGM55qEWA==,size_8,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/bbac5a213fef4f41826e1cd39874ef8d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5LiA5Y-q54m556uL54us6KGM55qEWA==,size_8,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<p>Paxos中两个重要的角色：</p>
+<p>提议者：</p>
+<ol>
+<li>向大多数接受者提交编号为n 的请求。等待大多数接受者回复。</li>
+<li>如果多数人回复“同意”，他们还将发回他们已经接受的任何提案的价值。选择其中一个值，并发送带有提案编号和值的“提交”消息。如果尚未接受任何值，请使用您自己的值。相反，如果多数人回复“拒绝”，或未能回复，则放弃提案并重新开始。</li>
+<li>如果大多数人使用“已接受”消息回复您的提交请求，则认为协议已终止。否则，放弃提案并重新开始。</li>
+</ol>
+<p>接受者：</p>
+<ol>
+<li>收到提案后，将其编号与您已经同意的编号最高的提案进行比较。如果新提案更高，请回复“同意”您已接受的任何提案的价值。如果它较低，则回复“拒绝”，以及最高提案的序列号。</li>
+<li>当收到“提交”消息时，如果 a) 值与任何先前接受的提案相同并且 b) 它的序列号是您同意的最高提案号，则接受它。否则，拒绝它。<br><img src="https://img-blog.csdnimg.cn/b68e3f0ac869467a9b0920e745aeffa5.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5LiA5Y-q54m556uL54us6KGM55qEWA==,size_10,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/b68e3f0ac869467a9b0920e745aeffa5.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5LiA5Y-q54m556uL54us6KGM55qEWA==,size_10,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><blockquote>
+<p>参考文章：</p>
+</blockquote>
+</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://www.the-paper-trail.org/post/2008-11-27-consensus-protocols-two-phase-commit/">https://www.the-paper-trail.org/post/2008-11-27-consensus-protocols-two-phase-commit/</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.the-paper-trail.org/post/2008-11-29-consensus-protocols-three-phase-commit/">https://www.the-paper-trail.org/post/2008-11-29-consensus-protocols-three-phase-commit/</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.the-paper-trail.org/post/2009-02-03-consensus-protocols-paxos/">https://www.the-paper-trail.org/post/2009-02-03-consensus-protocols-paxos/</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38289815/article/details/108714855">https://blog.csdn.net/qq_38289815/article/details/108714855</a></p>
 
-分布式事务处理
-分布式不同节点间同步时钟
-决定分布式算法的下一阶段（这是著名的复制状态机方法）
-选举一个领导节点来协调一些...
+
       
     
   </div>
@@ -2745,12 +2967,6 @@ Node.js
         <time itemprop="dateCreated datePublished" datetime="2022-05-30T17:33:28+08:00">2022-05-30</time>
         
       </div>
-      
-        <div>
-          <a class='readmore' href='/2022/05/30/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E4%B9%8B%E5%85%B1%E8%AF%86%E7%AE%97%E6%B3%95%E2%80%942PC%E3%80%813PC%E3%80%81%20Paxos/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
       
     </div>
   
@@ -2789,8 +3005,53 @@ Node.js
   <div class='md article-desc' itemprop="articleBody">
     
       
-        ﻿### 1 搭建Spring  Boot+MySQL项目
-1.1 项目依赖123456789101112131415161718192021222324&lt;dependency&gt;    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;    &lt;artifactId&gt;spring-boot-starter-w...
+        <p>﻿### 1 搭建Spring  Boot+MySQL项目</p>
+<h4 id="1-1-项目依赖"><a href="#1-1-项目依赖" class="headerlink" title="1.1 项目依赖"></a>1.1 项目依赖</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.spring.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>druid<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>runtime<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="1-2-配置文件"><a href="#1-2-配置文件" class="headerlink" title="1.2 配置文件"></a>1.2 配置文件</h4><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server.port</span>=<span class="string">8081</span></span><br><span class="line"><span class="attr">spring.datasource.username</span>=<span class="string">root</span></span><br><span class="line"><span class="attr">spring.datasource.password</span>=<span class="string">12345678</span></span><br><span class="line"><span class="attr">spring.datasource.driver-class-name</span>=<span class="string">com.mysql.jdbc.Driver</span></span><br><span class="line"><span class="attr">spring.datasource.url</span>=<span class="string">jdbc:mysql://localhost:3306/test</span></span><br><span class="line"><span class="attr">spring.datasource.type</span>=<span class="string">com.alibaba.druid.pool.DruidDataSource</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="1-3-具体代码"><a href="#1-3-具体代码" class="headerlink" title="1.3 具体代码"></a>1.3 具体代码</h4><p>HelloDao.java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Mapper</span></span><br><span class="line"><span class="meta">@Repository</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">HelloDao</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Select(&quot;SELECT * FROM student WHERE id=#&#123;id&#125;&quot;)</span></span><br><span class="line">    Map&lt;String, Object&gt; <span class="title function_">findObjectById</span><span class="params">(<span class="meta">@Param(&quot;id&quot;)</span> Integer id)</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>HelloController.java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloController</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> HelloDao helloDao;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/hello&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">hello</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Hello Docker!&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/find/&#123;id&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">find</span><span class="params">(<span class="meta">@PathVariable(&quot;id&quot;)</span> Integer id)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> helloDao.findObjectById(id).toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-编写Dockerfile"><a href="#2-编写Dockerfile" class="headerlink" title="2 编写Dockerfile"></a>2 编写Dockerfile</h3><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 该镜像需要依赖的基础镜像</span></span><br><span class="line"><span class="keyword">FROM</span> java:<span class="number">8</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 指定维护者的名字</span></span><br><span class="line"><span class="keyword">MAINTAINER</span> YMX <span class="string">&quot;1712229564@qq.com&quot;</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 将指定目录下的jar包复制到docker容器的/export/Apps/springboot-admin目录下</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> sp-docker-0.0.1-SNAPSHOT.jar /usr/local/sp_demo/sp-docker-0.0.1-SNAPSHOT.jar</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 声明服务运行在8080端口</span></span><br><span class="line"><span class="keyword">EXPOSE</span> <span class="number">8081</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 指定docker容器启动时运行jar包</span></span><br><span class="line"><span class="keyword">ENTRYPOINT</span><span class="language-bash"> [<span class="string">&quot;java&quot;</span>, <span class="string">&quot;-jar&quot;</span>,<span class="string">&quot;/usr/local/sp_demo/sp-docker-0.0.1-SNAPSHOT.jar&quot;</span>]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-导出数据库"><a href="#3-导出数据库" class="headerlink" title="3 导出数据库"></a>3 导出数据库</h3><p>在MySQL安装目录的&#x2F;bin目录下执行以下命令：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.<span class="operator">/</span>mysqldump <span class="operator">-</span>uroot <span class="operator">-</span>p12345678 test <span class="operator">&gt;</span> <span class="operator">~</span><span class="operator">/</span>test.sql </span><br></pre></td></tr></table></figure>
+
+<p>数据库信息：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `student` (</span><br><span class="line">  `id` <span class="type">int</span>(<span class="number">11</span>) unsigned <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  `name` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `age` <span class="type">int</span>(<span class="number">2</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  <span class="keyword">PRIMARY</span> KEY (`id`)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB AUTO_INCREMENT<span class="operator">=</span><span class="number">4</span> <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8mb4;</span><br><span class="line"></span><br><span class="line">LOCK TABLES `student` WRITE;</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> `student` <span class="keyword">VALUES</span> (<span class="number">1</span>,<span class="string">&#x27;zs&#x27;</span>,<span class="number">32</span>),(<span class="number">2</span>,<span class="string">&#x27;ls&#x27;</span>,<span class="number">24</span>),(<span class="number">3</span>,<span class="string">&#x27;zsss&#x27;</span>,<span class="number">21</span>);</span><br><span class="line">UNLOCK TABLES;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-复制SQL数据"><a href="#4-复制SQL数据" class="headerlink" title="4 复制SQL数据"></a>4 复制SQL数据</h3><p>在宿主机中执行以下命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker cp test.sql mysql:/tmp</span><br><span class="line">docker run -p 3307:3306 --name mysql -e MYSQL_ROOT_PASSWORD=12345678 -d mysql</span><br><span class="line">docker ps</span><br><span class="line">docker exec -it mysql /bin/sh</span><br></pre></td></tr></table></figure>
+
+<p>在已安装MySQL 的docker容器中执行以下命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> /tmp</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">ls</span></span></span><br><span class="line">test.sql</span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">mysql -uroot -p12345678</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">##进入MySQL###</span></span></span><br><span class="line"><span class="meta prompt_">mysql&gt; </span><span class="language-bash">use <span class="built_in">test</span></span></span><br><span class="line">Database changed</span><br><span class="line"><span class="meta prompt_">mysql&gt; </span><span class="language-bash"><span class="built_in">source</span> /tmp/test.sql</span></span><br><span class="line">Query OK, 0 rows affected, 2 warnings (0.03 sec)</span><br><span class="line"><span class="meta prompt_">mysql&gt; </span><span class="language-bash">select * from student;</span></span><br><span class="line">+----+------+------+</span><br><span class="line">| id | name | age  |</span><br><span class="line">+----+------+------+</span><br><span class="line">|  1 | zs   |   32 |</span><br><span class="line">|  2 | ls   |   24 |</span><br><span class="line">|  3 | zsss |   21 |</span><br><span class="line">+----+------+------+</span><br><span class="line">3 rows in set (0.00 sec)</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-将Spring-Boot容器和MySQL容器进行联通"><a href="#5-将Spring-Boot容器和MySQL容器进行联通" class="headerlink" title="5 将Spring Boot容器和MySQL容器进行联通"></a>5 将Spring Boot容器和MySQL容器进行联通</h3><p>使用Docker命令查看IP地址</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">root ~ % docker network ls</span><br><span class="line">NETWORK ID     NAME      DRIVER    SCOPE</span><br><span class="line">5b9134swqe954   bridge    bridge    local</span><br><span class="line">root ~ % docker network inspect 5b9134swqe954                                          </span><br><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        ......</span><br><span class="line">        &quot;IPAM&quot;: &#123;</span><br><span class="line">            &quot;Driver&quot;: &quot;default&quot;,</span><br><span class="line">            &quot;Options&quot;: null,</span><br><span class="line">            &quot;Config&quot;: [</span><br><span class="line">                &#123;</span><br><span class="line">                    &quot;Subnet&quot;: &quot;172.17.0.0/16&quot;</span><br><span class="line">                &#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        ......,</span><br><span class="line">        &quot;Containers&quot;: &#123;</span><br><span class="line">            &quot;d3938789hhuinj1499f680e&quot;: &#123;</span><br><span class="line">                &quot;Name&quot;: &quot;mysql&quot;,</span><br><span class="line">                ......</span><br><span class="line">                &quot;IPv4Address&quot;: &quot;172.17.0.2/16&quot;,</span><br><span class="line">                &quot;IPv6Address&quot;: &quot;&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        ......</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>经过查看我们发现，Docker的网络默认是桥接网络，即每个容器都属于同一网段，图示：</p>
+<p><img src="https://img-blog.csdnimg.cn/0cfce9db1a1841aa993fa303762d41d6.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5LiA5Y-q54m556uL54us6KGM55qEWA==,size_20,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/0cfce9db1a1841aa993fa303762d41d6.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5LiA5Y-q54m556uL54us6KGM55qEWA==,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<p>（图片来自<a target="_blank" rel="noopener" href="https://www.cnblogs.com/ygria/p/13217793.html%EF%BC%89">https://www.cnblogs.com/ygria/p/13217793.html）</a></p>
+<p>因此，我们把Spring Boot项目的配置文件修改下：</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server.port</span>=<span class="string">8081</span></span><br><span class="line"><span class="attr">spring.datasource.username</span>=<span class="string">root</span></span><br><span class="line"><span class="attr">spring.datasource.password</span>=<span class="string">12345678</span></span><br><span class="line"><span class="attr">spring.datasource.driver-class-name</span>=<span class="string">com.mysql.jdbc.Driver</span></span><br><span class="line"><span class="attr">spring.datasource.url</span>=<span class="string">jdbc:mysql://172.17.0.2:3306/test</span></span><br><span class="line"><span class="attr">spring.datasource.type</span>=<span class="string">com.alibaba.druid.pool.DruidDataSource</span></span><br></pre></td></tr></table></figure>
+
+<p>如果条件允许可直接使用域名。</p>
+<p>然后再重启Spring Boot则可以进行MySQL的访问和使用</p>
+<h3 id="扩展：Docker网络"><a href="#扩展：Docker网络" class="headerlink" title="扩展：Docker网络"></a>扩展：Docker网络</h3><p>Docker 的网络子系统是可选的，使用驱动程序。默认情况下存在几个驱动程序，并提供核心网络功能：</p>
+<ul>
+<li><code>bridge</code>：默认网络驱动程序。如果您未指定驱动程序，则这是您正在创建的网络类型。<strong>当您的应用程序在需要通信的独立容器中运行时，通常会使用桥接网络。</strong></li>
+<li><code>host</code>：对于独立容器，去掉容器与 Docker 主机之间的网络隔离，直接使用主机的网络。</li>
+<li><code>overlay</code>: Overlay 网络将多个 Docker 守护进程连接在一起，使 swarm 服务能够相互通信。您还可以使用覆盖网络来促进 swarm 服务和独立容器之间的通信，或者不同 Docker 守护程序上的两个独立容器之间的通信。这种策略消除了在这些容器之间进行操作系统级路由的需要。</li>
+<li><code>ipvlan</code>：IPvlan 网络使用户可以完全控制 IPv4 和 IPv6 寻址。VLAN 驱动程序建立在此之上，为对底层网络集成感兴趣的用户提供了对第 2 层 VLAN 标记甚至 IPvlan L3 路由的完全控制。</li>
+<li><code>macvlan</code>：Macvlan 网络允许您将 MAC 地址分配给容器，使其在您的网络上显示为物理设备。Docker 守护进程通过它们的 MAC 地址将流量路由到容器。<code>macvlan</code> 在处理期望直接连接到物理网络而不是通过 Docker 主机的网络堆栈路由的遗留应用程序时，使用驱动程序有时是最佳选择。</li>
+<li><code>none</code>：对于这个容器，禁用所有网络。通常与自定义网络驱动程序一起使用。<code>none</code>不适用于 swarm 服务。</li>
+</ul>
+
+
       
     
   </div>
@@ -2809,12 +3070,6 @@ Node.js
         <time itemprop="dateCreated datePublished" datetime="2022-05-30T17:33:28+08:00">2022-05-30</time>
         
       </div>
-      
-        <div>
-          <a class='readmore' href='/2022/05/30/%E7%8E%A9%E8%BD%ACDocker%E2%80%94%E9%83%A8%E7%BD%B2Spring%20Boot+MySQL%E5%B7%A5%E7%A8%8B%E5%AE%9E%E6%88%98/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
       
     </div>
   
@@ -2853,11 +3108,72 @@ Node.js
   <div class='md article-desc' itemprop="articleBody">
     
       
-        
-说明：MySQL8.0 之后才支持窗口函数
+        <blockquote>
+<p>说明：MySQL8.0 之后才支持窗口函数</p>
+</blockquote>
+<h3 id="1-提前准备"><a href="#1-提前准备" class="headerlink" title="1 提前准备"></a>1 提前准备</h3><p>在MySQL8.0版本数据库下新建数据表，插入数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `student`</span><br><span class="line">(   `id`      <span class="type">int</span>(<span class="number">10</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    `name`    <span class="type">varchar</span>(<span class="number">20</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    `age`     <span class="type">int</span>(<span class="number">10</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    `address` <span class="type">varchar</span>(<span class="number">20</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span></span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB;</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student <span class="keyword">values</span>(<span class="number">1</span>,<span class="string">&#x27;zs&#x27;</span>,<span class="number">23</span>,<span class="string">&#x27;Beijing&#x27;</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student <span class="keyword">values</span>(<span class="number">2</span>,<span class="string">&#x27;ls&#x27;</span>,<span class="number">21</span>,<span class="string">&#x27;Tianjing&#x27;</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student <span class="keyword">values</span>(<span class="number">3</span>,<span class="string">&#x27;ww&#x27;</span>,<span class="number">13</span>,<span class="string">&#x27;Shanghai&#x27;</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student <span class="keyword">values</span>(<span class="number">4</span>,<span class="string">&#x27;zl&#x27;</span>,<span class="number">23</span>,<span class="string">&#x27;Beijing&#x27;</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student <span class="keyword">values</span>(<span class="number">5</span>,<span class="string">&#x27;mq&#x27;</span>,<span class="number">4</span>,<span class="string">&#x27;Nanjing&#x27;</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student <span class="keyword">values</span>(<span class="number">6</span>,<span class="string">&#x27;wb&#x27;</span>,<span class="number">3</span>,<span class="string">&#x27;Beijing&#x27;</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student <span class="keyword">values</span>(<span class="number">7</span>,<span class="string">&#x27;hj&#x27;</span>,<span class="number">21</span>,<span class="string">&#x27;Hebei&#x27;</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student <span class="keyword">values</span>(<span class="number">8</span>,<span class="string">&#x27;sw&#x27;</span>,<span class="number">34</span>,<span class="string">&#x27;Henan&#x27;</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student <span class="keyword">values</span>(<span class="number">9</span>,<span class="string">&#x27;sa&#x27;</span>,<span class="number">42</span>,<span class="string">&#x27;Beijing&#x27;</span>);</span><br></pre></td></tr></table></figure>
 
-1 提前准备在MySQL8.0版本数据库下新建数据表，插入数据
-12345678910111213141516CREATE TABLE `student`(   `id`      int(10) DEFAULT NULL,    `name`    varchar(20) DEFAULT NULL,    `age`     int(10) ...
+<h3 id="2-MySQL窗口函数及其语法"><a href="#2-MySQL窗口函数及其语法" class="headerlink" title="2 MySQL窗口函数及其语法"></a>2 MySQL窗口函数及其语法</h3><p>分类：</p>
+<ul>
+<li><p>专用窗口函数，比如rank、dense_rank、row_number等</p>
+</li>
+<li><p>聚合函数，如sum、 avg、count、max、min等</p>
+</li>
+</ul>
+<h4 id="2-1-基本语法"><a href="#2-1-基本语法" class="headerlink" title="2.1 基本语法"></a>2.1 基本语法</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">&lt;</span>窗口函数<span class="operator">&gt;</span> <span class="keyword">over</span> (<span class="keyword">partition</span> <span class="keyword">by</span> <span class="operator">&lt;</span>用于分组的列名<span class="operator">&gt;</span></span><br><span class="line">                <span class="keyword">order</span> <span class="keyword">by</span> <span class="operator">&lt;</span>用于排序的列名<span class="operator">&gt;</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2-专用窗口函数示例"><a href="#2-2-专用窗口函数示例" class="headerlink" title="2.2 专用窗口函数示例"></a>2.2 专用窗口函数示例</h4><h5 id="2-2-1-rank函数"><a href="#2-2-1-rank函数" class="headerlink" title="2.2.1 rank函数"></a>2.2.1 rank函数</h5><p><strong>作用</strong>：</p>
+<p>RANK()函数，顾名思义排名函数，可以对某一个字段进行排名.</p>
+<p><strong>示例</strong>：</p>
+<p>根据address分组，再根据age排序</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>,<span class="built_in">rank</span>() <span class="keyword">over</span> (<span class="keyword">partition</span> <span class="keyword">by</span> address <span class="keyword">order</span> <span class="keyword">by</span> age <span class="keyword">desc</span>) <span class="keyword">as</span> ranking <span class="keyword">from</span> student</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/236aab4cf03a424d9954d7f464e6350b.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_11,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/236aab4cf03a424d9954d7f464e6350b.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_11,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h5 id="2-2-2-dense-rank函数"><a href="#2-2-2-dense-rank函数" class="headerlink" title="2.2.2 dense_rank函数"></a>2.2.2 dense_rank函数</h5><p><strong>作用</strong>：</p>
+<p>DENSE_RANK() 函数用来表示排名，与RANK()不同的是，DENSE_RANK() 不会出现空缺数字。比如，如果出现了两个并列的1，DENSE_RANK() 的第三个数仍然是2，而RANK()的第三个数是3。</p>
+<p><strong>示例</strong>：</p>
+<p>根据address分组，再根据age排序</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>,<span class="built_in">dense_rank</span>() <span class="keyword">over</span> (<span class="keyword">partition</span> <span class="keyword">by</span> address <span class="keyword">order</span> <span class="keyword">by</span> age <span class="keyword">desc</span>) <span class="keyword">as</span> ranking <span class="keyword">from</span> student</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/3c775c18773d4396be7332eb9896f711.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_10,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/3c775c18773d4396be7332eb9896f711.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_10,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-tavdb8RP-1646454507181)(SQL窗口函数.assets/image-20220305111103656.png)]"></p>
+<h5 id="2-2-3-row-number函数"><a href="#2-2-3-row-number函数" class="headerlink" title="2.2.3 row_number函数"></a>2.2.3 row_number函数</h5><p><strong>作用</strong>：</p>
+<p>ROW_NUMBER()函数作用就是将select查询到的数据进行排序，每一条数据加一个序号，他不能用做于学生成绩的排名，一般多用于分页查询</p>
+<p><strong>示例</strong>：</p>
+<p>根据address分组，再根据age排序</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>,<span class="built_in">row_number</span>() <span class="keyword">over</span> (<span class="keyword">partition</span> <span class="keyword">by</span> address <span class="keyword">order</span> <span class="keyword">by</span> age <span class="keyword">desc</span>) <span class="keyword">as</span> ranking <span class="keyword">from</span> student</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/44d46020375a423e815532f28f230e2e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_10,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/44d46020375a423e815532f28f230e2e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_10,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h5 id="2-2-4-first-value函数"><a href="#2-2-4-first-value函数" class="headerlink" title="2.2.4 first_value函数"></a>2.2.4 first_value函数</h5><p><strong>作用</strong>：</p>
+<p>FIRST_VALUE() 返回窗口范围内的第一个值。</p>
+<p><strong>示例</strong>：</p>
+<p>根据address分组，返回某组中最大age的数量</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>,<span class="built_in">FIRST_VALUE</span>(age) <span class="keyword">over</span> (<span class="keyword">partition</span> <span class="keyword">by</span> address <span class="keyword">order</span> <span class="keyword">by</span> age <span class="keyword">desc</span>) <span class="keyword">as</span> ranking <span class="keyword">from</span> student</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/169f8d9b39d5460dbb933af0cd43c6d8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_10,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/169f8d9b39d5460dbb933af0cd43c6d8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_10,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h5 id="2-2-5-综合使用"><a href="#2-2-5-综合使用" class="headerlink" title="2.2.5 综合使用"></a>2.2.5 综合使用</h5><p>相当于将三个函数的排名情况进行对比</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>,</span><br><span class="line">       <span class="built_in">rank</span>() <span class="keyword">over</span> (<span class="keyword">order</span> <span class="keyword">by</span> age <span class="keyword">desc</span>) <span class="keyword">as</span> ranking,</span><br><span class="line">        <span class="built_in">dense_rank</span>() <span class="keyword">over</span> (<span class="keyword">order</span> <span class="keyword">by</span> age <span class="keyword">desc</span>) <span class="keyword">as</span> dese_rank,</span><br><span class="line">        <span class="built_in">row_number</span>() <span class="keyword">over</span> (<span class="keyword">order</span> <span class="keyword">by</span> age <span class="keyword">desc</span>) <span class="keyword">as</span> row_num</span><br><span class="line"><span class="keyword">from</span> student</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/3416334705ef45ac8f4672e62d798b30.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_15,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/3416334705ef45ac8f4672e62d798b30.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_15,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>聚合窗口函数，不断向下聚会取结果</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span>,</span><br><span class="line">       <span class="built_in">sum</span>(age) <span class="keyword">over</span> (<span class="keyword">order</span> <span class="keyword">by</span> age) <span class="keyword">as</span> current_sum,</span><br><span class="line">        <span class="built_in">avg</span>(age) <span class="keyword">over</span> (<span class="keyword">order</span> <span class="keyword">by</span> age) <span class="keyword">as</span> current_avg,</span><br><span class="line">        <span class="built_in">count</span>(age) <span class="keyword">over</span> (<span class="keyword">order</span> <span class="keyword">by</span> age) <span class="keyword">as</span> current_count,</span><br><span class="line">        <span class="built_in">max</span>(age) <span class="keyword">over</span> (<span class="keyword">order</span> <span class="keyword">by</span> age) <span class="keyword">as</span> current_max,</span><br><span class="line">        <span class="built_in">min</span>(age) <span class="keyword">over</span> (<span class="keyword">order</span> <span class="keyword">by</span> age) <span class="keyword">as</span> current_min</span><br><span class="line"><span class="keyword">from</span> student</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/0679aef045324842b3560483ecead91f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_20,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/0679aef045324842b3560483ecead91f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h3 id="3-总结"><a href="#3-总结" class="headerlink" title="3 总结"></a>3 总结</h3><p>窗口函数有以下功能：</p>
+<ul>
+<li>同时具有分组（partition by）和排序（order by）的功能</li>
+<li>不减少原表的行数，所以经常用来在每组内排名</li>
+</ul>
+<p>注意事项</p>
+<ul>
+<li>窗口函数原则上只能写在select子句中</li>
+<li>窗口函数使用场景一般是排名问题和top N问题上</li>
+</ul>
+<blockquote>
+<p> 参考:</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/92654574">https://zhuanlan.zhihu.com/p/92654574</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/shaiguchun9503/article/details/82349050">https://blog.csdn.net/shaiguchun9503/article/details/82349050</a></p>
+<p><a target="_blank" rel="noopener" href="https://doris.apache.org/zh-CN/sql-reference/sql-functions/window-function.html#function%E4%BD%BF%E7%94%A8%E4%B8%BE%E4%BE%8B">https://doris.apache.org/zh-CN/sql-reference/sql-functions/window-function.html#function%E4%BD%BF%E7%94%A8%E4%B8%BE%E4%BE%8B</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/shaiguchun9503/article/details/82349050">https://blog.csdn.net/shaiguchun9503/article/details/82349050</a></p>
+
+
       
     
   </div>
@@ -2876,12 +3192,6 @@ Node.js
         <time itemprop="dateCreated datePublished" datetime="2022-05-30T17:33:28+08:00">2022-05-30</time>
         
       </div>
-      
-        <div>
-          <a class='readmore' href='/2022/05/30/%E7%8E%A9%E8%BD%ACSQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
       
     </div>
   
@@ -2920,14 +3230,78 @@ Node.js
   <div class='md article-desc' itemprop="articleBody">
     
       
-        ﻿### 1 概念
+        <p>﻿### 1 概念</p>
+<blockquote>
+<p>官网：<a target="_blank" rel="noopener" href="https://gin-gonic.com/zh-cn/">https://gin-gonic.com/zh-cn/</a></p>
+</blockquote>
+<p><strong>What is Gin?</strong></p>
+<p>Gin is a web framework written in Golang.</p>
+<p>It features a martini-like API with much better performance, up to 40 times faster.</p>
+<p>If you need performance and good productivity, you will love Gin.</p>
+<p>翻译：</p>
+<p>Gin是一个用Golang写的网络框架。</p>
+<p>它有一个马提尼式的API，性能更好，速度快40倍。</p>
+<p>如果您需要性能和良好的生产力，您会喜欢Gin。</p>
+<p><strong>特点：</strong></p>
+<ul>
+<li><p>快速:基于基树路由，内存占用小。没有反射。可预测的API的性能。</p>
+</li>
+<li><p>中间件支持:传入的HTTP请求可以由中间件链和最终操作处理。例如:Logger, Authorization, GZIP，最后在DB中发布消息。</p>
+</li>
+<li><p>轻松捕获故障:Gin可以捕捉到HTTP请求期间发生的恐慌并恢复它。 这样，您的服务器将始终可用。 也可以将这种恐慌报告给哨兵!  </p>
+</li>
+<li><p>JSON验证:Gin可以解析和验证请求的JSON，例如检查需要的值是否存在。</p>
+</li>
+<li><p>路线分组:更好地组织你的路线。 授权需要和不需要，不同的API版本。 此外，组可以无限制地嵌套而不会降低性能。</p>
+</li>
+<li><p>错误管理:Gin提供了一种方便的方法来收集HTTP请求期间发生的所有错误。最终，中间件可以将它们写入日志文件、数据库并通过网络发送。</p>
+</li>
+<li><p>内置渲染:Gin为JSON、XML和HTML渲染提供了一个易于使用的API。</p>
+</li>
+<li><p>可扩展的:创建新的中间件非常简单，只需查看示例代码即可。</p>
+</li>
+</ul>
+<h3 id="2-安装"><a href="#2-安装" class="headerlink" title="2 安装"></a>2 安装</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go get -u github.com/gin-gonic/gin</span><br></pre></td></tr></table></figure>
 
-官网：https://gin-gonic.com/zh-cn/
+<h3 id="3-初步使用"><a href="#3-初步使用" class="headerlink" title="3 初步使用"></a>3 初步使用</h3><h4 id="3-1-HelloWorld"><a href="#3-1-HelloWorld" class="headerlink" title="3.1 HelloWorld"></a>3.1 HelloWorld</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;github.com/gin-gonic/gin&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	r := gin.Default()</span><br><span class="line">	r.GET(<span class="string">&quot;/Hello&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line">		c.JSON(<span class="number">200</span>, gin.H&#123;</span><br><span class="line">			<span class="string">&quot;message&quot;</span>: <span class="string">&quot;HelloWorld&quot;</span>,</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;)</span><br><span class="line">    r.Run(<span class="string">&quot;127.0.0.1:8899&quot;</span>) <span class="comment">// 监听并在 0.0.0.0:8899 上启动服务</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-What is Gin?
-Gin is a web framework written in Golang.
-It features a martini-like API with much better performance, up to 40 times faster.
-If you need pe...
+<p>测试：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl http://127.0.0.1:8899/hello</span><br><span class="line">&#123;&quot;message&quot;: &quot;HelloWorld&quot;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2-获取请求参数"><a href="#3-2-获取请求参数" class="headerlink" title="3.2 获取请求参数"></a>3.2 获取请求参数</h4><p>（1）<a target="_blank" rel="noopener" href="http://127.0.0.1:8899/?name=zs%E5%9E%8B%E5%8F%82%E6%95%B0">http://127.0.0.1:8899?name=zs型参数</a></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">r.GET(<span class="string">&quot;/name&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line">    query := c.Query(<span class="string">&quot;name&quot;</span>)</span><br><span class="line">    <span class="comment">//等价于：c.Request.URL.Query().Get(&quot;name&quot;)</span></span><br><span class="line">    c.JSON(<span class="number">200</span>, <span class="string">&quot;Hello &quot;</span>+query)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>测试：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl http://127.0.0.1:8899/name?name=zs</span><br><span class="line">&quot;Hello zs&quot;</span><br></pre></td></tr></table></figure>
+
+<p>（2）<a target="_blank" rel="noopener" href="http://127.0.0.1:8899/name/%7Bzs%7D%E5%9E%8B%E5%8F%82%E6%95%B0">http://127.0.0.1:8899/name/{zs}型参数</a></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">r.GET(<span class="string">&quot;/name/:name&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line">    name := c.Param(<span class="string">&quot;name&quot;</span>)</span><br><span class="line">    c.JSON(<span class="number">200</span>, <span class="string">&quot;Hello &quot;</span>+name)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>测试：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl http://127.0.0.1:8899/name/zs</span><br><span class="line">&quot;Hello zs&quot;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-3-获取请求体"><a href="#3-3-获取请求体" class="headerlink" title="3.3 获取请求体"></a>3.3 获取请求体</h4><p>（1）一般获取请求体</p>
+<p>结构体：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Student <span class="keyword">struct</span> &#123;</span><br><span class="line">   Name <span class="type">string</span> <span class="string">`json:&quot;name&quot;`</span></span><br><span class="line">   Age  <span class="type">int</span>    <span class="string">`json:&quot;age&quot;`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>方法：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">r.POST(<span class="string">&quot;/stu&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line">   body := c.Request.Body</span><br><span class="line">   bytes, err := ioutil.ReadAll(body)</span><br><span class="line">   stu := Student&#123;&#125;</span><br><span class="line">   json.Unmarshal(bytes, &amp;stu)</span><br><span class="line">   <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">      <span class="built_in">panic</span>(err)</span><br><span class="line">   &#125;</span><br><span class="line">   c.JSON(<span class="number">200</span>, stu)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>测试：<br><img src="https://img-blog.csdnimg.cn/f755597910324e69985c61b40ffd622d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_20,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/f755597910324e69985c61b40ffd622d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>（2）获取请求体与结构体绑定</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">r.POST(<span class="string">&quot;/stu&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line">   stu := Student&#123;&#125;</span><br><span class="line">   <span class="comment">// c.ShouldBindJSON 使用了 c.Request.Body，不可重用。</span></span><br><span class="line">   c.ShouldBindJSON(&amp;stu)</span><br><span class="line">   c.JSON(<span class="number">200</span>, stu)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>测试：<br><img src="https://img-blog.csdnimg.cn/8aca334db7064ccbb576faff938c0010.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_20,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/8aca334db7064ccbb576faff938c0010.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA57qi5bi95rW357u15a6d5a6d,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h4 id="3-4-路由组"><a href="#3-4-路由组" class="headerlink" title="3.4 路由组"></a>3.4 路由组</h4><p>路由组就好比一层配置，增加了一个层级，以便于区分不同分组的URL，例如下面的代码中，如果要请求FindAppInfoById方法，路径就是&#x2F;appInfo&#x2F;save，完整路径就是<a target="_blank" rel="noopener" href="http://127.0.0.1:8899/appInfo/save">http://127.0.0.1:8899/appInfo/save</a></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	r := gin.Default()</span><br><span class="line">	<span class="comment">//路由组</span></span><br><span class="line">	appInfoGroup := r.Group(<span class="string">&quot;/appInfo&quot;</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		appInfoGroup.POST(<span class="string">&quot;/save&quot;</span>, controller.SaveAppInfo)</span><br><span class="line">		appInfoGroup.GET(<span class="string">&quot;/find/:id&quot;</span>, controller.FindAppInfoById)</span><br><span class="line">		appInfoGroup.GET(<span class="string">&quot;/findAll&quot;</span>, controller.FindAllAppInfo)</span><br><span class="line">	&#125;</span><br><span class="line">	r.Run(<span class="string">&quot;127.0.0.1:&quot;</span> + utils.IntToString(port))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// FindAppInfoById 自定义HTTP方法</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">FindAppInfoById</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line">	id := c.Param(<span class="string">&quot;id&quot;</span>)</span><br><span class="line">	......</span><br><span class="line">	c.JSON(<span class="number">200</span>, id)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">SaveAppInfo</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line">    ......</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">FindAllAppInfo</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line">    ......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-Gin实现拦截器"><a href="#4-Gin实现拦截器" class="headerlink" title="4 Gin实现拦截器"></a>4 Gin实现拦截器</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   r := gin.Default()</span><br><span class="line">   <span class="comment">//增加拦截器</span></span><br><span class="line">   r.Use(interceptor.HttpInterceptor())</span><br><span class="line">   ......</span><br><span class="line">   r.Run(<span class="string">&quot;127.0.0.1:&quot;</span> + utils.IntToString(port))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>拦截器实现：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// HttpInterceptor 自定义中间件</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">HttpInterceptor</span><span class="params">()</span></span> gin.HandlerFunc &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">func</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line">		t := time.Now()</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 设置 example 变量</span></span><br><span class="line">		c.Set(<span class="string">&quot;example&quot;</span>, <span class="string">&quot;12345&quot;</span>)</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 请求前</span></span><br><span class="line">		log.Print(<span class="string">&quot;--------------拦截器-------------&quot;</span>)</span><br><span class="line"></span><br><span class="line">		<span class="comment">//定义错误,终止并返回该JSON</span></span><br><span class="line">		<span class="comment">//c.AbortWithStatusJSON(500, &quot;error&quot;)</span></span><br><span class="line"></span><br><span class="line">		requestURI := c.Request.RequestURI</span><br><span class="line"></span><br><span class="line">		fmt.Println(requestURI)</span><br><span class="line"></span><br><span class="line">		<span class="comment">//通过请求</span></span><br><span class="line">		c.Next()</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 请求后</span></span><br><span class="line">		latency := time.Since(t)</span><br><span class="line">		log.Print(latency)</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 获取发送的 status</span></span><br><span class="line">		status := c.Writer.Status()</span><br><span class="line">		log.Println(status)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>~</p>
+
+
       
     
   </div>
@@ -2946,12 +3320,6 @@ If you need pe...
         <time itemprop="dateCreated datePublished" datetime="2022-05-30T17:33:28+08:00">2022-05-30</time>
         
       </div>
-      
-        <div>
-          <a class='readmore' href='/2022/05/30/%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8Gin%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BAHTTP%E6%9C%8D%E5%8A%A1/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
       
     </div>
   
@@ -2990,14 +3358,43 @@ If you need pe...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        1 场景再现今天上午刚想用云服务器传输下文件，当打开finalshell连接服务器时突然发现服务器的系统指标很异常，而且在终端输入命令的时候都非常的卡，图示：很明显我们可以看出服务器的异常状态：
+        <h3 id="1-场景再现"><a href="#1-场景再现" class="headerlink" title="1 场景再现"></a>1 场景再现</h3><p>今天上午刚想用云服务器传输下文件，当打开finalshell连接服务器时突然发现服务器的系统指标很异常，而且在终端输入命令的时候都非常的卡，图示：<br><img src="https://img-blog.csdnimg.cn/5e7254f9101d490c9caa86d7391fcd9f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_14,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/5e7254f9101d490c9caa86d7391fcd9f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_14,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>很明显我们可以看出服务器的异常状态：</p>
+<ul>
+<li>CPU高负载</li>
+<li>内存高利用率</li>
+<li>网络高出口带宽</li>
+</ul>
+<h3 id="2-尝试解决"><a href="#2-尝试解决" class="headerlink" title="2 尝试解决"></a>2 尝试解决</h3><h4 id="2-1-尝试使用netstat命令检查网络连接状态"><a href="#2-1-尝试使用netstat命令检查网络连接状态" class="headerlink" title="2.1 尝试使用netstat命令检查网络连接状态"></a>2.1 尝试使用netstat命令检查网络连接状态</h4><p>首先使用最基本的netstat命令查看网络的连接状态</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">###  命令</span></span></span><br><span class="line">netstat</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">###  输出字段含义</span></span></span><br><span class="line">Proto   #</span><br><span class="line">Recv-Q  #</span><br><span class="line">Send-Q  #</span><br><span class="line">Local   #</span><br><span class="line">Address  #</span><br><span class="line">Foreign Address #</span><br><span class="line">State #</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/c0d0a97e508a4681893dfeab0d45d89a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_20,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/c0d0a97e508a4681893dfeab0d45d89a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h4 id="2-2-回顾TCP三次握手"><a href="#2-2-回顾TCP三次握手" class="headerlink" title="2.2 回顾TCP三次握手"></a>2.2 回顾TCP三次握手</h4><p><img src="https://img-blog.csdnimg.cn/f03f7e5c47cc4da9a0a16e08b648cdf2.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_17,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/f03f7e5c47cc4da9a0a16e08b648cdf2.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_17,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>由TCP三次握手的流程和各自的状态我们可以看出，当客户端向服务器发送玩syn&#x3D;1，seq&#x3D;n时，客户端会处于SYN_SEND状态，并等待服务端ACK。</p>
+<p>由上图得知我们的服务器TCP连接大量的处于SYN_SEND状态，因此可以判断是被黑客当成了肉机对其他服务器进行拒绝服务攻击，我们自己服务器攻击的类似则属于SYN泛洪攻击。</p>
+<h4 id="2-3-netstat命令搭配参数查看更多网络状态信息"><a href="#2-3-netstat命令搭配参数查看更多网络状态信息" class="headerlink" title="2.3 netstat命令搭配参数查看更多网络状态信息"></a>2.3 netstat命令搭配参数查看更多网络状态信息</h4><p>接下来我们使用更复杂一点的netstat参数来查看详细一点的网络信息，首先是</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">###  命令</span></span></span><br><span class="line">netstst -p</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">###  参数作用</span></span></span><br><span class="line">-p 显示建立相关链接的程序名</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">## 其他参数</span></span></span><br><span class="line">-a (all)显示所有选项，默认不显示LISTEN相关</span><br><span class="line">-t (tcp)仅显示tcp相关选项</span><br><span class="line">-u (udp)仅显示udp相关选项</span><br><span class="line">-n 拒绝显示别名，能显示数字的全部转化成数字。</span><br><span class="line">-l 仅列出有在 Listen (监听) 的服務状态</span><br><span class="line"></span><br><span class="line">-p 显示建立相关链接的程序名</span><br><span class="line">-r 显示路由信息，路由表</span><br><span class="line">-e 显示扩展信息，例如uid等</span><br><span class="line">-s 按各个协议进行统计</span><br><span class="line">-c 每隔一个固定时间，执行该netstat命令。</span><br><span class="line"></span><br><span class="line">提示：LISTEN和LISTENING的状态只有用-a或者-l才能看到</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">###  -p输出字段含义</span></span></span><br><span class="line">Proto   #</span><br><span class="line">Recv-Q  #</span><br><span class="line">Send-Q  #</span><br><span class="line">Local   #</span><br><span class="line">Address  #</span><br><span class="line">Foreign Address #</span><br><span class="line">State #</span><br><span class="line">PID/Program name #</span><br></pre></td></tr></table></figure>
 
-CPU高负载
-内存高利用率
-网络高出口带宽
+<p>我们使用netstat -p命令进行对网络连接所处程序的查询，发现无法正确的查看，因此我们可以断定攻击者的水平还算是可以的，并且我们通过这些简单的命令很难查出背后的原因了。</p>
+<p><img src="https://img-blog.csdnimg.cn/9b328b93f1664409b960444241bd181d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_20,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/9b328b93f1664409b960444241bd181d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>发现TCP的连接数如此之多，而且状态多为正在打开并未连接的TCP报文<br><img src="https://img-blog.csdnimg.cn/eaa6c88a10464435b4f3c558b502c376.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_13,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/eaa6c88a10464435b4f3c558b502c376.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_13,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h4 id="2-4-发现异常TCP连接"><a href="#2-4-发现异常TCP连接" class="headerlink" title="2.4 发现异常TCP连接"></a>2.4 发现异常TCP连接</h4><p>下一步排查当前服务器的TCP已连接情况：</p>
+<p>22端口的都是我在本机使用三方工具进行对服务器的远程连接，22端口和我本机的公网IP，因此这一部分TCP连接不需要质疑，但是唯独有几个不知名端口号和不知名IP的连接，因此我们可以断定这些连接多半为黑客攻击时的异常连接，并且隐藏了连接的进程。<br><img src="https://img-blog.csdnimg.cn/ce4f7caf01aa414f9224b796af481b47.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_20,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/ce4f7caf01aa414f9224b796af481b47.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>因为只有一个异常连接能够看到进程名，于是我们顺藤摸瓜找到该程序的位置<br><img src="https://img-blog.csdnimg.cn/4f1a455c18c14761ba3c636550ad9397.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/4f1a455c18c14761ba3c636550ad9397.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>该程序的位置在&#x2F;tmp目录下，但是这个服务器只有我一个人使用，并未下载和添加该程序，因此该程序来源不明，对于该程序的介绍（来自GitHub）：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/tmate-io/tmate">https://github.com/tmate-io/tmate</a></p>
+<p>tmate 的意思是 teammates，它是 tmux 的一个分支，并且使用相同的配置信息（例如快捷键配置，配色方案等）。它是一个终端多路复用器，同时具有即时分享终端的能力。它允许在单个屏幕中创建并操控多个终端，同时这些终端还能与其他同事分享。</p>
+<p>你可以分离会话，让作业在后台运行，然后在想要查看状态时重新连接会话。tmate 提供了一个即时配对的方案，让你可以与一个或多个队友共享一个终端。</p>
+<p>在屏幕的底部有一个状态栏，显示了当前会话的一些诸如 ssh 命令之类的共享信息。<br><img src="https://img-blog.csdnimg.cn/f7e4a32209bd436d8be81dc8d1c68ea8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_20,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/f7e4a32209bd436d8be81dc8d1c68ea8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>因此我们大致可以断定<code>黑客就是通过tmate来对我们的服务器进行控制，让服务器出去SYN泛红状态并启动了挖矿程序进行挖矿。</code></p>
+<h3 id="3-偶遇大神指点"><a href="#3-偶遇大神指点" class="headerlink" title="3 偶遇大神指点"></a>3 偶遇大神指点</h3><p>由于服务器的用途有限，并且针对服务器异常情况的应对经验也有限，因此先在微信的一个技术群中进行询问，以下是处理过程。</p>
+<h4 id="3-1-ps命令查找恶意进程并终止"><a href="#3-1-ps命令查找恶意进程并终止" class="headerlink" title="3.1 ps命令查找恶意进程并终止"></a>3.1 ps命令查找恶意进程并终止</h4><p>什么都没说，一位很有经验的老前辈上来就让我执行这几部操作</p>
+<ul>
+<li><code>ps -ef|egrep &quot;mass|scan&quot; </code></li>
+<li>停止相关进程</li>
+<li>找到对应的文件，删除</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/b959ff89e66348a481b1aeea11d548aa.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_20,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/b959ff89e66348a481b1aeea11d548aa.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/7fda5af1bc6b4f5bbe969a0b1fb5146d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_18,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/7fda5af1bc6b4f5bbe969a0b1fb5146d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_18,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>虽然不知道为什么，但是还是照做了，当停止进程的时候，发现网络和内存的情况一下子就好了<br><img src="https://img-blog.csdnimg.cn/e8cb90f4bb354cc5916c0f5727950311.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_11,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/e8cb90f4bb354cc5916c0f5727950311.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_11,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h4 id="3-2-删除异常用户和文件"><a href="#3-2-删除异常用户和文件" class="headerlink" title="3.2 删除异常用户和文件"></a>3.2 删除异常用户和文件</h4><p>按照前辈说的，再将黑客创建的用户和用户目录都删除掉<br><img src="https://img-blog.csdnimg.cn/bcc529d59666425b9de6e1d337965bf8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_17,color_FFFFFF,t_70,g_se,x_16" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/bcc529d59666425b9de6e1d337965bf8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6Zer5ZCM5a2m77yB,size_17,color_FFFFFF,t_70,g_se,x_16" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>还有异常的脚本也都删除掉<br><img src="https://img-blog.csdnimg.cn/4b948617248748a889adcce64926ca04.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/4b948617248748a889adcce64926ca04.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h4 id="3-3-缘由探究"><a href="#3-3-缘由探究" class="headerlink" title="3.3 缘由探究"></a>3.3 缘由探究</h4><p>在那位老前辈的指引下，服务器的网络和内存情况已经得到修复，但是CPU占用情况仍然没有缓解，而且多半是被挖矿程序占用，因此很不容易被发现。</p>
+<p>在操作完成后，向老前辈请教本次异常出现的原因，老前辈直接就说肯定是端口开太多了，我回头一想，当初确实是为了方便做实验，开放了很多端口，因此被黑客利用，对服务器发起了攻击。</p>
+<h3 id="4-回顾总结"><a href="#4-回顾总结" class="headerlink" title="4 回顾总结"></a>4 回顾总结</h3><p>对TCP连接过程比较熟悉的同学应该都知道，TCP的SYN泛洪攻击以及DOS、DDOS攻击等都是基于TCP三次握手来进行的，因此很难完全避免，我们要做的就是在公网服务器上尽量少放开不常用的端口，以免遭受黑客攻击。还有就是加深自己的计算机网络知识，遇到问题要知道是什么原因，并且尝试着去解决。</p>
+<p>当然因为有挖矿程序很难清理，最后还是备份数据，重装了服务器的操作系统来解决的，但是内存和网络的异常得以被修复就是很值得学习和记录的，继续加油~</p>
 
-2 尝试解决2.1 尝试使用netstat命令检查网络连接状态首先使用最基本的netstat命令查看网络的连接状态
-1234567891011####...
+
       
     
   </div>
@@ -3016,12 +3413,6 @@ CPU高负载
         <time itemprop="dateCreated datePublished" datetime="2022-05-30T17:32:26+08:00">2022-05-30</time>
         
       </div>
-      
-        <div>
-          <a class='readmore' href='/2022/05/30/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%81%AD%E9%81%87SYN%E6%B3%9B%E6%B4%AA%E6%94%BB%E5%87%BB%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
       
     </div>
   
