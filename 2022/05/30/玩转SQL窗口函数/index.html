@@ -33,17 +33,17 @@
   <!-- 页面元数据 -->
   <title>玩转SQL窗口函数 - Barry Yan's Blog</title>
   <meta name="keywords" content="Java,Go,SQL">
-  <meta desc name="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等 - Barry Yan - Barry Yan's Blog">
+  <meta desc name="description" content="MySQL8.0 之后才支持窗口函数 - Barry Yan - Barry Yan's Blog">
   
 <meta property="og:type" content="article">
 <meta property="og:title" content="玩转SQL窗口函数">
 <meta property="og:url" content="http://example.com/2022/05/30/%E7%8E%A9%E8%BD%ACSQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="Barry Yan&#39;s Blog">
-<meta property="og:description" content="说明：MySQL8.0 之后才支持窗口函数  1 提前准备在MySQL8.0版本数据库下新建数据表，插入数据 12345678910111213141516CREATE TABLE &#96;student&#96;(   &#96;id&#96;      int(10) DEFAULT NULL,    &#96;name&#96;    varchar(20) DEFAULT NULL,    &#96;age&#96;     int(10) DEF">
+<meta property="og:description" content="MySQL8.0 之后才支持窗口函数">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-05-30T09:33:28.000Z">
-<meta property="article:modified_time" content="2022-05-31T02:10:12.805Z">
+<meta property="article:modified_time" content="2022-06-11T11:04:22.345Z">
 <meta property="article:author" content="Barry Yan">
 <meta property="article:tag" content="Java,Go,SQL">
 <meta name="twitter:card" content="summary">
@@ -1751,7 +1751,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.cbfd0700.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.311803bb.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1654945091679),
+    lastupdate: new Date(1654945466359),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","music","tagcloud"],
@@ -2595,7 +2595,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <blockquote>
+    <p>MySQL8.0 之后才支持窗口函数</p>
+<span id="more"></span>
+
+<blockquote>
 <p>说明：MySQL8.0 之后才支持窗口函数</p>
 </blockquote>
 <h3 id="1-提前准备"><a href="#1-提前准备" class="headerlink" title="1 提前准备"></a>1 提前准备</h3><p>在MySQL8.0版本数据库下新建数据表，插入数据</p>
@@ -2673,7 +2676,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <blockquote>
             
               
-                <p>博客内容未授权请勿转载，E-mail：<a href="mailto:&#49;&#55;&#x31;&#50;&#x32;&#x32;&#57;&#53;&#x36;&#52;&#64;&#113;&#113;&#x2e;&#x63;&#x6f;&#x6d;">&#49;&#55;&#x31;&#50;&#x32;&#x32;&#57;&#53;&#x36;&#52;&#64;&#113;&#113;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
+                <p>博客内容未授权请勿转载，E-mail：<a href="mailto:&#x31;&#x37;&#49;&#50;&#50;&#x32;&#x39;&#53;&#x36;&#52;&#x40;&#x71;&#x71;&#x2e;&#99;&#111;&#x6d;">&#x31;&#x37;&#49;&#50;&#50;&#x32;&#x39;&#53;&#x36;&#52;&#x40;&#x71;&#x71;&#x2e;&#99;&#111;&#x6d;</a></p>
 
               
             
@@ -2695,10 +2698,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-05-31T10:10:12+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-06-11T19:04:22+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年5月31日</p>
+    <p>更新于：2022年6月11日</p>
   </a>
 </div>
 
@@ -2717,7 +2720,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/05/30/%E7%8E%A9%E8%BD%ACSQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0/&title=玩转SQL窗口函数 - Barry Yan's Blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/05/30/%E7%8E%A9%E8%BD%ACSQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0/&title=玩转SQL窗口函数 - Barry Yan's Blog&summary=MySQL8.0 之后才支持窗口函数"
           
           >
           
@@ -2729,7 +2732,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/05/30/%E7%8E%A9%E8%BD%ACSQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0/&title=玩转SQL窗口函数 - Barry Yan's Blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/05/30/%E7%8E%A9%E8%BD%ACSQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0/&title=玩转SQL窗口函数 - Barry Yan's Blog&summary=MySQL8.0 之后才支持窗口函数"
           
           >
           
@@ -2741,7 +2744,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/05/30/%E7%8E%A9%E8%BD%ACSQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0/&title=玩转SQL窗口函数 - Barry Yan's Blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/05/30/%E7%8E%A9%E8%BD%ACSQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0/&title=玩转SQL窗口函数 - Barry Yan's Blog&summary=MySQL8.0 之后才支持窗口函数"
           
           >
           
@@ -2776,19 +2779,25 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2022/05/30/%E7%8E%A9%E8%BD%ACDocker%E2%80%94%E9%83%A8%E7%BD%B2Spring%20Boot+MySQL%E5%B7%A5%E7%A8%8B%E5%AE%9E%E6%88%98/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>玩转Docker-部署Spring Boot+MySQL工程实战</p>
-          <p class='content'>﻿### 1 搭建Spring  Boot+MySQL项目
-1.1 项目依赖123456789101112131415161718192021222324&lt;dependency&gt;  ...</p>
+          <p class='content'>Docker部署Spring Boot+MySQL工程实战
+
+
+﻿### 1 搭建Spring  Boot+MySQL项目
+1.1 项目依赖123456789101112131415161718...</p>
         </a>
       
       
         <a class='next' href='/2022/05/30/%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8Gin%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BAHTTP%E6%9C%8D%E5%8A%A1/'>
           <p class='title'>快速入门Gin框架搭建HTTP服务<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>﻿### 1 概念
+          <p class='content'>What is Gin?
+
+
+﻿### 1 概念
 
 官网：https://gin-gonic.com/zh-cn/
 
 What is Gin?
-Gin is a web framework written in Golang...</p>
+Gin is a web framework wr...</p>
         </a>
       
     </div>
@@ -2950,7 +2959,7 @@ Gin is a web framework written in Golang...</p>
     
       
         
-          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"> 13123</i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true">4231</i></span> 人</span></p>
+          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 31123次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 4231人</span></p>
 </div>
         
       
@@ -3860,7 +3869,7 @@ Gin is a web framework written in Golang...</p>
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Barry Yan's Blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/05/30/玩转SQL窗口函数/","name":"玩转SQL窗口函数"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Barry Yan's Blog","url":"http://example.com/","keywords":"Java,Go,SQL","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"玩转SQL窗口函数","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/05/30/%E7%8E%A9%E8%BD%ACSQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0/"},"author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/05/30/%E7%8E%A9%E8%BD%ACSQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0/","wordCount":0,"datePublished":"2022-05-30T09:33:28.000Z","dateModified":"2022-05-31T02:10:12.805Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Barry Yan's Blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/05/30/玩转SQL窗口函数/","name":"玩转SQL窗口函数"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Barry Yan's Blog","url":"http://example.com/","keywords":"Java,Go,SQL","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"玩转SQL窗口函数","description":"MySQL8.0 之后才支持窗口函数","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/05/30/%E7%8E%A9%E8%BD%ACSQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0/"},"author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/05/30/%E7%8E%A9%E8%BD%ACSQL%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0/","wordCount":18,"datePublished":"2022-05-30T09:33:28.000Z","dateModified":"2022-06-11T11:04:22.345Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
