@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <title>未来邮件</title>
+</head>
+<body style="width: 90%;margin-left: 5%;">
+<div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-9">
+            <h1 style="margin-top: 3rem;margin-bottom: 3rem;">Future Email<small
+                    style="margin-left: 1rem;font-size: 18px;">写给未来的自己想说的话</small>
+            </h1>
+        </div>
+    </div>
+    <div class="container col-4 col-offset-4" style="width: 80%;margin-left: 10%;">
+        <form>
+            <div class="form-group">
+                <label for="send_email">接收人邮箱</label>
+                <input type="email" class="form-control" id="send_email" placeholder="xxx@qq.com">
+            </div>
+            <div class="form-group">
+                <label for="title">主题</label>
+                <input type="text" class="form-control" id="title">
+            </div>
+            <div class="form-group">
+                <label for="send_time_day">发送时间</label>
+                <input type="text" class="form-control" id="send_time_day" readonly>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="send_time_time" readonly>
+            </div>
+            <div class="form-group">
+                <label for="context">邮件内容</label>
+                <textarea class="form-control" id="context" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="email">发送人邮箱</label>
+                <input type="email" class="form-control" id="email" placeholder="xxx@qq.com(用于撤回和修改邮件)">
+            </div>
+            <button id="submit" type="button" style="width: 60%;margin: 0 auto;margin-top: 1rem;"
+                    class="btn btn-primary btn-lg btn-block" onclick="to_submit()">确认发送
+            </button>
+        </form>
+    </div>
+</div>
+<footer id="foo" style="height: 50px;margin-top: 30px;margin-bottom: 20px;">
+    <p style="text-align: center;">
+        author&nbsp;:&nbsp;<a href="https://github.com/ibarryyan"> Barry Yan</a>
+    </p>
+    <p style="text-align: center;">页面浏览人数：12312</p>
+    <p style="text-align: center;">版权所有&nbsp;2022</p>
+</footer>
+</body>
+<script src="./js/index.js"></script>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/laydate.js"></script>
+<script>
+    //前后若干天可选，这里以7天为例
+    laydate.render({
+        elem: '#send_time_day'
+        , min: 0
+    });
+    //限定可选时间
+    laydate.render({
+        elem: '#send_time_time'
+        , type: 'time'
+        , btns: ['clear', 'confirm']
+    });
+
+    function to_submit() {
+        var send_email = $("#send_email").val();
+        var title = $("#title").val();
+        var send_time_day = $("#send_time_day").val();
+        var send_time_time = $("#send_time_time").val();
+        var context = $("#context").val();
+        var email = $("#email").val();
+        var send_time = send_time_day + " " + send_time_time;
+
+        //判断
+        if (send_email.length == 0 || title.length == 0 || send_time.length == 0 || context.length == 0) {
+            alert("输入不能为空")
+            return
+        }
+
+        $.ajax({
+            url: "http://localhost:8080/send/saveMessage",
+            type: "POST",
+            data: {
+                "title": title,
+                "content": context,
+                "sendTime": send_time,
+                "toEmail": send_email,
+                "email": email
+            },
+            success: function (mes) {
+                if (mes = "1") {
+                    alert("发送成功")
+                } else {
+                    alert("发送失败")
+                }
+            },
+            error: function (err) {
+                alert("请求错误")
+            }
+        })
+
+    }
+</script>
+</html>
