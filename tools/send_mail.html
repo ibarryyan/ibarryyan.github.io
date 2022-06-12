@@ -88,7 +88,8 @@
         }
 
         $.ajax({
-            url: "http://localhost:8080/send/saveMessage",
+            //url: "http://localhost:8080/send/saveMessage",
+            url: "http://59.110.25.8:6379/send/saveMessage",
             type: "POST",
             data: {
                 "title": title,
