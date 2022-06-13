@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>未来邮件</title>
 </head>
 <body style="width: 90%;margin-left: 5%;">
@@ -88,8 +89,8 @@
         }
 
         $.ajax({
-            //url: "http://localhost:8080/send/saveMessage",
-            url: "http://59.110.25.8:6379/send/saveMessage",
+            url: "https://localhost:8090/send/saveMessage",
+            //url: "http://59.110.25.8:6379/send/saveMessage",
             type: "POST",
             data: {
                 "title": title,
