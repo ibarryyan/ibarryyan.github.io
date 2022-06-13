@@ -10,4 +10,8 @@ Gitee：https://gitee.com/yan_mingxin
 
 GitHub：https://github.com/ibarryyan
 
-GitHub.io：https://ibarryyan.github.io/
+GitHub个人博客：https://ibarryyan.github.io/
+
+公众号：扯编程的淡
+
+![img.png](https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/1.jpg)
