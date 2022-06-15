@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.3.2">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="index,follow">
-  <link rel="canonical" href="http://example.com/"/>
+  
+  <link rel="canonical" href="http://example.com/2022/06/14/浅谈云原生技术组件—etcd/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,19 +31,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>Barry Yan's Blog</title>
-  <meta name="keywords" content="Java,Go,SQL">
-  <meta desc name="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等 - Barry Yan - Barry Yan's Blog">
+  <title>浅谈云原生技术组件—etcd - Barry Yan's Blog</title>
+  <meta name="keywords" content="云原生,Java,Go,SQL">
+  <meta desc name="description" content="浅谈云原生技术组件—etcd - Barry Yan - Barry Yan's Blog">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="Barry Yan&#39;s Blog">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈云原生技术组件—etcd">
+<meta property="og:url" content="http://example.com/2022/06/14/%E6%B5%85%E8%B0%88%E4%BA%91%E5%8E%9F%E7%94%9F%E6%8A%80%E6%9C%AF%E7%BB%84%E4%BB%B6%E2%80%94etcd/index.html">
 <meta property="og:site_name" content="Barry Yan&#39;s Blog">
-<meta property="og:description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
+<meta property="og:description" content="浅谈云原生技术组件—etcd">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2022-06-14T08:23:28.000Z">
+<meta property="article:modified_time" content="2022-06-15T01:30:12.735Z">
 <meta property="article:author" content="Barry Yan">
-<meta property="article:tag" content="Java,Go,SQL">
+<meta property="article:tag" content="云原生">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2175,7 +2177,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin begin-->
     
     <!-- Custom Files bodyBegin end-->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header always shadow floatable blur "  >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header always shadow floatable blur show"  >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2444,7 +2446,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="full" class='cover-wrapper  dock' style="display: ;">
+      <div id="none" class='cover-wrapper post dock' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://images.unsplash.com/photo-1613331134165-1445f441513c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"></div>
 
@@ -2504,7 +2506,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 </div>
 
-        <div id="scroll-down" style="display: ;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+        <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
       </div>
     
   
@@ -2514,171 +2516,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  
-  <section class="post-list">
-    
-      
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/15/%E6%96%B0%E4%B8%80%E4%BB%A3%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E2%80%94Apache%20Pulsar/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/06/15/%E6%96%B0%E4%B8%80%E4%BB%A3%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E2%80%94Apache%20Pulsar/"  itemprop="url">
-        新一代消息中间件——Apache Pulsar
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p>Pulsar是由Java语言进行编写的新一代消息队列产品，具有多租户、高性能等优势</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://blog.csdn.net/Mr_YanMingXin'><img src='https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg">
-            <meta itemprop="name" content="Barry Yan">
-            <meta itemprop="url" content="https://blog.csdn.net/Mr_YanMingXin">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-06-15T17:33:28+08:00">2022-06-15</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/06/15/%E6%96%B0%E4%B8%80%E4%BB%A3%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E2%80%94Apache%20Pulsar/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/15/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E4%B8%80%E9%97%A8%E6%96%B0%E6%8A%80%E6%9C%AF%E7%9A%84/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/06/15/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E4%B8%80%E9%97%A8%E6%96%B0%E6%8A%80%E6%9C%AF%E7%9A%84/"  itemprop="url">
-        我是如何学习一门新技术的
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p>我是如何学习一门新技术的</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://blog.csdn.net/Mr_YanMingXin'><img src='https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg">
-            <meta itemprop="name" content="Barry Yan">
-            <meta itemprop="url" content="https://blog.csdn.net/Mr_YanMingXin">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-06-15T08:33:28+08:00">2022-06-15</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/06/15/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E4%B8%80%E9%97%A8%E6%96%B0%E6%8A%80%E6%9C%AF%E7%9A%84/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
   <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/14/%E6%B5%85%E8%B0%88%E4%BA%91%E5%8E%9F%E7%94%9F%E6%8A%80%E6%9C%AF%E7%BB%84%E4%BB%B6%E2%80%94etcd/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Barry Yan's Blog">
@@ -2688,502 +2526,317 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/06/14/%E6%B5%85%E8%B0%88%E4%BA%91%E5%8E%9F%E7%94%9F%E6%8A%80%E6%9C%AF%E7%BB%84%E4%BB%B6%E2%80%94etcd/"  itemprop="url">
+    
+    
+      <h1 class="title" itemprop="name headline">
         浅谈云原生技术组件—etcd
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p>浅谈云原生技术组件—etcd</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+      </h1>
+      <div class='new-meta-box'>
         
           
-          <a class='avatar' target="_blank" rel="noopener" href='https://blog.csdn.net/Mr_YanMingXin'><img src='https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg">
-            <meta itemprop="name" content="Barry Yan">
-            <meta itemprop="url" content="https://blog.csdn.net/Mr_YanMingXin">
-          </span>
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' target="_blank" href="https://blog.csdn.net/Mr_YanMingXin" rel="nofollow noopener">
+    <img itemprop="image" src="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg" class="lazyload" data-srcset="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">Barry Yan</p>
+  </a>
+</div>
+
+          
         
-        <time itemprop="dateCreated datePublished" datetime="2022-06-14T16:23:28+08:00">2022-06-14</time>
+          
+            
+
+          
         
-      </div>
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-06-14T16:23:28+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2022年6月14日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
       
-        <div>
-          <a class='readmore' href='/2022/06/14/%E6%B5%85%E8%B0%88%E4%BA%91%E5%8E%9F%E7%94%9F%E6%8A%80%E6%9C%AF%E7%BB%84%E4%BB%B6%E2%80%94etcd/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
+      <span>12412次浏览</span>
+    </p>
+  </a>
+</div>
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <p>浅谈云原生技术组件—etcd</p>
+<span id="more"></span>
+
+<div class="story post-story"><h2 id="浅谈云原生技术组件—etcd"><a href="#浅谈云原生技术组件—etcd" class="headerlink" title="浅谈云原生技术组件—etcd"></a>浅谈云原生技术组件—etcd</h2><blockquote>
+<p>技术官网：<a target="_blank" rel="noopener" href="https://etcd.io/">https://etcd.io/</a></p>
+<p>GitHub：<a target="_blank" rel="noopener" href="https://github.com/etcd-io/etcd">https://github.com/etcd-io/etcd</a></p>
+</blockquote>
+<h3 id="1-什么是etcd？"><a href="#1-什么是etcd？" class="headerlink" title="1 什么是etcd？"></a>1 什么是etcd？</h3><p><strong>etcd</strong>是一种强一致性的分布式键值存储组件，使用Raft算法，利用Go语言编写，它提供了一种可靠的方式来存储需要由分布式系统或机器集群访问的数据。它在网络分区期间优雅地处理领导者选举，并且可以容忍机器故障，即使在领导者节点中也是如此。</p>
+<p><strong>特点：</strong></p>
+<ul>
+<li><strong>操作简单整洁</strong>，使用HTTP协议和JSON文件格式进行存取键值对</li>
+<li><strong>键值对存储</strong>，类似于Zookeeper</li>
+<li><strong>更够根据值的变化快速相应</strong></li>
+<li><strong>可以利用TLS增强安全性</strong></li>
+</ul>
+<h3 id="2-动手运行etcd"><a href="#2-动手运行etcd" class="headerlink" title="2 动手运行etcd"></a>2 动手运行etcd</h3><h4 id="2-1-安装要求"><a href="#2-1-安装要求" class="headerlink" title="2.1 安装要求"></a>2.1 安装要求</h4><p>支持平台：<a target="_blank" rel="noopener" href="https://etcd.io/docs/v3.5/op-guide/hardware/">https://etcd.io/docs/v3.5/op-guide/hardware/</a></p>
+<p>硬件要求：<a target="_blank" rel="noopener" href="https://etcd.io/docs/v3.5/op-guide/supported-platform/">https://etcd.io/docs/v3.5/op-guide/supported-platform/</a></p>
+<p>本次实验将使用Ubuntu虚拟机，64bit、4GB内存、4核CPU</p>
+<h4 id="2-2-下载并测试"><a href="#2-2-下载并测试" class="headerlink" title="2.2 下载并测试"></a>2.2 下载并测试</h4><p>下载页面：<a target="_blank" rel="noopener" href="https://github.com/etcd-io/etcd/releases/">https://github.com/etcd-io/etcd/releases/</a></p>
+<p>我们选择的版本是v3.5.4，下面演示下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">root@ymx-ubuntu:/usr/local# wget https://github.com/etcd-io/etcd/releases/download/v3.5.4/etcd-v3.5.4-linux-amd64.tar.gz</span><br><span class="line">......</span><br><span class="line">2022-05-15 14:20:34 (1.45 MB/s) - 已保存 “etcd-v3.5.4-linux-amd64.tar.gz” [19432359/19432359])</span><br><span class="line">root@ymx-ubuntu:/usr/local# ls</span><br><span class="line">etcd-v3.5.4-linux-amd64.tar.gz ......</span><br><span class="line">root@ymx-ubuntu:/usr/local# tar -zxvf etcd-v3.5.4-linux-amd64.tar.gz </span><br><span class="line">......</span><br><span class="line">root@ymx-ubuntu:/usr/local# cd etcd-v3.5.4-linux-amd64/</span><br><span class="line">root@ymx-ubuntu:/usr/local/etcd-v3.5.4-linux-amd64# ls -al</span><br><span class="line">总用量 56300</span><br><span class="line">drwxr-xr-x  3 528287 89939     4096 4月  24 18:45 .</span><br><span class="line">drwxr-xr-x 14 root   root      4096 5月  15 14:20 ..</span><br><span class="line">drwxr-xr-x  3 528287 89939     4096 4月  24 18:45 Documentation</span><br><span class="line">-rwxr-xr-x  1 528287 89939 23564288 4月  24 18:45 etcd</span><br><span class="line">-rwxr-xr-x  1 528287 89939 17960960 4月  24 18:45 etcdctl</span><br><span class="line">-rwxr-xr-x  1 528287 89939 16039936 4月  24 18:45 etcdutl</span><br><span class="line">-rw-r--r--  1 528287 89939    42066 4月  24 18:45 README-etcdctl.md</span><br><span class="line">-rw-r--r--  1 528287 89939     7359 4月  24 18:45 README-etcdutl.md</span><br><span class="line">-rw-r--r--  1 528287 89939     9394 4月  24 18:45 README.md</span><br><span class="line">-rw-r--r--  1 528287 89939     7896 4月  24 18:45 READMEv2-etcdctl.md</span><br><span class="line">root@ymx-ubuntu:/usr/local/etcd-v3.5.4-linux-amd64# ./etcd -version</span><br><span class="line">etcd Version: 3.5.4</span><br><span class="line">Git SHA: 0xxxxxx</span><br><span class="line">Go Version: go1.16.15</span><br><span class="line">Go OS/Arch: linux/amd64</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><code>etcd</code>：etcd服务</p>
+</li>
+<li><p><code>etcdctl</code> ：etcd的命令行客户端</p>
+</li>
+<li><p><code>etcdutl</code> ：etcd的命令行管理工具</p>
+</li>
+</ul>
+<h4 id="2-3-运行并初步使用etcd"><a href="#2-3-运行并初步使用etcd" class="headerlink" title="2.3 运行并初步使用etcd"></a>2.3 运行并初步使用etcd</h4><h5 id="2-3-1-设置环境变量"><a href="#2-3-1-设置环境变量" class="headerlink" title="2.3.1 设置环境变量"></a>2.3.1 设置环境变量</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">root@ymx-ubuntu:/usr/local/etcd-v3.5.4-linux-amd64# vim /etc/profile</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">### 在文件末尾加入以下内容</span></span></span><br><span class="line">export ETCD_HOME=/usr/local/etcd-v3.5.4-linux-amd64</span><br><span class="line">export PATH=$PATH:$ETCD_HOME</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-3-1-启动etcd-单节点"><a href="#2-3-1-启动etcd-单节点" class="headerlink" title="2.3.1 启动etcd(单节点)"></a>2.3.1 启动etcd(单节点)</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">TOKEN=my_etcd</span><br><span class="line">CLUSTER_STATE=new</span><br><span class="line">NAME_1=my_etcd_name</span><br><span class="line">HOST_1=127.0.0.1</span><br><span class="line">CLUSTER=$&#123;NAME_1&#125;=http://$&#123;HOST_1&#125;:2380</span><br><span class="line"></span><br><span class="line">THIS_NAME=$&#123;NAME_1&#125;</span><br><span class="line">THIS_IP=$&#123;HOST_1&#125;</span><br><span class="line"></span><br><span class="line">etcd --data-dir=data.etcd --name $&#123;THIS_NAME&#125; \</span><br><span class="line">	--initial-advertise-peer-urls http://$&#123;THIS_IP&#125;:2380 --listen-peer-urls http://$&#123;THIS_IP&#125;:2380 \</span><br><span class="line">	--advertise-client-urls http://$&#123;THIS_IP&#125;:2379 --listen-client-urls http://$&#123;THIS_IP&#125;:2379 \</span><br><span class="line">	--initial-cluster $&#123;CLUSTER&#125; \</span><br><span class="line">	--initial-cluster-state $&#123;CLUSTER_STATE&#125; --initial-cluster-token $&#123;TOKEN&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-3-2-使用-etcdctl-连接到-etcd"><a href="#2-3-2-使用-etcdctl-连接到-etcd" class="headerlink" title="2.3.2 使用 etcdctl 连接到 etcd"></a>2.3.2 使用 etcdctl 连接到 etcd</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">etcdctl --endpoints=127.0.0.1:2379 member list</span><br></pre></td></tr></table></figure>
+
+<p>演示：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@ymx-ubuntu:/usr/local/etcd-v3.5.4-linux-amd64# ./etcdctl --endpoints=127.0.0.1:2379 member list</span><br><span class="line">xxxxxxxx, started, my_etcd_name, http://127.0.0.1:2380, http://127.0.0.1:2379, false</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-3-3-使用etcd的Hello-World"><a href="#2-3-3-使用etcd的Hello-World" class="headerlink" title="2.3.3 使用etcd的Hello World"></a>2.3.3 使用etcd的Hello World</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ENDPOINTS=127.0.0.1:2379</span><br><span class="line"></span><br><span class="line">etcdctl --endpoints=$ENDPOINTS put foo &quot;Hello World!&quot;</span><br><span class="line">etcdctl --endpoints=$ENDPOINTS get foo</span><br><span class="line">etcdctl --endpoints=$ENDPOINTS --write-out=&quot;json&quot; get foo</span><br></pre></td></tr></table></figure>
+
+<p>演示：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">root@ymx-ubuntu:/usr/local/etcd-v3.5.4-linux-amd64# ./etcdctl --endpoints=$ENDPOINTS put foo &quot;Hello World!&quot;</span><br><span class="line">OK</span><br><span class="line">root@ymx-ubuntu:/usr/local/etcd-v3.5.4-linux-amd64# ./etcdctl --endpoints=$ENDPOINTS get foo</span><br><span class="line">foo</span><br><span class="line">Hello World!</span><br><span class="line">root@ymx-ubuntu:/usr/local/etcd-v3.5.4-linux-amd64# ./etcdctl --endpoints=$ENDPOINTS --write-out=&quot;json&quot; get foo</span><br><span class="line">&#123;&quot;header&quot;:&#123;&quot;cluster_id&quot;:87772999870000089,&quot;member_id&quot;:10756500090258089453,&quot;revision&quot;:3,&quot;raft_term&quot;:2&#125;,&quot;kvs&quot;:[&#123;&quot;key&quot;:&quot;Zm9v&quot;,&quot;create_revision&quot;:2,&quot;mod_revision&quot;:3,&quot;version&quot;:2,&quot;value&quot;:&quot;SGV00000ybGQh&quot;&#125;],&quot;count&quot;:1&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-3-4-将etcd数据进行持久化"><a href="#2-3-4-将etcd数据进行持久化" class="headerlink" title="2.3.4 将etcd数据进行持久化"></a>2.3.4 将etcd数据进行持久化</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ENDPOINTS=127.0.0.1:2379</span><br><span class="line">etcdctl --endpoints=$ENDPOINTS snapshot save my.db</span><br><span class="line">etcdctl --write-out=table --endpoints=$ENDPOINTS snapshot status my.db</span><br></pre></td></tr></table></figure>
+
+<p>演示：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">root@ymx-ubuntu:/usr/local/etcd-v3.5.4-linux-amd64# ./etcdctl --endpoints=$ENDPOINTS snapshot save my.db</span><br><span class="line">......</span><br><span class="line">Snapshot saved at my.db</span><br><span class="line">root@ymx-ubuntu:/usr/local/etcd-v3.5.4-linux-amd64# ./etcdctl --write-out=table --endpoints=$ENDPOINTS snapshot status my.db</span><br><span class="line">Deprecated: Use `etcdutl snapshot status` instead.</span><br><span class="line"></span><br><span class="line">+----------+----------+------------+------------+</span><br><span class="line">|   HASH   | REVISION | TOTAL KEYS | TOTAL SIZE |</span><br><span class="line">+----------+----------+------------+------------+</span><br><span class="line">| ebfb411d |        3 |          8 |      20 kB |</span><br><span class="line">+----------+----------+------------+------------+</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-使用客户端连接etcd"><a href="#3-使用客户端连接etcd" class="headerlink" title="3 使用客户端连接etcd"></a>3 使用客户端连接etcd</h3><p>etcd支持以下客户端：</p>
+<ul>
+<li><p>Go</p>
+</li>
+<li><p>Java</p>
+</li>
+<li><p>Scala</p>
+</li>
+<li><p>Perl</p>
+</li>
+<li><p>Python</p>
+</li>
+<li><p>Node</p>
+</li>
+<li><p>Ruby</p>
+</li>
+<li><p>C</p>
+</li>
+<li><p>C++</p>
+</li>
+<li><p>……</p>
+</li>
+</ul>
+<p>因为作者本人目前只能够熟练的使用Java和Go，因此只那这两个做演示哈~</p>
+<h4 id="3-1-使用Go操作etcd"><a href="#3-1-使用Go操作etcd" class="headerlink" title="3.1 使用Go操作etcd"></a>3.1 使用Go操作etcd</h4><h5 id="3-1-1-Go官方推荐的etcd连接工具（3-x版本以上）"><a href="#3-1-1-Go官方推荐的etcd连接工具（3-x版本以上）" class="headerlink" title="3.1.1 Go官方推荐的etcd连接工具（3.x版本以上）"></a>3.1.1 Go官方推荐的etcd连接工具（3.x版本以上）</h5><blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/etcd-io/etcd/tree/main/client/v3">https://github.com/etcd-io/etcd/tree/main/client/v3</a></p>
+</blockquote>
+<p>下载：<code>go get go.etcd.io/etcd/client/v3</code></p>
+<h5 id="3-1-2-代码"><a href="#3-1-2-代码" class="headerlink" title="3.1.2 代码"></a>3.1.2 代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   cli, err := clientv3.New(clientv3.Config&#123;</span><br><span class="line">      Endpoints:   []<span class="type">string</span>&#123;<span class="string">&quot;127.0.0.1:2379&quot;</span>&#125;,</span><br><span class="line">      DialTimeout: <span class="number">5</span> * time.Second,</span><br><span class="line">   &#125;)</span><br><span class="line">   <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">      <span class="built_in">panic</span>(err)</span><br><span class="line">   &#125;</span><br><span class="line">   resp, err := cli.Put(context.TODO(), <span class="string">&quot;sample_key&quot;</span>, <span class="string">&quot;sample_value&quot;</span>)</span><br><span class="line">   fmt.Println(resp)</span><br><span class="line">   response, err := cli.Get(context.TODO(), <span class="string">&quot;sample_key&quot;</span>)</span><br><span class="line">   fmt.Println(response)</span><br><span class="line">   <span class="keyword">defer</span> cli.Close()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2-使用Java连接etcd"><a href="#3-2-使用Java连接etcd" class="headerlink" title="3.2 使用Java连接etcd"></a>3.2 使用Java连接etcd</h4><h5 id="3-2-1-使用jetcd进行连接"><a href="#3-2-1-使用jetcd进行连接" class="headerlink" title="3.2.1 使用jetcd进行连接"></a>3.2.1 使用jetcd进行连接</h5><blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/etcd-io/jetcd">https://github.com/etcd-io/jetcd</a></p>
+</blockquote>
+<p>maven依赖：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.etcd<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jetcd-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.5.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="3-2-2-代码"><a href="#3-2-2-代码" class="headerlink" title="3.2.2 代码"></a>3.2.2 代码</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">TestEtcd</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    <span class="comment">//集群模式下可以使用逗号分隔</span></span><br><span class="line">    <span class="type">Client</span> <span class="variable">client</span> <span class="operator">=</span> Client.builder().endpoints(<span class="string">&quot;http://127.0.0.1:2379&quot;</span>).build();</span><br><span class="line">    <span class="type">KV</span> <span class="variable">kvClient</span> <span class="operator">=</span> client.getKVClient();</span><br><span class="line">    <span class="type">ByteSequence</span> <span class="variable">key</span> <span class="operator">=</span> ByteSequence.from(<span class="string">&quot;test_key&quot;</span>.getBytes());</span><br><span class="line">    <span class="type">ByteSequence</span> <span class="variable">value</span> <span class="operator">=</span> ByteSequence.from(<span class="string">&quot;test_value&quot;</span>.getBytes());</span><br><span class="line">    <span class="comment">// put值</span></span><br><span class="line">    kvClient.put(key, value).get();</span><br><span class="line">    <span class="comment">// get值</span></span><br><span class="line">    CompletableFuture&lt;GetResponse&gt; getFuture = kvClient.get(key);</span><br><span class="line">    <span class="type">GetResponse</span> <span class="variable">response</span> <span class="operator">=</span> getFuture.get();</span><br><span class="line">    System.out.println(response);</span><br><span class="line">    <span class="comment">// 删除值</span></span><br><span class="line">    kvClient.delete(key).get();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-小总结下"><a href="#4-小总结下" class="headerlink" title="4 小总结下"></a>4 小总结下</h3><p>etcd作为Kubernetes集群默认的服务配置中心，可以说是最贴近云原生的，相比Zookeeper，虽说有几分相似，但是他们所使用的分布式一致性算法颇有些不同，etcd使用Raft协议， Zookeeper使用ZAB协议，而且etcd支持使用http和https进行访问，使用上更加方便。</p>
+<blockquote>
+<p>参考：</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/etcd-io/jetcd">https://github.com/etcd-io/jetcd</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/etcd-io/etcd/tree/main/client/v3">https://github.com/etcd-io/etcd/tree/main/client/v3</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/etcd-io/etcd">https://github.com/etcd-io/etcd</a></p>
+<p><a target="_blank" rel="noopener" href="https://etcd.io/docs/v3.5/integrations/">https://etcd.io/docs/v3.5/integrations/</a></p>
+
+</div>
+  </div>
+  
+  
+    
+    <div class='footer'>
+      
+      
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-06-15T09:30:12+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2022年6月15日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/14/MarkDown%E8%AF%AD%E6%B3%95%E4%B8%8ETypora%E7%9A%84%E4%BD%BF%E7%94%A8%E2%80%94%E4%BB%8E%E6%AD%A4%E5%91%8A%E5%88%ABWord%E6%96%B9%E5%BC%8F%E5%81%9A%E7%AC%94%E8%AE%B0/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>云原生</p></a></div>
+  <span hidden itemprop="keywords">云原生</span>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/06/14/%E6%B5%85%E8%B0%88%E4%BA%91%E5%8E%9F%E7%94%9F%E6%8A%80%E6%9C%AF%E7%BB%84%E4%BB%B6%E2%80%94etcd/&title=浅谈云原生技术组件—etcd - Barry Yan's Blog&summary=浅谈云原生技术组件—etcd"
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/06/14/%E6%B5%85%E8%B0%88%E4%BA%91%E5%8E%9F%E7%94%9F%E6%8A%80%E6%9C%AF%E7%BB%84%E4%BB%B6%E2%80%94etcd/&title=浅谈云原生技术组件—etcd - Barry Yan's Blog&summary=浅谈云原生技术组件—etcd"
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/06/14/%E6%B5%85%E8%B0%88%E4%BA%91%E5%8E%9F%E7%94%9F%E6%8A%80%E6%9C%AF%E7%BB%84%E4%BB%B6%E2%80%94etcd/&title=浅谈云原生技术组件—etcd - Barry Yan's Blog&summary=浅谈云原生技术组件—etcd"
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
   
   
+
   
+    <div class="prev-next">
+      
+        <a class='prev' href='/2022/06/15/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E4%B8%80%E9%97%A8%E6%96%B0%E6%8A%80%E6%9C%AF%E7%9A%84/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>我是如何学习一门新技术的</p>
+          <p class='content'>我是如何学习一门新技术的
+
+
+Hello Everyone ~
+因为近期在业余时间看了一些书和文章，而且也都让自己颇有些心得，以前的快乐是打几把游戏现在的快乐是学会一个新知识，写一篇博客，享受写...</p>
+        </a>
+      
+      
+        <a class='next' href='/2022/06/14/MarkDown%E8%AF%AD%E6%B3%95%E4%B8%8ETypora%E7%9A%84%E4%BD%BF%E7%94%A8%E2%80%94%E4%BB%8E%E6%AD%A4%E5%91%8A%E5%88%ABWord%E6%96%B9%E5%BC%8F%E5%81%9A%E7%AC%94%E8%AE%B0/'>
+          <p class='title'>MarkDown语法与Typora的使用—从此告别Word方式做笔记<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>Markdown是一种轻量级标记语言
+
+一、首先来说下MarkDown语言
+Markdown是一种轻量级标记语言，创始人为约翰·格鲁伯（英语：John Gruber）。 它允许人们使用易读易写的...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="discussionUrl" content="/2022/06/14/%E6%B5%85%E8%B0%88%E4%BA%91%E5%8E%9F%E7%94%9F%E6%8A%80%E6%9C%AF%E7%BB%84%E4%BB%B6%E2%80%94etcd/index.html#comments">
     </span>
-  
-  
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/06/14/MarkDown%E8%AF%AD%E6%B3%95%E4%B8%8ETypora%E7%9A%84%E4%BD%BF%E7%94%A8%E2%80%94%E4%BB%8E%E6%AD%A4%E5%91%8A%E5%88%ABWord%E6%96%B9%E5%BC%8F%E5%81%9A%E7%AC%94%E8%AE%B0/"  itemprop="url">
-        MarkDown语法与Typora的使用—从此告别Word方式做笔记
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p>Markdown是一种轻量级标记语言</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://blog.csdn.net/Mr_YanMingXin'><img src='https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg">
-            <meta itemprop="name" content="Barry Yan">
-            <meta itemprop="url" content="https://blog.csdn.net/Mr_YanMingXin">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-06-14T10:33:28+08:00">2022-06-14</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/06/14/MarkDown%E8%AF%AD%E6%B3%95%E4%B8%8ETypora%E7%9A%84%E4%BD%BF%E7%94%A8%E2%80%94%E4%BB%8E%E6%AD%A4%E5%91%8A%E5%88%ABWord%E6%96%B9%E5%BC%8F%E5%81%9A%E7%AC%94%E8%AE%B0/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
 
-</div>
+    <div id="layoutHelper-comments"></div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/13/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82%E4%BB%8E%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BE%93%E5%85%A5%E4%B8%80%E4%B8%AAURL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%87%BA%E7%8E%B0%E9%83%BD%E7%BB%8F%E5%8E%86%E4%BA%86%E5%93%AA%E4%BA%9B%E8%BF%87%E7%A8%8B/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/06/13/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82%E4%BB%8E%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BE%93%E5%85%A5%E4%B8%80%E4%B8%AAURL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%87%BA%E7%8E%B0%E9%83%BD%E7%BB%8F%E5%8E%86%E4%BA%86%E5%93%AA%E4%BA%9B%E8%BF%87%E7%A8%8B/"  itemprop="url">
-        一文搞懂从浏览器输入一个URL到页面出现都经历了哪些过程
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p><strong>域名系统</strong>（英文全称：<strong>D</strong>omain <strong>N</strong>ame <strong>S</strong>ystem，简称DNS）是互联网的一项服务。它作为将域名和IP地址相互映射的一个分布式数据库，能够使人更方便地访问互联网。</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://blog.csdn.net/Mr_YanMingXin'><img src='https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg">
-            <meta itemprop="name" content="Barry Yan">
-            <meta itemprop="url" content="https://blog.csdn.net/Mr_YanMingXin">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-06-13T17:33:28+08:00">2022-06-13</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/06/13/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82%E4%BB%8E%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BE%93%E5%85%A5%E4%B8%80%E4%B8%AAURL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%87%BA%E7%8E%B0%E9%83%BD%E7%BB%8F%E5%8E%86%E4%BA%86%E5%93%AA%E4%BA%9B%E8%BF%87%E7%A8%8B/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
+  </article>
 
-</div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/11/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E4%B9%8B%E5%B8%B8%E8%A7%81%E7%9A%84%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E7%AE%97%E6%B3%95/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/06/11/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E4%B9%8B%E5%B8%B8%E8%A7%81%E7%9A%84%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E7%AE%97%E6%B3%95/"  itemprop="url">
-        分布式系统设计之常见的负载均衡算法
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p>负载均衡（Load Balance），其含义就是指将负载（工作任务）进行平衡、分摊到多个操作单元上进行运行，从而协同完成工作任务。</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://blog.csdn.net/Mr_YanMingXin'><img src='https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg">
-            <meta itemprop="name" content="Barry Yan">
-            <meta itemprop="url" content="https://blog.csdn.net/Mr_YanMingXin">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-06-11T14:33:28+08:00">2022-06-11</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/06/11/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E4%B9%8B%E5%B8%B8%E8%A7%81%E7%9A%84%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E7%AE%97%E6%B3%95/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
 
-</div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/10/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E6%90%AD%E5%BB%BASpring%20Boot+Vue%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/06/10/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E6%90%AD%E5%BB%BASpring%20Boot+Vue%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/"  itemprop="url">
-        手把手教你搭建Spring Boot+Vue前后端分离.md
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p>前后端分离是目前互联网开发中比较广泛使用的开发模式</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://blog.csdn.net/Mr_YanMingXin'><img src='https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg">
-            <meta itemprop="name" content="Barry Yan">
-            <meta itemprop="url" content="https://blog.csdn.net/Mr_YanMingXin">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-06-10T17:33:28+08:00">2022-06-10</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/06/10/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E6%90%AD%E5%BB%BASpring%20Boot+Vue%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/30/%E6%8E%A2%E7%B4%A2Pulsar%E4%B9%8B%E4%BD%BF%E7%94%A8Go%E5%92%8CJava%E6%93%8D%E4%BD%9CPulsar/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/05/30/%E6%8E%A2%E7%B4%A2Pulsar%E4%B9%8B%E4%BD%BF%E7%94%A8Go%E5%92%8CJava%E6%93%8D%E4%BD%9CPulsar/"  itemprop="url">
-        探索Pulsar之使用Go和Java操作Pulsar
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p>Pulsar之使用Go和Java操作Pulsar</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://blog.csdn.net/Mr_YanMingXin'><img src='https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg">
-            <meta itemprop="name" content="Barry Yan">
-            <meta itemprop="url" content="https://blog.csdn.net/Mr_YanMingXin">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-05-30T17:33:28+08:00">2022-05-30</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/05/30/%E6%8E%A2%E7%B4%A2Pulsar%E4%B9%8B%E4%BD%BF%E7%94%A8Go%E5%92%8CJava%E6%93%8D%E4%BD%9CPulsar/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/30/%E4%B8%80%E6%96%87%E5%B8%A6%E4%BD%A0%E6%90%9E%E6%87%82HTTP%E5%92%8CHTTPS/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/05/30/%E4%B8%80%E6%96%87%E5%B8%A6%E4%BD%A0%E6%90%9E%E6%87%82HTTP%E5%92%8CHTTPS/"  itemprop="url">
-        一文带你搞懂HTTP和HTTPS
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p>一文带你搞懂HTTP和HTTPS</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://blog.csdn.net/Mr_YanMingXin'><img src='https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg">
-            <meta itemprop="name" content="Barry Yan">
-            <meta itemprop="url" content="https://blog.csdn.net/Mr_YanMingXin">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-05-30T17:33:28+08:00">2022-05-30</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/05/30/%E4%B8%80%E6%96%87%E5%B8%A6%E4%BD%A0%E6%90%9E%E6%87%82HTTP%E5%92%8CHTTPS/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/30/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E4%B9%8B%E5%85%B1%E8%AF%86%E7%AE%97%E6%B3%95%E2%80%942PC%E3%80%813PC%E3%80%81%20Paxos/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/05/30/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E4%B9%8B%E5%85%B1%E8%AF%86%E7%AE%97%E6%B3%95%E2%80%942PC%E3%80%813PC%E3%80%81%20Paxos/"  itemprop="url">
-        分布式系统设计之共识算法-2PC、3PC、Paxos
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p>共识问题分布式计算中最基本的概念之一</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://blog.csdn.net/Mr_YanMingXin'><img src='https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg">
-            <meta itemprop="name" content="Barry Yan">
-            <meta itemprop="url" content="https://blog.csdn.net/Mr_YanMingXin">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-05-30T17:33:28+08:00">2022-05-30</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/05/30/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E4%B9%8B%E5%85%B1%E8%AF%86%E7%AE%97%E6%B3%95%E2%80%942PC%E3%80%813PC%E3%80%81%20Paxos/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-        <p class="current">
-          1 / 2
-        </p>
-        
-          <a class="next" rel="next" href="/page/2/">
-            <section class="post next white-box shadow floatable blur">
-              &nbsp;下一页&nbsp;<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
-    
-  
 
 
 </div>
@@ -3193,76 +2846,29 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
 
-<section class="widget blogger shadow floatable blur desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Barry Yan</h2>
-        
-        
-          <p>请不要叫我程序员，叫我工程师或Programmer</p>
 
-        
-        
-      </div>
+
+  <section class="widget toc-wrapper shadow floatable blur desktop mobile pjax" id="toc-div" >
     
+  <header>
     
-      <div class="social-wrapper">
-        
-          
-            <a href="https://blog.csdn.net/Mr_YanMingXin"
-              class="social fa-solid fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:1712229564@qq.com"
-              class="social fa-solid fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/ibarryyan"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fa-solid fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
-  </div>
-</section>
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%85%E8%B0%88%E4%BA%91%E5%8E%9F%E7%94%9F%E6%8A%80%E6%9C%AF%E7%BB%84%E4%BB%B6%E2%80%94etcd"><span class="toc-number">1.</span> <span class="toc-text">浅谈云原生技术组件—etcd</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AFetcd%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">1 什么是etcd？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%8A%A8%E6%89%8B%E8%BF%90%E8%A1%8Cetcd"><span class="toc-number">1.2.</span> <span class="toc-text">2 动手运行etcd</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E5%AE%89%E8%A3%85%E8%A6%81%E6%B1%82"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1 安装要求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E4%B8%8B%E8%BD%BD%E5%B9%B6%E6%B5%8B%E8%AF%95"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2 下载并测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-%E8%BF%90%E8%A1%8C%E5%B9%B6%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8etcd"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.3 运行并初步使用etcd</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-1-%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">2.3.1 设置环境变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-1-%E5%90%AF%E5%8A%A8etcd-%E5%8D%95%E8%8A%82%E7%82%B9"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">2.3.1 启动etcd(单节点)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-2-%E4%BD%BF%E7%94%A8-etcdctl-%E8%BF%9E%E6%8E%A5%E5%88%B0-etcd"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">2.3.2 使用 etcdctl 连接到 etcd</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-3-%E4%BD%BF%E7%94%A8etcd%E7%9A%84Hello-World"><span class="toc-number">1.2.3.4.</span> <span class="toc-text">2.3.3 使用etcd的Hello World</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-4-%E5%B0%86etcd%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E6%8C%81%E4%B9%85%E5%8C%96"><span class="toc-number">1.2.3.5.</span> <span class="toc-text">2.3.4 将etcd数据进行持久化</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%BD%BF%E7%94%A8%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%BF%9E%E6%8E%A5etcd"><span class="toc-number">1.3.</span> <span class="toc-text">3 使用客户端连接etcd</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E4%BD%BF%E7%94%A8Go%E6%93%8D%E4%BD%9Cetcd"><span class="toc-number">1.3.1.</span> <span class="toc-text">3.1 使用Go操作etcd</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-1-1-Go%E5%AE%98%E6%96%B9%E6%8E%A8%E8%8D%90%E7%9A%84etcd%E8%BF%9E%E6%8E%A5%E5%B7%A5%E5%85%B7%EF%BC%883-x%E7%89%88%E6%9C%AC%E4%BB%A5%E4%B8%8A%EF%BC%89"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">3.1.1 Go官方推荐的etcd连接工具（3.x版本以上）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-1-2-%E4%BB%A3%E7%A0%81"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">3.1.2 代码</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E4%BD%BF%E7%94%A8Java%E8%BF%9E%E6%8E%A5etcd"><span class="toc-number">1.3.2.</span> <span class="toc-text">3.2 使用Java连接etcd</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-2-1-%E4%BD%BF%E7%94%A8jetcd%E8%BF%9B%E8%A1%8C%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">3.2.1 使用jetcd进行连接</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-2-2-%E4%BB%A3%E7%A0%81"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">3.2.2 代码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%B0%8F%E6%80%BB%E7%BB%93%E4%B8%8B"><span class="toc-number">1.4.</span> <span class="toc-text">4 小总结下</span></a></li></ol></li></ol>
+    </div>
+  </section>
 
   
 
   
     
     
+
+
 
   
 
@@ -3285,8 +2891,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     </div>
   </section>
 
-
-  
 
   
 
@@ -3327,7 +2931,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3336,15 +2940,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.remove("show");
+    l_header.classList.add("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="full";
-      cover_wrapper.style.display="";
-      scroll_down.style.display="";
+      cover_wrapper.id="none";
+      cover_wrapper.style.display="none";
+      scroll_down.style.display="none";
     
   
 </script>
@@ -4292,7 +3896,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Barry Yan's Blog"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Barry Yan's Blog","url":"http://example.com/","keywords":"Java,Go,SQL","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Barry Yan's Blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/06/14/浅谈云原生技术组件—etcd/","name":"浅谈云原生技术组件—etcd"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Barry Yan's Blog","url":"http://example.com/","keywords":"Java,Go,SQL","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"浅谈云原生技术组件—etcd","description":"浅谈云原生技术组件—etcd","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/06/14/%E6%B5%85%E8%B0%88%E4%BA%91%E5%8E%9F%E7%94%9F%E6%8A%80%E6%9C%AF%E7%BB%84%E4%BB%B6%E2%80%94etcd/"},"author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/06/14/%E6%B5%85%E8%B0%88%E4%BA%91%E5%8E%9F%E7%94%9F%E6%8A%80%E6%9C%AF%E7%BB%84%E4%BB%B6%E2%80%94etcd/","wordCount":14,"datePublished":"2022-06-14T08:23:28.000Z","dateModified":"2022-06-15T01:30:12.735Z","keywords":"云原生","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

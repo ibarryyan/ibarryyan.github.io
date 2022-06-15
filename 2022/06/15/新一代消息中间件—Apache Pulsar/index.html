@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.3.2">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="index,follow">
-  <link rel="canonical" href="http://example.com/"/>
+  
+  <link rel="canonical" href="http://example.com/2022/06/15/新一代消息中间件—apache pulsar/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,19 +31,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>Barry Yan's Blog</title>
-  <meta name="keywords" content="Java,Go,SQL">
-  <meta desc name="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等 - Barry Yan - Barry Yan's Blog">
+  <title>新一代消息中间件——Apache Pulsar - Barry Yan's Blog</title>
+  <meta name="keywords" content="消息中间件,Java,Go,SQL">
+  <meta desc name="description" content="Pulsar是由Java语言进行编写的新一代消息队列产品，具有多租户、高性能等优势 - Barry Yan - Barry Yan's Blog">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="Barry Yan&#39;s Blog">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="新一代消息中间件——Apache Pulsar">
+<meta property="og:url" content="http://example.com/2022/06/15/%E6%96%B0%E4%B8%80%E4%BB%A3%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E2%80%94Apache%20Pulsar/index.html">
 <meta property="og:site_name" content="Barry Yan&#39;s Blog">
-<meta property="og:description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
+<meta property="og:description" content="Pulsar是由Java语言进行编写的新一代消息队列产品，具有多租户、高性能等优势">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2022-06-15T09:33:28.000Z">
+<meta property="article:modified_time" content="2022-06-15T01:30:12.762Z">
 <meta property="article:author" content="Barry Yan">
-<meta property="article:tag" content="Java,Go,SQL">
+<meta property="article:tag" content="消息中间件">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2175,7 +2177,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin begin-->
     
     <!-- Custom Files bodyBegin end-->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header always shadow floatable blur "  >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header always shadow floatable blur show"  >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2444,7 +2446,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="full" class='cover-wrapper  dock' style="display: ;">
+      <div id="none" class='cover-wrapper post dock' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://images.unsplash.com/photo-1613331134165-1445f441513c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"></div>
 
@@ -2504,7 +2506,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 </div>
 
-        <div id="scroll-down" style="display: ;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+        <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
       </div>
     
   
@@ -2514,49 +2516,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  
-  <section class="post-list">
-    
-      
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
   <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/15/%E6%96%B0%E4%B8%80%E4%BB%A3%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E2%80%94Apache%20Pulsar/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Barry Yan's Blog">
@@ -2566,624 +2526,459 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/06/15/%E6%96%B0%E4%B8%80%E4%BB%A3%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E2%80%94Apache%20Pulsar/"  itemprop="url">
+    
+    
+      <h1 class="title" itemprop="name headline">
         新一代消息中间件——Apache Pulsar
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p>Pulsar是由Java语言进行编写的新一代消息队列产品，具有多租户、高性能等优势</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+      </h1>
+      <div class='new-meta-box'>
         
           
-          <a class='avatar' target="_blank" rel="noopener" href='https://blog.csdn.net/Mr_YanMingXin'><img src='https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg">
-            <meta itemprop="name" content="Barry Yan">
-            <meta itemprop="url" content="https://blog.csdn.net/Mr_YanMingXin">
-          </span>
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' target="_blank" href="https://blog.csdn.net/Mr_YanMingXin" rel="nofollow noopener">
+    <img itemprop="image" src="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg" class="lazyload" data-srcset="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">Barry Yan</p>
+  </a>
+</div>
+
+          
         
-        <time itemprop="dateCreated datePublished" datetime="2022-06-15T17:33:28+08:00">2022-06-15</time>
+          
+            
+
+          
         
-      </div>
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-06-15T17:33:28+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2022年6月15日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
       
-        <div>
-          <a class='readmore' href='/2022/06/15/%E6%96%B0%E4%B8%80%E4%BB%A3%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E2%80%94Apache%20Pulsar/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
+      <span>12412次浏览</span>
+    </p>
+  </a>
+</div>
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <p>Pulsar是由Java语言进行编写的新一代消息队列产品，具有多租户、高性能等优势</p>
+<span id="more"></span>
+
+<p><img src="https://img-blog.csdnimg.cn/340d3ae189bc42b29428fe2660af8c4c.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/340d3ae189bc42b29428fe2660af8c4c.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br><em>（图片来自：<a target="_blank" rel="noopener" href="https://pulsar.apache.org)/">https://pulsar.apache.org）</a></em></p>
+<blockquote>
+<p>官网：<a target="_blank" rel="noopener" href="https://pulsar.apache.org/">https://pulsar.apache.org</a></p>
+<p>官方文档：<a target="_blank" rel="noopener" href="https://pulsar.apache.org/docs/zh-CN/">https://pulsar.apache.org/docs/zh-CN/</a></p>
+<p>GitHub：<a target="_blank" rel="noopener" href="https://github.com/apache/pulsar">https://github.com/apache/pulsar</a></p>
+</blockquote>
+<div class="story post-story"><h2 id="1-初识Pulsar"><a href="#1-初识Pulsar" class="headerlink" title="1 初识Pulsar"></a>1 初识Pulsar</h2><p><strong>简介</strong>：</p>
+<ul>
+<li><p>Pulsar是由Java语言进行编写的新一代消息队列产品，具有多租户、高性能等优势。</p>
+</li>
+<li><p>Pulsar 最初由 Yahoo 开发，目前由 Apache 软件基金会管理。</p>
+</li>
+</ul>
+<p><strong>关键特性</strong>：</p>
+<ul>
+<li>Pulsar 的单个实例原生支持多个集群，可跨机房在集群间无缝地完成消息复制。</li>
+<li>极低的发布延迟和端到端延迟。</li>
+<li>可无缝扩展到超过一百万个 topic和topic的多种订阅模式。</li>
+<li>通过 Apache BookKeeper提供的持久化消息存储机制保证消息传递 。</li>
+<li>由轻量级的 serverless 计算框架 Pulsar Functions 实现流原生的数据处理。</li>
+<li>基于 Pulsar Functions 的 serverless connector 框架 Pulsar IO 使得数据更易移入、移出 Apache Pulsar。</li>
+<li>分层式存储可在数据陈旧时，将数据从热存储卸载到冷&#x2F;长期存储（如S3、GCS）中。</li>
+</ul>
+</div><div class="story post-story"><h2 id="2-基本概念"><a href="#2-基本概念" class="headerlink" title="2 基本概念"></a>2 基本概念</h2><h3 id="2-1-基本概念"><a href="#2-1-基本概念" class="headerlink" title="2.1 基本概念"></a>2.1 基本概念</h3><h4 id="2-1-1-设计模式"><a href="#2-1-1-设计模式" class="headerlink" title="2.1.1 设计模式"></a>2.1.1 设计模式</h4><p>Pulsar 采用经典的<strong>发布-订阅</strong>的设计模式(简称 pub-sub)，在这个模式中，生产者向主题发布消息; 使用者订阅这些主题，处理传入消息，并在处理完成时向代理发送确认。  </p>
+<p>一旦创建订阅，即使 consumer 断开连接，Pulsar 仍然可以保存所有消息。 <strong>只有当消费者确认所有这些消息都已成功处理时，才会丢弃保留的消息。</strong></p>
+<p>如果消息的使用失败，并且希望再次使用该消息，则可以通过向代理发送否定确认或为未确认的消息启用确认超时来启用该消息的自动重新传递。 </p>
+<p><strong>简单的发布订阅模型：</strong><br><img src="https://img-blog.csdnimg.cn/1bca09c6eb6d4962acbd4b5bdcf6f947.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/1bca09c6eb6d4962acbd4b5bdcf6f947.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h4 id="2-1-2-基础单元—消息"><a href="#2-1-2-基础单元—消息" class="headerlink" title="2.1.2 基础单元—消息"></a>2.1.2 基础单元—消息</h4><p>消息是 Pulsar 的基础“单元”。 消息的组成部分如下：</p>
+<table>
+<thead>
+<tr>
+<th align="left">组件</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Value &#x2F; data payload</td>
+<td align="left">信息所携带的数据。 所有Pulsar消息都包含原始字节，尽管消息数据也可以符合数据模式。</td>
+</tr>
+<tr>
+<td align="left">Key</td>
+<td align="left">消息可以选择用键进行标记，这在topic 压缩 等操作很有用。</td>
+</tr>
+<tr>
+<td align="left">Properties</td>
+<td align="left">用户自定义属性的键值对（可选）。</td>
+</tr>
+<tr>
+<td align="left">Producer 名称</td>
+<td align="left">产生消息的生产者的名称。 如果没有指定生产者名称，则使用默认名称。</td>
+</tr>
+<tr>
+<td align="left">Sequence ID</td>
+<td align="left">每条Pulsar 信息都属于其主题的有序序列。 消息的序列ID是其在该序列中的顺序。</td>
+</tr>
+<tr>
+<td align="left">Publish time</td>
+<td align="left">消息发布的时间戳。 时间戳由生产者自动应用。</td>
+</tr>
+<tr>
+<td align="left">Event time</td>
+<td align="left">应用程序可以附加到消息的时间戳（可选）， 例如处理消息的时间。 如果没有明确设置，则消息的事件时间为 <code>0</code>。</td>
+</tr>
+<tr>
+<td align="left">TypedMessageBuilder</td>
+<td align="left">用于构造消息。</td>
+</tr>
+</tbody></table>
+<h4 id="2-1-3-生产者"><a href="#2-1-3-生产者" class="headerlink" title="2.1.3 生产者"></a>2.1.3 生产者</h4><p><strong>（1）概念</strong></p>
+<p>Producer 是连接 topic 的程序，它将消息发布到一个 Pulsar broker上。</p>
+<p><strong>（2）发送模式</strong></p>
+<p>Producer 可以以同步(sync) 或 异步(async) 的方式发布消息到 broker。</p>
+<table>
+<thead>
+<tr>
+<th align="left">发送模式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Sync send</td>
+<td>Producer 将在发送每条消息后等待 broker 的确认。 如果未收到确认，则 producer 将认为发送失败。</td>
+</tr>
+<tr>
+<td align="left">异步发送</td>
+<td>Producer 将把消息放于阻塞队列中，并立即返回 然后，客户端将在后台将消息发送给 broker。 如果队列已满(最大大小可配置)，则调用 API 时，producer 可能会立即被阻止或失败，具体取决于传递给 producer 的参数。</td>
+</tr>
+</tbody></table>
+<h4 id="2-1-4-消费者"><a href="#2-1-4-消费者" class="headerlink" title="2.1.4 消费者"></a>2.1.4 消费者</h4><p><strong>（1）概念</strong></p>
+<p>消费者是通过订阅附加到主题，然后接收消息的流程。  </p>
+<p>Consumer 向 broker 发送消息流获取申请以获取消息。 在 Consumer 端有一个队列，用于接收从 broker 推送来的消息。 你能够通过<a target="_blank" rel="noopener" href="https://pulsar.apache.org/docs/zh-CN/next/client-libraries-java#configure-consumer"><code>receiverQueueSize</code></a>参数配置队列的长度 (队列的默认长度是<code>1000</code>) 每当 <code>consumer.receive()</code> 被调用一次，就从缓冲区（buffer）获取一条消息。</p>
+<p><strong>（2）接收模式</strong></p>
+<p>可以通过同步(sync) 或者异步(async)的方式从brokers接受消息。</p>
+<table>
+<thead>
+<tr>
+<th align="left">发送模式</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">同步接收</td>
+<td align="left">同步模式，在收到消息之前都是被阻塞的。</td>
+</tr>
+<tr>
+<td align="left">异步接收</td>
+<td align="left">异步接收模式会立即返回一个 future 值（如 Java 中的 <a target="_blank" rel="noopener" href="http://www.baeldung.com/java-completablefuture"><code>CompletableFuture</code></a>），一旦收到新的消息就立刻完成。</td>
+</tr>
+</tbody></table>
+<p><strong>（3）消息确认</strong></p>
+<p>消费者在成功消费一个消息后，向 Broker 发送一个确认请求。 然后，这条被消费的消息将被永久保存，只有在所有订阅者都确认后才会被删除。 如果希望消息被消费者确认后仍然保留下来，可配置消息保留策略实现。</p>
+<p>消息可以通过以下两种方式之一进行确认。</p>
+<ul>
+<li>被单独确认。在单独确认的情况下，消费者确认每个消息，并向 Broker 发送确认请求。</li>
+<li>累积确认模式 在累积确认中，消费者<strong>只</strong>确认它收到的最后一条消息。 所有之前（包含此条）的消息，都不会被再次发送给那个消费者。</li>
+</ul>
+<h4 id="2-1-5-Topic"><a href="#2-1-5-Topic" class="headerlink" title="2.1.5 Topic"></a>2.1.5 Topic</h4><p>与其他发布-订阅系统一样，Pulsar 中的主题被命名为通道，用于将消息从生产者传输到消费者。 主题名称是具有良好定义结构的 URL： 与其他发布-订阅系统一样，Pulsar 主题是生产者向消费者传递信息的通道。主题名称是具有明确定义结构的 URL：</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;persistent|non-persistent&#125;://tenant/namespace/topic</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">Topic名称组成</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>持久化</code> &#x2F; <code>非持久化</code></td>
+<td align="left">用来标识 topic 的类型。 Pulsar 支持两种主题类型：持久化和非持久化。 主题默认是持久化类型，如果不特殊指定主题类型，那主题就是持久化的。 对于持久化的主题，所有的消息都会被持久化的保存到磁盘当中(如果 broker 不是单机模式，消息会被持久化到多块磁盘)，而非持久化的主题的数据不会被保存到磁盘里面。</td>
+</tr>
+<tr>
+<td align="left"><code>租户</code></td>
+<td align="left">实例中的主题租户。租户对于Pulsar中的多租户特性来说是必不可少的，并且可以扩展到集群中。</td>
+</tr>
+<tr>
+<td align="left"><code>命名空间</code></td>
+<td align="left">将相关联的 topic 作为一个组来管理，是管理 Topic 的基本单元。 大多数对 topic 的管理都是对命名空间的一项配置。 每个租户里面可以有一个或者多个命名空间。</td>
+</tr>
+<tr>
+<td align="left"><code>topic</code></td>
+<td align="left">名字的最后一部分。主题名称在Pulsar实例中没有特殊意义。</td>
+</tr>
+</tbody></table>
+<h4 id="2-1-6-浅谈多租户概念"><a href="#2-1-6-浅谈多租户概念" class="headerlink" title="2.1.6 浅谈多租户概念"></a>2.1.6 浅谈多租户概念</h4><p><strong>（1）什么是多租户？</strong></p>
+<p>多租户技术或称多重租赁技术，是一种软件架构技术，是实现如何在多用户环境下（此处的多用户一般是面向企业用户）共用相同的系统或程序组件，并且可确保各用户间数据的隔离性。</p>
+<p>多租户是一种架构，目的是为了让多用户环境下使用同一套程序，且保证用户间数据隔离。</p>
+<p><strong>（2）多租户有什么好处？</strong></p>
+<ul>
+<li>隔离性，类似于容器化部署</li>
+<li>可重用，减少成本</li>
+<li>安全性</li>
+</ul>
+<p><strong>（3）Pulsar多租户是如何体现的？</strong></p>
+<p>答案：<strong>租户+命名空间</strong></p>
+<p>Pulsar 有租户的概念。 租户可以跨集群分布，每个租户都可以有单独的认证和授权机制。 租户也是存储配额、消息 TTL和隔离策略的管理单元。</p>
+<p>Pulsar 的多租户性质主要体现在 Topic 的 URL 中，结构如下：</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">persistent://tenant/namespace/topic</span><br></pre></td></tr></table></figure>
+
+<p>可以看到，租户是 topic 的最基本单位（比命名空间和 topic 名称更为基本）。</p>
+<p>可以为 Pulsar 实例中的每个租户分配：</p>
+<ul>
+<li>授权机制</li>
+<li>适用于租户配置的集群配置</li>
+</ul>
+<p>Pulsar 通过租户和命名空间这两个关键概念支持多租户。</p>
+<ul>
+<li>Pulsar 为指定的多个租户配置了合适的容量。</li>
+<li>命名空间是一个术语，指租户的管理单元。</li>
+</ul>
+<p>同一命名空间中 topic 的名称如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">persistent://tenant/app1/topic-1</span><br><span class="line"></span><br><span class="line">persistent://tenant/app1/topic-2</span><br><span class="line"></span><br><span class="line">persistent://tenant/app1/topic-3</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-集群架构简述"><a href="#2-2-集群架构简述" class="headerlink" title="2.2  集群架构简述"></a>2.2  集群架构简述</h3><p>单个 Pulsar 集群由以下三部分组成：</p>
+<ul>
+<li>一个或者多个 broker 负责处理和负载均衡 producer 发出的消息，并将这些消息分派给 consumer；Broker 与 Pulsar 配置存储交互来处理相应的任务，并将消息存储在 BookKeeper 实例中（又称 bookies）；Broker 依赖 ZooKeeper 集群处理特定的任务，等等。</li>
+<li>包含一个或多个 bookie 的 BookKeeper 集群负责消息的持久化存储。</li>
+<li>一个Zookeeper集群，用来处理多个Pulsar集群之间的协调任务。<br><img src="https://img-blog.csdnimg.cn/3ea980286aa649ea873bc284daa9560a.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/3ea980286aa649ea873bc284daa9560a.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br><em>（图片来自：<a target="_blank" rel="noopener" href="https://pulsar.apache.org/docs/zh-CN/concepts-architecture-overview/%EF%BC%89">https://pulsar.apache.org/docs/zh-CN/concepts-architecture-overview/）</a></em></li>
+</ul>
+<h3 id="2-3-存储计算分离的设计方式"><a href="#2-3-存储计算分离的设计方式" class="headerlink" title="2.3 存储计算分离的设计方式"></a>2.3 存储计算分离的设计方式</h3><h4 id="2-3-1-什么是存储计算分离设计"><a href="#2-3-1-什么是存储计算分离设计" class="headerlink" title="2.3.1 什么是存储计算分离设计"></a>2.3.1 什么是存储计算分离设计</h4><p>顾名思义，存储计算分离设计就是将一个整体的系统把存储部分和计算部分进行分解，达到解耦合的目的，存储计算分离是一种思想，计算节点只负责计算，是无状态的，而存储节点只负责数据的存储。</p>
+<h4 id="2-3-2-存储计算分离有什么优势和劣势"><a href="#2-3-2-存储计算分离有什么优势和劣势" class="headerlink" title="2.3.2 存储计算分离有什么优势和劣势"></a>2.3.2 存储计算分离有什么优势和劣势</h4><p><strong>优势：</strong></p>
+<ul>
+<li>解耦合</li>
+<li>故障隔离，故障转移和恢复容易</li>
+<li>部署更加灵活</li>
+</ul>
+<p><strong>劣势：</strong></p>
+<ul>
+<li>系统复杂度高</li>
+<li>性能瓶颈较大</li>
+</ul>
+</div><div class="story post-story"><h2 id="3-安装测试"><a href="#3-安装测试" class="headerlink" title="3 安装测试"></a>3 安装测试</h2><h3 id="3-1-安装和运行条件"><a href="#3-1-安装和运行条件" class="headerlink" title="3.1 安装和运行条件"></a>3.1 安装和运行条件</h3><ul>
+<li><p>64 位 <strong>macOS</strong>、<strong>Linux</strong> 和 <strong>Windows</strong> 上。</p>
+</li>
+<li><p>64 位 JRE&#x2F;JDK 8 或更高版本。</p>
+</li>
+<li><p>运行条件：JVM的堆内存默认分配是2G ，可通过修改 <code>conf/pulsar_env.sh</code> 的<code>PULSAR_MEM</code>属性进行设置。</p>
+</li>
+</ul>
+<h3 id="3-2-下载"><a href="#3-2-下载" class="headerlink" title="3.2 下载"></a>3.2 下载</h3><ul>
+<li><p>从 Apache 镜像站下载（<a target="_blank" rel="noopener" href="https://archive.apache.org/dist/pulsar/pulsar-2.10.0/apache-pulsar-2.10.0-bin.tar.gz">Pulsar 2.10.0 二进制版本</a>）</p>
+</li>
+<li><p>从 Pulsar 官网<a target="_blank" rel="noopener" href="https://pulsar.apache.org/download">下载页</a>下载</p>
+</li>
+<li><p>从 Pulsar <a target="_blank" rel="noopener" href="https://github.com/apache/pulsar/releases/latest">发布页面</a>下载</p>
+</li>
+<li><p>使用 <a target="_blank" rel="noopener" href="https://www.gnu.org/software/wget">wget</a> 命令下载：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://archive.apache.org/dist/pulsar/pulsar-2.10.0/apache-pulsar-2.10.0-bin.tar.gz</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="3-3-各目录的作用"><a href="#3-3-各目录的作用" class="headerlink" title="3.3 各目录的作用"></a>3.3 各目录的作用</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">drwxr-xr-x   3 root root   225 1月  22 2020 bin  </span><br><span class="line">drwxr-xr-x   5 root root  4096 1月  22 2020 conf</span><br><span class="line">drwxr-xr-x   3 root root   132 4月  30 15:45 examples</span><br><span class="line">drwxr-xr-x   4 root root    66 4月  30 15:45 instances</span><br><span class="line">drwxr-xr-x   3 root root 20480 4月  30 15:45 lib</span><br><span class="line">-rw-r--r--   1 root root 32333 1月  22 2020 LICENSE</span><br><span class="line">drwxr-xr-x   2 root root  4096 1月  22 2020 licenses</span><br><span class="line">-rw-r--r--   1 root root  6612 1月  22 2020 NOTICE</span><br><span class="line">-rw-r--r--   1 root root  1269 1月  22 2020 README</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>bin：启动文件目录</li>
+<li>conf：配置文件目录</li>
+<li>lib：依赖文件目录</li>
+<li>data：单节点启动后自动生成的目录（存放BookKeeper 和Zookeeper信息）</li>
+</ul>
+<h3 id="3-4-启动"><a href="#3-4-启动" class="headerlink" title="3.4 启动"></a>3.4 启动</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@iZ2ze bin]# pwd</span><br><span class="line">/root/apache-pulsar-2.10.0/bin</span><br><span class="line">[root@iZ2ze bin]# ./pulsar standalone</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-5-测试"><a href="#3-5-测试" class="headerlink" title="3.5 测试"></a>3.5 测试</h3><p><strong>（1）生产消息</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@iZ2ze bin]# ./pulsar-client produce my-topic --messages &quot;hello-pulsar&quot;</span><br><span class="line">......</span><br><span class="line">2022-04-30T16:01:52,920+0800 [main] INFO  org.apache.pulsar.client.cli.PulsarClientTool - 1 messages successfully produced</span><br></pre></td></tr></table></figure>
+
+<p><strong>（2）消费消息</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@iZ2ze4m2ri7irkf6h6n8zoZ bin]# ./pulsar-client consume my-topic -s &quot;first-subscription&quot;</span><br><span class="line">......</span><br><span class="line">2022-04-30T16:15:04,492+0800 [pulsar-client-io-1-1] INFO  com.scurrilous.circe.checksum.Crc32cIntChecksum - SSE4.2 CRC32C provider initialized</span><br><span class="line">----- got message -----</span><br><span class="line">key:[null], properties:[], content:hello-pulsar</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-6-理解subscription"><a href="#3-6-理解subscription" class="headerlink" title="3.6 理解subscription"></a>3.6 理解subscription</h3><p>subscription代表Pulsar的订阅模式，Pulsar一共有四种订阅模式：</p>
+<ul>
+<li><strong>exclusive（默认）</strong>：在exclusive模式下，只允许一个使用者附加到订阅。 如果多个消费者使用相同的订阅一个主题，则会发生错误。  </li>
+<li><strong>shared</strong>：在shared或轮询模式下，多个使用者可以附加到相同的订阅。消息通过轮询机制分发给不同的消费者，并且每个消息仅会被分发给一个消费者。 当消费者断开连接，所有被发送给他，但没有被确认的消息将被重新安排，分发给其它存活的消费者。</li>
+<li><strong>failover</strong>：在failover模式下，多个使用者可以附加到相同的订阅。主消费者会消费非分区主题或者分区主题中的每个分区的消息。 当主使用者断开连接时，所有(未确认的和后续的)消息都被发送到队列中的下一个使用者。  </li>
+<li><strong>key_shared</strong>：在key_shared模式下，多个使用者可以附加到相同的订阅。 消息在跨使用者的分发中传递，具有相同键或相同订购键的消息只传递给一个使用者。 无论消息被重新传递多少次，它都被传递给相同的使用者。 当一个消费者连接或断开时，将导致被服务的消费者更改消息的某个键。<br><img src="https://img-blog.csdnimg.cn/939327a078e84e2482038bc582a5aeb1.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/939327a078e84e2482038bc582a5aeb1.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br><em>（图片来自：<a target="_blank" rel="noopener" href="https://pulsar.apache.org/docs/zh-CN/concepts-messaging/#topic%EF%BC%89">https://pulsar.apache.org/docs/zh-CN/concepts-messaging/#topic）</a></em></li>
+</ul>
+</div><div class="story post-story"><h2 id="4-小结"><a href="#4-小结" class="headerlink" title="4 小结"></a>4 小结</h2><p>​      Pulsar消息队列可以说是消息队列产品的一个未来发展方向，因为Pulsar更加支持云原生和具有比较优秀的存储计算分离的设计思想，除了Pulsar之外的其他消息队列产品也在逐渐的想这个方向靠近，当然除了这两点以外，Pulsar还有很多的优秀思想和巧妙的设计值得我们去学习和领悟。</p>
+<p>​      <code>   回顾本篇文章，可以说对Pulsar的学习和介绍是非常有限的</code>，Pulsar还有许多的机制和特性，<code>小到如顺序消息、延迟队列、消息持久化和去重，大到如：Pulsar Functions、Pulsar IO、Pulsar SQL和层级存储，以及Pulsar是如何在Docker和Kubernetes中运行的，为什么能更好的支持云原生等等</code>，如果要想学会这些并能够更好的使用Pulsar，还是建议去读一下Pulsar的官方文档和一些高质量的博客，让我们一起期待我的下一篇博客！</p>
+<blockquote>
+<p>参考：</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/651434092qq/p/15192976.html">https://www.cnblogs.com/651434092qq/p/15192976.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://pulsar.apache.org/docs/zh-CN/concepts-messaging/">https://pulsar.apache.org/docs/zh-CN/concepts-messaging/</a></p>
+<p><a target="_blank" rel="noopener" href="https://pulsar.apache.org/docs/zh-CN/concepts-overview/">https://pulsar.apache.org/docs/zh-CN/concepts-overview/</a></p>
+<p><a target="_blank" rel="noopener" href="https://pulsar.apache.org/docs/zh-CN/">https://pulsar.apache.org/docs/zh-CN/</a></p>
+<p><a target="_blank" rel="noopener" href="https://pulsar.apache.org/docs/zh-CN/next/concepts-multi-tenancy/">https://pulsar.apache.org/docs/zh-CN/next/concepts-multi-tenancy/</a></p>
+<p><a target="_blank" rel="noopener" href="https://time.geekbang.org/column/article/140913">https://time.geekbang.org/column/article/140913</a></p>
+
+</div>
+  </div>
+  
+  
+    
+    <div class='footer'>
+      
+      
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-06-15T09:30:12+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2022年6月15日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/15/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E4%B8%80%E9%97%A8%E6%96%B0%E6%8A%80%E6%9C%AF%E7%9A%84/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>消息中间件</p></a></div>
+  <span hidden itemprop="keywords">消息中间件</span>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/06/15/%E6%96%B0%E4%B8%80%E4%BB%A3%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E2%80%94Apache%20Pulsar/&title=新一代消息中间件——Apache Pulsar - Barry Yan's Blog&summary=Pulsar是由Java语言进行编写的新一代消息队列产品，具有多租户、高性能等优势"
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/06/15/%E6%96%B0%E4%B8%80%E4%BB%A3%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E2%80%94Apache%20Pulsar/&title=新一代消息中间件——Apache Pulsar - Barry Yan's Blog&summary=Pulsar是由Java语言进行编写的新一代消息队列产品，具有多租户、高性能等优势"
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/06/15/%E6%96%B0%E4%B8%80%E4%BB%A3%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E2%80%94Apache%20Pulsar/&title=新一代消息中间件——Apache Pulsar - Barry Yan's Blog&summary=Pulsar是由Java语言进行编写的新一代消息队列产品，具有多租户、高性能等优势"
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
   
   
+
   
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2022/06/15/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E4%B8%80%E9%97%A8%E6%96%B0%E6%8A%80%E6%9C%AF%E7%9A%84/'>
+          <p class='title'>我是如何学习一门新技术的<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>我是如何学习一门新技术的
+
+
+Hello Everyone ~
+因为近期在业余时间看了一些书和文章，而且也都让自己颇有些心得，以前的快乐是打几把游戏现在的快乐是学会一个新知识，写一篇博客，享受写...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="discussionUrl" content="/2022/06/15/%E6%96%B0%E4%B8%80%E4%BB%A3%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E2%80%94Apache%20Pulsar/index.html#comments">
     </span>
-  
-  
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/06/15/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E4%B8%80%E9%97%A8%E6%96%B0%E6%8A%80%E6%9C%AF%E7%9A%84/"  itemprop="url">
-        我是如何学习一门新技术的
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p>我是如何学习一门新技术的</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://blog.csdn.net/Mr_YanMingXin'><img src='https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg">
-            <meta itemprop="name" content="Barry Yan">
-            <meta itemprop="url" content="https://blog.csdn.net/Mr_YanMingXin">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-06-15T08:33:28+08:00">2022-06-15</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/06/15/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E4%B8%80%E9%97%A8%E6%96%B0%E6%8A%80%E6%9C%AF%E7%9A%84/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
 
-</div>
+    <div id="layoutHelper-comments"></div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/14/%E6%B5%85%E8%B0%88%E4%BA%91%E5%8E%9F%E7%94%9F%E6%8A%80%E6%9C%AF%E7%BB%84%E4%BB%B6%E2%80%94etcd/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/06/14/%E6%B5%85%E8%B0%88%E4%BA%91%E5%8E%9F%E7%94%9F%E6%8A%80%E6%9C%AF%E7%BB%84%E4%BB%B6%E2%80%94etcd/"  itemprop="url">
-        浅谈云原生技术组件—etcd
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p>浅谈云原生技术组件—etcd</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://blog.csdn.net/Mr_YanMingXin'><img src='https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg">
-            <meta itemprop="name" content="Barry Yan">
-            <meta itemprop="url" content="https://blog.csdn.net/Mr_YanMingXin">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-06-14T16:23:28+08:00">2022-06-14</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/06/14/%E6%B5%85%E8%B0%88%E4%BA%91%E5%8E%9F%E7%94%9F%E6%8A%80%E6%9C%AF%E7%BB%84%E4%BB%B6%E2%80%94etcd/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
+  </article>
 
-</div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/14/MarkDown%E8%AF%AD%E6%B3%95%E4%B8%8ETypora%E7%9A%84%E4%BD%BF%E7%94%A8%E2%80%94%E4%BB%8E%E6%AD%A4%E5%91%8A%E5%88%ABWord%E6%96%B9%E5%BC%8F%E5%81%9A%E7%AC%94%E8%AE%B0/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/06/14/MarkDown%E8%AF%AD%E6%B3%95%E4%B8%8ETypora%E7%9A%84%E4%BD%BF%E7%94%A8%E2%80%94%E4%BB%8E%E6%AD%A4%E5%91%8A%E5%88%ABWord%E6%96%B9%E5%BC%8F%E5%81%9A%E7%AC%94%E8%AE%B0/"  itemprop="url">
-        MarkDown语法与Typora的使用—从此告别Word方式做笔记
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p>Markdown是一种轻量级标记语言</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://blog.csdn.net/Mr_YanMingXin'><img src='https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg">
-            <meta itemprop="name" content="Barry Yan">
-            <meta itemprop="url" content="https://blog.csdn.net/Mr_YanMingXin">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-06-14T10:33:28+08:00">2022-06-14</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/06/14/MarkDown%E8%AF%AD%E6%B3%95%E4%B8%8ETypora%E7%9A%84%E4%BD%BF%E7%94%A8%E2%80%94%E4%BB%8E%E6%AD%A4%E5%91%8A%E5%88%ABWord%E6%96%B9%E5%BC%8F%E5%81%9A%E7%AC%94%E8%AE%B0/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
 
-</div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/13/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82%E4%BB%8E%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BE%93%E5%85%A5%E4%B8%80%E4%B8%AAURL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%87%BA%E7%8E%B0%E9%83%BD%E7%BB%8F%E5%8E%86%E4%BA%86%E5%93%AA%E4%BA%9B%E8%BF%87%E7%A8%8B/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/06/13/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82%E4%BB%8E%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BE%93%E5%85%A5%E4%B8%80%E4%B8%AAURL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%87%BA%E7%8E%B0%E9%83%BD%E7%BB%8F%E5%8E%86%E4%BA%86%E5%93%AA%E4%BA%9B%E8%BF%87%E7%A8%8B/"  itemprop="url">
-        一文搞懂从浏览器输入一个URL到页面出现都经历了哪些过程
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p><strong>域名系统</strong>（英文全称：<strong>D</strong>omain <strong>N</strong>ame <strong>S</strong>ystem，简称DNS）是互联网的一项服务。它作为将域名和IP地址相互映射的一个分布式数据库，能够使人更方便地访问互联网。</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://blog.csdn.net/Mr_YanMingXin'><img src='https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg">
-            <meta itemprop="name" content="Barry Yan">
-            <meta itemprop="url" content="https://blog.csdn.net/Mr_YanMingXin">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-06-13T17:33:28+08:00">2022-06-13</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/06/13/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82%E4%BB%8E%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BE%93%E5%85%A5%E4%B8%80%E4%B8%AAURL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%87%BA%E7%8E%B0%E9%83%BD%E7%BB%8F%E5%8E%86%E4%BA%86%E5%93%AA%E4%BA%9B%E8%BF%87%E7%A8%8B/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/11/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E4%B9%8B%E5%B8%B8%E8%A7%81%E7%9A%84%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E7%AE%97%E6%B3%95/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/06/11/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E4%B9%8B%E5%B8%B8%E8%A7%81%E7%9A%84%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E7%AE%97%E6%B3%95/"  itemprop="url">
-        分布式系统设计之常见的负载均衡算法
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p>负载均衡（Load Balance），其含义就是指将负载（工作任务）进行平衡、分摊到多个操作单元上进行运行，从而协同完成工作任务。</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://blog.csdn.net/Mr_YanMingXin'><img src='https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg">
-            <meta itemprop="name" content="Barry Yan">
-            <meta itemprop="url" content="https://blog.csdn.net/Mr_YanMingXin">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-06-11T14:33:28+08:00">2022-06-11</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/06/11/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E4%B9%8B%E5%B8%B8%E8%A7%81%E7%9A%84%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E7%AE%97%E6%B3%95/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/10/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E6%90%AD%E5%BB%BASpring%20Boot+Vue%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/06/10/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E6%90%AD%E5%BB%BASpring%20Boot+Vue%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/"  itemprop="url">
-        手把手教你搭建Spring Boot+Vue前后端分离.md
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p>前后端分离是目前互联网开发中比较广泛使用的开发模式</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://blog.csdn.net/Mr_YanMingXin'><img src='https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg">
-            <meta itemprop="name" content="Barry Yan">
-            <meta itemprop="url" content="https://blog.csdn.net/Mr_YanMingXin">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-06-10T17:33:28+08:00">2022-06-10</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/06/10/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E6%90%AD%E5%BB%BASpring%20Boot+Vue%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/30/%E6%8E%A2%E7%B4%A2Pulsar%E4%B9%8B%E4%BD%BF%E7%94%A8Go%E5%92%8CJava%E6%93%8D%E4%BD%9CPulsar/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/05/30/%E6%8E%A2%E7%B4%A2Pulsar%E4%B9%8B%E4%BD%BF%E7%94%A8Go%E5%92%8CJava%E6%93%8D%E4%BD%9CPulsar/"  itemprop="url">
-        探索Pulsar之使用Go和Java操作Pulsar
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p>Pulsar之使用Go和Java操作Pulsar</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://blog.csdn.net/Mr_YanMingXin'><img src='https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg">
-            <meta itemprop="name" content="Barry Yan">
-            <meta itemprop="url" content="https://blog.csdn.net/Mr_YanMingXin">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-05-30T17:33:28+08:00">2022-05-30</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/05/30/%E6%8E%A2%E7%B4%A2Pulsar%E4%B9%8B%E4%BD%BF%E7%94%A8Go%E5%92%8CJava%E6%93%8D%E4%BD%9CPulsar/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/30/%E4%B8%80%E6%96%87%E5%B8%A6%E4%BD%A0%E6%90%9E%E6%87%82HTTP%E5%92%8CHTTPS/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/05/30/%E4%B8%80%E6%96%87%E5%B8%A6%E4%BD%A0%E6%90%9E%E6%87%82HTTP%E5%92%8CHTTPS/"  itemprop="url">
-        一文带你搞懂HTTP和HTTPS
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p>一文带你搞懂HTTP和HTTPS</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://blog.csdn.net/Mr_YanMingXin'><img src='https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg">
-            <meta itemprop="name" content="Barry Yan">
-            <meta itemprop="url" content="https://blog.csdn.net/Mr_YanMingXin">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-05-30T17:33:28+08:00">2022-05-30</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/05/30/%E4%B8%80%E6%96%87%E5%B8%A6%E4%BD%A0%E6%90%9E%E6%87%82HTTP%E5%92%8CHTTPS/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/30/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E4%B9%8B%E5%85%B1%E8%AF%86%E7%AE%97%E6%B3%95%E2%80%942PC%E3%80%813PC%E3%80%81%20Paxos/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/05/30/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E4%B9%8B%E5%85%B1%E8%AF%86%E7%AE%97%E6%B3%95%E2%80%942PC%E3%80%813PC%E3%80%81%20Paxos/"  itemprop="url">
-        分布式系统设计之共识算法-2PC、3PC、Paxos
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p>共识问题分布式计算中最基本的概念之一</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://blog.csdn.net/Mr_YanMingXin'><img src='https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg">
-            <meta itemprop="name" content="Barry Yan">
-            <meta itemprop="url" content="https://blog.csdn.net/Mr_YanMingXin">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-05-30T17:33:28+08:00">2022-05-30</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/05/30/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E4%B9%8B%E5%85%B1%E8%AF%86%E7%AE%97%E6%B3%95%E2%80%942PC%E3%80%813PC%E3%80%81%20Paxos/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-        <p class="current">
-          1 / 2
-        </p>
-        
-          <a class="next" rel="next" href="/page/2/">
-            <section class="post next white-box shadow floatable blur">
-              &nbsp;下一页&nbsp;<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
-    
-  
 
 
 </div>
@@ -3193,76 +2988,29 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
 
-<section class="widget blogger shadow floatable blur desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Barry Yan</h2>
-        
-        
-          <p>请不要叫我程序员，叫我工程师或Programmer</p>
 
-        
-        
-      </div>
+
+  <section class="widget toc-wrapper shadow floatable blur desktop mobile pjax" id="toc-div" >
     
+  <header>
     
-      <div class="social-wrapper">
-        
-          
-            <a href="https://blog.csdn.net/Mr_YanMingXin"
-              class="social fa-solid fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:1712229564@qq.com"
-              class="social fa-solid fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/ibarryyan"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fa-solid fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
-  </div>
-</section>
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%88%9D%E8%AF%86Pulsar"><span class="toc-number">1.</span> <span class="toc-text">1 初识Pulsar</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">2.</span> <span class="toc-text">2 基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-1-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.1.1.</span> <span class="toc-text">2.1.1 设计模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-2-%E5%9F%BA%E7%A1%80%E5%8D%95%E5%85%83%E2%80%94%E6%B6%88%E6%81%AF"><span class="toc-number">2.1.2.</span> <span class="toc-text">2.1.2 基础单元—消息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-3-%E7%94%9F%E4%BA%A7%E8%80%85"><span class="toc-number">2.1.3.</span> <span class="toc-text">2.1.3 生产者</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-4-%E6%B6%88%E8%B4%B9%E8%80%85"><span class="toc-number">2.1.4.</span> <span class="toc-text">2.1.4 消费者</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-5-Topic"><span class="toc-number">2.1.5.</span> <span class="toc-text">2.1.5 Topic</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-6-%E6%B5%85%E8%B0%88%E5%A4%9A%E7%A7%9F%E6%88%B7%E6%A6%82%E5%BF%B5"><span class="toc-number">2.1.6.</span> <span class="toc-text">2.1.6 浅谈多租户概念</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E9%9B%86%E7%BE%A4%E6%9E%B6%E6%9E%84%E7%AE%80%E8%BF%B0"><span class="toc-number">2.2.</span> <span class="toc-text">2.2  集群架构简述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E5%AD%98%E5%82%A8%E8%AE%A1%E7%AE%97%E5%88%86%E7%A6%BB%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%96%B9%E5%BC%8F"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 存储计算分离的设计方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%AD%98%E5%82%A8%E8%AE%A1%E7%AE%97%E5%88%86%E7%A6%BB%E8%AE%BE%E8%AE%A1"><span class="toc-number">2.3.1.</span> <span class="toc-text">2.3.1 什么是存储计算分离设计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-2-%E5%AD%98%E5%82%A8%E8%AE%A1%E7%AE%97%E5%88%86%E7%A6%BB%E6%9C%89%E4%BB%80%E4%B9%88%E4%BC%98%E5%8A%BF%E5%92%8C%E5%8A%A3%E5%8A%BF"><span class="toc-number">2.3.2.</span> <span class="toc-text">2.3.2 存储计算分离有什么优势和劣势</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%AE%89%E8%A3%85%E6%B5%8B%E8%AF%95"><span class="toc-number">3.</span> <span class="toc-text">3 安装测试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E5%AE%89%E8%A3%85%E5%92%8C%E8%BF%90%E8%A1%8C%E6%9D%A1%E4%BB%B6"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 安装和运行条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E4%B8%8B%E8%BD%BD"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E5%90%84%E7%9B%AE%E5%BD%95%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 各目录的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E5%90%AF%E5%8A%A8"><span class="toc-number">3.4.</span> <span class="toc-text">3.4 启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-%E6%B5%8B%E8%AF%95"><span class="toc-number">3.5.</span> <span class="toc-text">3.5 测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-%E7%90%86%E8%A7%A3subscription"><span class="toc-number">3.6.</span> <span class="toc-text">3.6 理解subscription</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%B0%8F%E7%BB%93"><span class="toc-number">4.</span> <span class="toc-text">4 小结</span></a></li></ol>
+    </div>
+  </section>
 
   
 
   
     
     
+
+
 
   
 
@@ -3285,8 +3033,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     </div>
   </section>
 
-
-  
 
   
 
@@ -3327,7 +3073,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3336,15 +3082,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.remove("show");
+    l_header.classList.add("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="full";
-      cover_wrapper.style.display="";
-      scroll_down.style.display="";
+      cover_wrapper.id="none";
+      cover_wrapper.style.display="none";
+      scroll_down.style.display="none";
     
   
 </script>
@@ -4292,7 +4038,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Barry Yan's Blog"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Barry Yan's Blog","url":"http://example.com/","keywords":"Java,Go,SQL","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Barry Yan's Blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/06/15/新一代消息中间件—Apache Pulsar/","name":"新一代消息中间件——Apache Pulsar"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Barry Yan's Blog","url":"http://example.com/","keywords":"Java,Go,SQL","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"新一代消息中间件——Apache Pulsar","description":"Pulsar是由Java语言进行编写的新一代消息队列产品，具有多租户、高性能等优势","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/06/15/%E6%96%B0%E4%B8%80%E4%BB%A3%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E2%80%94Apache%20Pulsar/"},"author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/06/15/%E6%96%B0%E4%B8%80%E4%BB%A3%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E2%80%94Apache%20Pulsar/","wordCount":41,"datePublished":"2022-06-15T09:33:28.000Z","dateModified":"2022-06-15T01:30:12.762Z","keywords":"消息中间件","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
