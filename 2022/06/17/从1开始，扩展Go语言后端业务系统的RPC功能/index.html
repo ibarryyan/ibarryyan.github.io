@@ -33,7 +33,7 @@
   <!-- 页面元数据 -->
   <title>从1开始，扩展Go语言后端业务系统的RPC功能 - Barry Yan's Blog</title>
   <meta name="keywords" content="Go语言,Java,Go,SQL">
-  <meta desc name="description" content="﻿这次我们接上一篇文章《从0开始，用Go语言搭建一个简单的后端业务系统》，利用Google开源的RPC框架—gRPC来进行对接口的RPC功能横向扩展，也就是用RPC协议将restful的HTTP协议重写一遍。 - Barry Yan - Barry Yan's Blog">
+  <meta desc name="description" content="这次我们接上一篇文章《从0开始，用Go语言搭建一个简单的后端业务系统》，利用Google开源的RPC框架—gRPC来进行对接口的RPC功能横向扩展，也就是用RPC协议将restful的HTTP协议重写一遍。 - Barry Yan - Barry Yan's Blog">
   
 <meta property="og:type" content="article">
 <meta property="og:title" content="从1开始，扩展Go语言后端业务系统的RPC功能">
@@ -43,7 +43,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-06-17T06:33:28.000Z">
-<meta property="article:modified_time" content="2022-06-29T09:54:58.240Z">
+<meta property="article:modified_time" content="2022-06-29T10:00:59.403Z">
 <meta property="article:author" content="Barry Yan">
 <meta property="article:tag" content="Go语言">
 <meta name="twitter:card" content="summary">
@@ -1751,7 +1751,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.cbfd0700.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.311803bb.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1656496702396),
+    lastupdate: new Date(1656496863549),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","music","tagcloud"],
@@ -2595,10 +2595,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>﻿这次我们接上一篇文章《从0开始，用Go语言搭建一个简单的后端业务系统》，利用Google开源的RPC框架—gRPC来进行对接口的RPC功能横向扩展，也就是用RPC协议将restful的HTTP协议重写一遍。</p>
+    <p>这次我们接上一篇文章《从0开始，用Go语言搭建一个简单的后端业务系统》，利用Google开源的RPC框架—gRPC来进行对接口的RPC功能横向扩展，也就是用RPC协议将restful的HTTP协议重写一遍。</p>
 <span id="more"></span>
 
-<p>﻿这次我们接上一篇文章<a target="_blank" rel="noopener" href="https://blog.csdn.net/Mr_YanMingXin/article/details/125294855">《从0开始，用Go语言搭建一个简单的后端业务系统》</a>，利用Google开源的RPC框架—gRPC来进行对接口的RPC功能横向扩展，也就是用RPC协议将restful的HTTP协议重写一遍。</p>
 <p>那么对于gRPC不是很了解的同学可以尝试着学一下我之前写过的这篇文章：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Mr_YanMingXin/article/details/121870724">《Go使用grpc协议通信实战》</a>，以及<a target="_blank" rel="noopener" href="https://blog.csdn.net/Mr_YanMingXin/article/details/124653945">《一文带你搞懂HTTP和RPC协议的异同》</a>，相信有了这些知识作为铺垫之后，了解gRPC的使用和原理就能更加的顺理成章。</p>
 <p>下面我们开始正文：</p>
 <h3 id="1-扩展后的项目结构"><a href="#1-扩展后的项目结构" class="headerlink" title="1 扩展后的项目结构"></a>1 扩展后的项目结构</h3><p>画红圈圈的为新增加的文件<br><img src="https://img-blog.csdnimg.cn/5e5580530edc4bb3b4159f3bd32f6c8c.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/5e5580530edc4bb3b4159f3bd32f6c8c.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
@@ -2655,7 +2654,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-06-29T17:54:58+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-06-29T18:00:59+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2022年6月29日</p>
@@ -2681,7 +2680,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/06/17/%E4%BB%8E1%E5%BC%80%E5%A7%8B%EF%BC%8C%E6%89%A9%E5%B1%95Go%E8%AF%AD%E8%A8%80%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E7%9A%84RPC%E5%8A%9F%E8%83%BD/&title=从1开始，扩展Go语言后端业务系统的RPC功能 - Barry Yan's Blog&summary=﻿这次我们接上一篇文章《从0开始，用Go语言搭建一个简单的后端业务系统》，利用Google开源的RPC框架—gRPC来进行对接口的RPC功能横向扩展，也就是用RPC协议将restful的HTTP协议重写一遍。"
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/06/17/%E4%BB%8E1%E5%BC%80%E5%A7%8B%EF%BC%8C%E6%89%A9%E5%B1%95Go%E8%AF%AD%E8%A8%80%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E7%9A%84RPC%E5%8A%9F%E8%83%BD/&title=从1开始，扩展Go语言后端业务系统的RPC功能 - Barry Yan's Blog&summary=这次我们接上一篇文章《从0开始，用Go语言搭建一个简单的后端业务系统》，利用Google开源的RPC框架—gRPC来进行对接口的RPC功能横向扩展，也就是用RPC协议将restful的HTTP协议重写一遍。"
           
           >
           
@@ -2693,7 +2692,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/06/17/%E4%BB%8E1%E5%BC%80%E5%A7%8B%EF%BC%8C%E6%89%A9%E5%B1%95Go%E8%AF%AD%E8%A8%80%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E7%9A%84RPC%E5%8A%9F%E8%83%BD/&title=从1开始，扩展Go语言后端业务系统的RPC功能 - Barry Yan's Blog&summary=﻿这次我们接上一篇文章《从0开始，用Go语言搭建一个简单的后端业务系统》，利用Google开源的RPC框架—gRPC来进行对接口的RPC功能横向扩展，也就是用RPC协议将restful的HTTP协议重写一遍。"
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/06/17/%E4%BB%8E1%E5%BC%80%E5%A7%8B%EF%BC%8C%E6%89%A9%E5%B1%95Go%E8%AF%AD%E8%A8%80%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E7%9A%84RPC%E5%8A%9F%E8%83%BD/&title=从1开始，扩展Go语言后端业务系统的RPC功能 - Barry Yan's Blog&summary=这次我们接上一篇文章《从0开始，用Go语言搭建一个简单的后端业务系统》，利用Google开源的RPC框架—gRPC来进行对接口的RPC功能横向扩展，也就是用RPC协议将restful的HTTP协议重写一遍。"
           
           >
           
@@ -2705,7 +2704,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/06/17/%E4%BB%8E1%E5%BC%80%E5%A7%8B%EF%BC%8C%E6%89%A9%E5%B1%95Go%E8%AF%AD%E8%A8%80%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E7%9A%84RPC%E5%8A%9F%E8%83%BD/&title=从1开始，扩展Go语言后端业务系统的RPC功能 - Barry Yan's Blog&summary=﻿这次我们接上一篇文章《从0开始，用Go语言搭建一个简单的后端业务系统》，利用Google开源的RPC框架—gRPC来进行对接口的RPC功能横向扩展，也就是用RPC协议将restful的HTTP协议重写一遍。"
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/06/17/%E4%BB%8E1%E5%BC%80%E5%A7%8B%EF%BC%8C%E6%89%A9%E5%B1%95Go%E8%AF%AD%E8%A8%80%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E7%9A%84RPC%E5%8A%9F%E8%83%BD/&title=从1开始，扩展Go语言后端业务系统的RPC功能 - Barry Yan's Blog&summary=这次我们接上一篇文章《从0开始，用Go语言搭建一个简单的后端业务系统》，利用Google开源的RPC框架—gRPC来进行对接口的RPC功能横向扩展，也就是用RPC协议将restful的HTTP协议重写一遍。"
           
           >
           
@@ -2746,10 +2745,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='next' href='/2022/06/16/%E4%BB%8E0%E5%BC%80%E5%A7%8B%EF%BC%8C%E7%94%A8Go%E8%AF%AD%E8%A8%80%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F/'>
           <p class='title'>从0开始，用Go语言搭建一个简单的后端业务系统<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>﻿Hello 小伙伴们，今天给大家带来了一份Go语言搭建后端业务系统的教程，restful风格哦
+          <p class='content'>Hello 小伙伴们，今天给大家带来了一份Go语言搭建后端业务系统的教程，restful风格哦
 
 
-﻿Hello 小伙伴们，今天给大家带来了一份Go语言搭建后端业务系统的教程，restful风...</p>
+
+（1）内存占用更少
+
+（2）启动速度更快
+
+（3）代码更加简洁
+
+
+OK，下面我们开始正文，...</p>
         </a>
       
     </div>
@@ -4027,7 +4034,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Barry Yan's Blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/06/17/从1开始，扩展Go语言后端业务系统的RPC功能/","name":"从1开始，扩展Go语言后端业务系统的RPC功能"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Barry Yan's Blog","url":"http://example.com/","keywords":"Java,Go,SQL","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"从1开始，扩展Go语言后端业务系统的RPC功能","description":"﻿这次我们接上一篇文章《从0开始，用Go语言搭建一个简单的后端业务系统》，利用Google开源的RPC框架—gRPC来进行对接口的RPC功能横向扩展，也就是用RPC协议将restful的HTTP协议重写一遍。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/06/17/%E4%BB%8E1%E5%BC%80%E5%A7%8B%EF%BC%8C%E6%89%A9%E5%B1%95Go%E8%AF%AD%E8%A8%80%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E7%9A%84RPC%E5%8A%9F%E8%83%BD/"},"author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/06/17/%E4%BB%8E1%E5%BC%80%E5%A7%8B%EF%BC%8C%E6%89%A9%E5%B1%95Go%E8%AF%AD%E8%A8%80%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E7%9A%84RPC%E5%8A%9F%E8%83%BD/","wordCount":104,"datePublished":"2022-06-17T06:33:28.000Z","dateModified":"2022-06-29T09:54:58.240Z","keywords":"Go语言","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Barry Yan's Blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/06/17/从1开始，扩展Go语言后端业务系统的RPC功能/","name":"从1开始，扩展Go语言后端业务系统的RPC功能"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Barry Yan's Blog","url":"http://example.com/","keywords":"Java,Go,SQL","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"从1开始，扩展Go语言后端业务系统的RPC功能","description":"这次我们接上一篇文章《从0开始，用Go语言搭建一个简单的后端业务系统》，利用Google开源的RPC框架—gRPC来进行对接口的RPC功能横向扩展，也就是用RPC协议将restful的HTTP协议重写一遍。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/06/17/%E4%BB%8E1%E5%BC%80%E5%A7%8B%EF%BC%8C%E6%89%A9%E5%B1%95Go%E8%AF%AD%E8%A8%80%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E7%9A%84RPC%E5%8A%9F%E8%83%BD/"},"author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/06/17/%E4%BB%8E1%E5%BC%80%E5%A7%8B%EF%BC%8C%E6%89%A9%E5%B1%95Go%E8%AF%AD%E8%A8%80%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E7%9A%84RPC%E5%8A%9F%E8%83%BD/","wordCount":103,"datePublished":"2022-06-17T06:33:28.000Z","dateModified":"2022-06-29T10:00:59.403Z","keywords":"Go语言","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
