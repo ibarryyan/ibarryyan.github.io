@@ -22,6 +22,8 @@
 
 **:cow:阿里云技术社区**：https://developer.aliyun.com/profile/expert/gk7gux2h2w67c
 
+**:hatching_chick:掘金**：https://juejin.cn/user/990022531286247
+
 **:koala:Gitee**：https://gitee.com/yan_mingxin
 
 **:cat:GitHub**：https://github.com/ibarryyan
