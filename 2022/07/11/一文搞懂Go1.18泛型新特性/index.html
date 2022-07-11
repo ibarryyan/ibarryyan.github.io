@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2022/05/12/一文带你搞懂http和rpc协议的异同/"/>
+  <link rel="canonical" href="http://example.com/2022/07/11/一文搞懂go1.18泛型新特性/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,21 +31,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>一文带你搞懂HTTP和RPC协议的异同 - Barry Yan's Blog</title>
-  <meta name="keywords" content="网络,Java,Go,SQL">
-  <meta desc name="description" content="一文带你搞懂HTTP和RPC协议的异同 - Barry Yan - Barry Yan's Blog">
+  <title>一文搞懂Go1.18泛型新特性 - Barry Yan's Blog</title>
+  <meta name="keywords" content="Go语言,Java,Go,SQL">
+  <meta desc name="description" content="关于Go1.18版本的发布，当然不只有泛型（Generics）这一个新特性，具体的发布文档可以看下Go官方博客 - Barry Yan - Barry Yan's Blog">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="一文带你搞懂HTTP和RPC协议的异同">
-<meta property="og:url" content="http://example.com/2022/05/12/%E4%B8%80%E6%96%87%E5%B8%A6%E4%BD%A0%E6%90%9E%E6%87%82HTTP%E5%92%8CRPC%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%BC%82%E5%90%8C/index.html">
+<meta property="og:title" content="一文搞懂Go1.18泛型新特性">
+<meta property="og:url" content="http://example.com/2022/07/11/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82Go1.18%E6%B3%9B%E5%9E%8B%E6%96%B0%E7%89%B9%E6%80%A7/index.html">
 <meta property="og:site_name" content="Barry Yan&#39;s Blog">
-<meta property="og:description" content="一文带你搞懂HTTP和RPC协议的异同">
+<meta property="og:description" content="关于Go1.18版本的发布，当然不只有泛型（Generics）这一个新特性，具体的发布文档可以看下Go官方博客">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2022-05-12T03:43:28.000Z">
-<meta property="article:modified_time" content="2022-06-15T01:20:09.584Z">
+<meta property="article:published_time" content="2022-07-11T04:33:28.000Z">
+<meta property="article:modified_time" content="2022-07-11T12:47:00.653Z">
 <meta property="article:author" content="Barry Yan">
-<meta property="article:tag" content="网络">
+<meta property="article:tag" content="Go语言">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2517,7 +2517,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/12/%E4%B8%80%E6%96%87%E5%B8%A6%E4%BD%A0%E6%90%9E%E6%87%82HTTP%E5%92%8CRPC%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%BC%82%E5%90%8C/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/11/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82Go1.18%E6%B3%9B%E5%9E%8B%E6%96%B0%E7%89%B9%E6%80%A7/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Barry Yan's Blog">
   </span>
@@ -2538,7 +2538,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        一文带你搞懂HTTP和RPC协议的异同
+        一文搞懂Go1.18泛型新特性
       </h1>
       <div class='new-meta-box'>
         
@@ -2559,10 +2559,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-05-12T11:43:28+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-07-11T12:33:28+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2022年5月12日</p>
+    <p>发布于：2022年7月11日</p>
   </a>
 </div>
 
@@ -2595,27 +2595,43 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>一文带你搞懂HTTP和RPC协议的异同</p>
+    <p>关于Go1.18版本的发布，当然不只有泛型（Generics）这一个新特性，具体的发布文档可以看下Go官方博客</p>
 <span id="more"></span>
 
-<h3 id="1-什么是RPC协议"><a href="#1-什么是RPC协议" class="headerlink" title="1 什么是RPC协议"></a>1 什么是RPC协议</h3><h4 id="1-1-简介"><a href="#1-1-简介" class="headerlink" title="1.1 简介"></a>1.1 简介</h4><p>这是老生常谈的协议了，RPC即<strong>远程过程调用</strong>（Remote Procedure Call），</p>
-<p>RPC协议是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。</p>
-<h4 id="1-2-原理及模型"><a href="#1-2-原理及模型" class="headerlink" title="1.2 原理及模型"></a>1.2 原理及模型</h4><p>RPC协议广泛的应用于分布式系统中，主要用于不同计算机（即服务节点）间的通信，RPC主要是基于Socket，而Socket又基于TCP，因此我们可以理解为RPC基于TCP协议（部分RPC框架基于HTTP协议），在TCP的基础上增加了编程语言的机制，比如反射、编码与解码、以及动态代理，因此我们可以认为RPC只是一个概念，而实现这一概念有不同方式，典型的RPC框架如gRPC、Thrift、Netty、Dubbo等都是基于这一思想。<br><img src="https://img-blog.csdnimg.cn/f3c5c5b40b8e48abacb35e995b279608.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/f3c5c5b40b8e48abacb35e995b279608.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
-<h3 id="2-什么是HTTP协议"><a href="#2-什么是HTTP协议" class="headerlink" title="2 什么是HTTP协议"></a>2 什么是HTTP协议</h3><h4 id="2-1-简介"><a href="#2-1-简介" class="headerlink" title="2.1 简介"></a>2.1 简介</h4><p>这是老生常谈的协议了 too，HTTP即<strong>超文本传输协议</strong>（Hyper Text Transfer Protocol）</p>
-<p>HTTP是互联网上应用最为广泛的一种网络协议，是一个客户端和服务器端请求和应答的标准（TCP），用于从WWW服务器传输超文本到本地浏览器的传输协议，它可以使浏览器更加高效，使网络传输减少。</p>
-<h4 id="2-2-原理及模型"><a href="#2-2-原理及模型" class="headerlink" title="2.2 原理及模型"></a>2.2 原理及模型</h4><p>HTTP协议是处于OSI网络模型的最上层应用层的协议，基于TCP协议，是通信协议中相对简单的协议之一，为什么简单呢？我认为原因有二：一是封装了大量的协议和报文头，使用简单，二是明文传输，处理简单，也是基于此，HTTP协议成为了互联网中最广泛的协议之一。<br><img src="https://img-blog.csdnimg.cn/cc3163a801a34348b394378706bd1baa.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/cc3163a801a34348b394378706bd1baa.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
-<h3 id="3-为什么要拿HTTP和RPC协议进行比较？"><a href="#3-为什么要拿HTTP和RPC协议进行比较？" class="headerlink" title="3 为什么要拿HTTP和RPC协议进行比较？"></a>3 为什么要拿HTTP和RPC协议进行比较？</h3><p>为什么要拿HTTP和RPC进行比较呢，我觉得大抵是因为HTTP和RPC是互联网应用系统中使用最广泛的两种网络通信协议了吧（模仿下鲁迅），并且在使用上似乎谁都能替代谁（当然抛开使用效率层面），一个是简单易用，一个是复杂高效，因此二者间的比较会很丰富。</p>
-<h3 id="4-两者的相同点"><a href="#4-两者的相同点" class="headerlink" title="4 两者的相同点"></a>4 两者的相同点</h3><ul>
-<li>都是基于TCP协议点对点通信</li>
-<li>都可以在不同编程语言（应用系统）间进行通信</li>
+<p>关于Go1.18版本的发布，当然不只有泛型（Generics）这一个新特性，具体的发布文档可以看下Go官方博客：<a target="_blank" rel="noopener" href="https://go.dev/blog/go1.18%EF%BC%8C%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%87%BA%E9%99%A4%E4%BA%86%E6%B3%9B%E5%9E%8B%EF%BC%8C%E8%BF%98%E5%A2%9E%E5%8A%A0%E4%BA%86%E5%B7%A5%E4%BD%9C%E5%8C%BA%E3%80%81%E6%A8%A1%E7%B3%8A%E6%B5%8B%E8%AF%95%E7%AD%89%E6%96%B0%E7%89%B9%E6%80%A7%EF%BC%8C%E4%BD%86%E6%98%AF%E6%B3%9B%E5%9E%8B%E8%BF%99%E4%B8%80%E7%89%B9%E6%80%A7%E6%97%A0%E7%96%91%E6%98%AF%E6%9C%80%E5%BC%95%E4%BA%BA%E7%9E%A9%E7%9B%AE%E7%9A%84%EF%BC%8C%E5%86%8D%E8%B4%B4%E4%B8%80%E4%B8%8B%E6%B3%9B%E5%9E%8B%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%EF%BC%9Ahttps://go.dev/doc/tutorial/generics%EF%BC%8C%E6%8E%A5%E4%B8%8B%E6%9D%A5%E5%B0%B1%E8%B7%9F%E9%9A%8F%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E8%BF%98%E6%9C%89%E6%AD%A4%E7%AF%87%E5%8D%9A%E5%AE%A2%EF%BC%8C%E4%B8%80%E8%B5%B7%E6%9D%A5%E6%90%9E%E6%87%82Go1.18%E6%96%B0%E7%89%B9%E6%80%A7%E2%80%94%E6%B3%9B%E5%9E%8B%EF%BC%81">https://go.dev/blog/go1.18，可以看出除了泛型，还增加了工作区、模糊测试等新特性，但是泛型这一特性无疑是最引人瞩目的，再贴一下泛型学习的官方文档：https://go.dev/doc/tutorial/generics，接下来就跟随官方文档还有此篇博客，一起来搞懂Go1.18新特性—泛型！</a></p>
+<h3 id="1-安装Go1-18和环境"><a href="#1-安装Go1-18和环境" class="headerlink" title="1 安装Go1.18和环境"></a>1 安装Go1.18和环境</h3><blockquote>
+<p>下载地址：</p>
+<p><a target="_blank" rel="noopener" href="https://go.dev/dl/go1.18.3.windows-amd64.msi">https://go.dev/dl/go1.18.3.windows-amd64.msi</a></p>
+<p><a target="_blank" rel="noopener" href="https://go.dev/dl/go1.18.3.darwin-amd64.pkg">https://go.dev/dl/go1.18.3.darwin-amd64.pkg</a></p>
+<p><a target="_blank" rel="noopener" href="https://go.dev/dl/go1.18.3.linux-amd64.tar.gz">https://go.dev/dl/go1.18.3.linux-amd64.tar.gz</a></p>
+</blockquote>
+<p>IDE的话目前GoLand2022.1版本以上才支持泛型编程，VSCode、Vim也可以，但是个人比较喜欢使用GoLand</p>
+<h3 id="2-Go泛型编程实例"><a href="#2-Go泛型编程实例" class="headerlink" title="2 Go泛型编程实例"></a>2 Go泛型编程实例</h3><h4 id="2-1-泛型容器"><a href="#2-1-泛型容器" class="headerlink" title="2.1 泛型容器"></a>2.1 泛型容器</h4><p>泛型List</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> MyList[T any] <span class="keyword">struct</span> &#123;</span><br><span class="line">   Items []Item[T]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Item[T any] <span class="keyword">struct</span> &#123;</span><br><span class="line">   Index <span class="type">int</span></span><br><span class="line">   Value T</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(list *MyList[T])</span></span> AddItem(i T) &#123;</span><br><span class="line">   item := Item[T]&#123;Value: i, Index: <span class="built_in">len</span>(list.Items)&#125;</span><br><span class="line">   list.Items = <span class="built_in">append</span>(list.Items, item)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(list *MyList[T])</span></span> GetItem(index <span class="type">int</span>) T &#123;</span><br><span class="line">   l := list.Items</span><br><span class="line">   <span class="keyword">var</span> val T</span><br><span class="line">   <span class="keyword">for</span> i := <span class="keyword">range</span> l &#123;</span><br><span class="line">      <span class="keyword">if</span> l[i].Index == index &#123;</span><br><span class="line">         val = l[i].Value</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> val</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(list *MyList[T])</span></span> Print() &#123;</span><br><span class="line">   <span class="keyword">for</span> i := <span class="keyword">range</span> list.Items &#123;</span><br><span class="line">      fmt.Println(list.Items[i])</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>泛型Map</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> MyHashMap[K comparable, V any] <span class="keyword">struct</span> &#123;</span><br><span class="line">   Value <span class="keyword">map</span>[K]V</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(m *MyHashMap[K, V])</span></span> SetValue(k K, v V) &#123;</span><br><span class="line">   m.Value[k] = v</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(m *MyHashMap[K, V])</span></span> GetValue(k K) V &#123;</span><br><span class="line">   <span class="keyword">return</span> m.Value[k]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(m *MyHashMap[K, V])</span></span> Print() &#123;</span><br><span class="line">   <span class="keyword">for</span> k := <span class="keyword">range</span> m.Value &#123;</span><br><span class="line">      fmt.Println(k, m.Value[k])</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   list := MyList[<span class="type">int</span>]&#123;&#125;</span><br><span class="line">   list.AddItem(<span class="number">1</span>)</span><br><span class="line">   list.AddItem(<span class="number">2</span>)</span><br><span class="line">   fmt.Println(list)</span><br><span class="line">   item := list.GetItem(<span class="number">7</span>)</span><br><span class="line">   fmt.Println(item)</span><br><span class="line">   list.Print()</span><br><span class="line">   hashMap := MyHashMap[<span class="type">string</span>, <span class="type">int</span>]&#123;<span class="keyword">map</span>[<span class="type">string</span>]<span class="type">int</span>&#123;<span class="string">&quot;A&quot;</span>: <span class="number">1</span>, <span class="string">&quot;B&quot;</span>: <span class="number">2</span>&#125;&#125;</span><br><span class="line">   hashMap.SetValue(<span class="string">&quot;s&quot;</span>, <span class="number">2</span>)</span><br><span class="line">   fmt.Println(hashMap)</span><br><span class="line">   value := hashMap.GetValue(<span class="string">&quot;s&quot;</span>)</span><br><span class="line">   fmt.Println(value)</span><br><span class="line">   hashMap.Print()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>PS:</p>
+<ul>
+<li><p><strong>comparable</strong>：The comparable interface may only be used as a type parameter constraint, not as the type of a variable.（Comparable是由所有可比类型实现的接口 ，Comparable接口只能用作类型参数约束，而不能用作变量的类型。 ）</p>
+</li>
+<li><p><strong>any</strong>：any is an alias for interface{} and is equivalent to interface{} in all ways.（Any是interface{}的别名，在所有方面等价于interface{}。 ）</p>
+</li>
 </ul>
-<h3 id="5-两者的不同点"><a href="#5-两者的不同点" class="headerlink" title="5 两者的不同点"></a>5 两者的不同点</h3><ul>
-<li>所属网络七层模型中不同的网络层级（部分RPC框架属于应用层）<br><img src="https://img-blog.csdnimg.cn/d1e40643454d46afa1efb1ed6fe8eaad.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/d1e40643454d46afa1efb1ed6fe8eaad.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></li>
-<li>数据编码格式不同</li>
-<li>一般情况下，RPC是长连接，HTTP则是短连接</li>
-<li>一般情况下，RPC的传输效率高于HTTP</li>
-</ul>
-<h3 id="6-总结"><a href="#6-总结" class="headerlink" title="6 总结"></a>6 总结</h3><p>在系统开发中，一般需要对外提供接口时，因为普适性，HTTP是首选，而在同一个组织或公司内部进行不同系统间服务的提供时，面向服务封装的RPC更具有竞争力，可以针对服务进行可用性和效率的优化，因此HTTP和RPC不同的网络通信协议各自具有更擅长的领域。</p>
+</blockquote>
+<h4 id="2-2-泛型类型"><a href="#2-2-泛型类型" class="headerlink" title="2.2 泛型类型"></a>2.2 泛型类型</h4><p>泛型类型和方法：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Score <span class="keyword">interface</span> &#123;</span><br><span class="line">   <span class="type">int64</span>|<span class="type">float64</span> <span class="comment">//限制类型</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">GetNum</span>[<span class="title">T</span> <span class="title">Score</span>]<span class="params">(n1, n2 T)</span></span> T &#123;</span><br><span class="line">   <span class="keyword">return</span> n1 + n2</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   num := GetNum[<span class="number">64</span>](<span class="number">12.123</span>,<span class="number">2</span>)</span><br><span class="line">   fmt.Println(num)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-小结"><a href="#3-小结" class="headerlink" title="3 小结"></a>3 小结</h3><p>由上边的示例可以看出，Go泛型的语法相对还是比较复杂的，但是正因为这些复杂，才能显得Go泛型编程更加严谨，泛型最多的就是在集合中，能使得集合的变量类型统一，并且有统一的抽象方法，保证代码的质量和可读性。</p>
+<p>今天的文章就到这里咯~</p>
 
 
   </div>
@@ -2637,10 +2653,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-06-15T09:20:09+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-07-11T20:47:00+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年6月15日</p>
+    <p>更新于：2022年7月11日</p>
   </a>
 </div>
 
@@ -2649,8 +2665,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%BD%91%E7%BB%9C/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>网络</p></a></div>
-  <span hidden itemprop="keywords">网络</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Go%E8%AF%AD%E8%A8%80/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>Go语言</p></a></div>
+  <span hidden itemprop="keywords">Go语言</span>
 
 
         
@@ -2663,7 +2679,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/05/12/%E4%B8%80%E6%96%87%E5%B8%A6%E4%BD%A0%E6%90%9E%E6%87%82HTTP%E5%92%8CRPC%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%BC%82%E5%90%8C/&title=一文带你搞懂HTTP和RPC协议的异同 - Barry Yan's Blog&summary=一文带你搞懂HTTP和RPC协议的异同"
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/07/11/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82Go1.18%E6%B3%9B%E5%9E%8B%E6%96%B0%E7%89%B9%E6%80%A7/&title=一文搞懂Go1.18泛型新特性 - Barry Yan's Blog&summary=关于Go1.18版本的发布，当然不只有泛型（Generics）这一个新特性，具体的发布文档可以看下Go官方博客"
           
           >
           
@@ -2675,7 +2691,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/05/12/%E4%B8%80%E6%96%87%E5%B8%A6%E4%BD%A0%E6%90%9E%E6%87%82HTTP%E5%92%8CRPC%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%BC%82%E5%90%8C/&title=一文带你搞懂HTTP和RPC协议的异同 - Barry Yan's Blog&summary=一文带你搞懂HTTP和RPC协议的异同"
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/07/11/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82Go1.18%E6%B3%9B%E5%9E%8B%E6%96%B0%E7%89%B9%E6%80%A7/&title=一文搞懂Go1.18泛型新特性 - Barry Yan's Blog&summary=关于Go1.18版本的发布，当然不只有泛型（Generics）这一个新特性，具体的发布文档可以看下Go官方博客"
           
           >
           
@@ -2687,7 +2703,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/05/12/%E4%B8%80%E6%96%87%E5%B8%A6%E4%BD%A0%E6%90%9E%E6%87%82HTTP%E5%92%8CRPC%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%BC%82%E5%90%8C/&title=一文带你搞懂HTTP和RPC协议的异同 - Barry Yan's Blog&summary=一文带你搞懂HTTP和RPC协议的异同"
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/07/11/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82Go1.18%E6%B3%9B%E5%9E%8B%E6%96%B0%E7%89%B9%E6%80%A7/&title=一文搞懂Go1.18泛型新特性 - Barry Yan's Blog&summary=关于Go1.18版本的发布，当然不只有泛型（Generics）这一个新特性，具体的发布文档可以看下Go官方博客"
           
           >
           
@@ -2720,14 +2736,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/05/30/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%81%AD%E9%81%87SYN%E6%B3%9B%E6%B4%AA%E6%94%BB%E5%87%BB%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>记录一次云服务器遭遇SYN泛洪攻击的处理方式</p>
-          <p class='content'>记录一次云服务器遭遇SYN泛洪攻击的处理方式
-
-
-1 场景再现今天上午刚想用云服务器传输下文件，当打开finalshell连接服务器时突然发现服务器的系统指标很异常，而且在终端输入命令的时候都非...</p>
-        </a>
       
+        <a class='next' href='/2022/07/11/%E6%B7%B1%E5%BA%A6%E6%80%9D%E8%80%83%EF%BC%9A%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E6%B3%9B%E5%9E%8B%EF%BC%9F/'>
+          <p class='title'>深度思考：为什么需要泛型？<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>不知道大家平时在进行后端编程的时候有没有考虑过一个概念：泛型编程
+
+
+不知道大家平时在进行后端编程的时候有没有考虑过一个概念：泛型编程，就像面向对象、面向接口编程一样，很常用以致于用成为了大家广...</p>
+        </a>
       
     </div>
   
@@ -2742,7 +2758,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2022/05/12/%E4%B8%80%E6%96%87%E5%B8%A6%E4%BD%A0%E6%90%9E%E6%87%82HTTP%E5%92%8CRPC%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%BC%82%E5%90%8C/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2022/07/11/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82Go1.18%E6%B3%9B%E5%9E%8B%E6%96%B0%E7%89%B9%E6%80%A7/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2775,7 +2791,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AFRPC%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.</span> <span class="toc-text">1 什么是RPC协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E5%8E%9F%E7%90%86%E5%8F%8A%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 原理及模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BB%80%E4%B9%88%E6%98%AFHTTP%E5%8D%8F%E8%AE%AE"><span class="toc-number">2.</span> <span class="toc-text">2 什么是HTTP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E7%AE%80%E4%BB%8B"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E5%8E%9F%E7%90%86%E5%8F%8A%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 原理及模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%8B%BFHTTP%E5%92%8CRPC%E5%8D%8F%E8%AE%AE%E8%BF%9B%E8%A1%8C%E6%AF%94%E8%BE%83%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">3 为什么要拿HTTP和RPC协议进行比较？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E4%B8%A4%E8%80%85%E7%9A%84%E7%9B%B8%E5%90%8C%E7%82%B9"><span class="toc-number">4.</span> <span class="toc-text">4 两者的相同点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E4%B8%A4%E8%80%85%E7%9A%84%E4%B8%8D%E5%90%8C%E7%82%B9"><span class="toc-number">5.</span> <span class="toc-text">5 两者的不同点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E6%80%BB%E7%BB%93"><span class="toc-number">6.</span> <span class="toc-text">6 总结</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85Go1-18%E5%92%8C%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">1 安装Go1.18和环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Go%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B%E5%AE%9E%E4%BE%8B"><span class="toc-number">2.</span> <span class="toc-text">2 Go泛型编程实例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E6%B3%9B%E5%9E%8B%E5%AE%B9%E5%99%A8"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 泛型容器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E6%B3%9B%E5%9E%8B%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 泛型类型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%B0%8F%E7%BB%93"><span class="toc-number">3.</span> <span class="toc-text">3 小结</span></a></li></ol>
     </div>
   </section>
 
@@ -4004,7 +4020,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Barry Yan's Blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/05/12/一文带你搞懂HTTP和RPC协议的异同/","name":"一文带你搞懂HTTP和RPC协议的异同"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Barry Yan's Blog","url":"http://example.com/","keywords":"Java,Go,SQL","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"一文带你搞懂HTTP和RPC协议的异同","description":"一文带你搞懂HTTP和RPC协议的异同","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/05/12/%E4%B8%80%E6%96%87%E5%B8%A6%E4%BD%A0%E6%90%9E%E6%87%82HTTP%E5%92%8CRPC%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%BC%82%E5%90%8C/"},"author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/05/12/%E4%B8%80%E6%96%87%E5%B8%A6%E4%BD%A0%E6%90%9E%E6%87%82HTTP%E5%92%8CRPC%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%BC%82%E5%90%8C/","wordCount":19,"datePublished":"2022-05-12T03:43:28.000Z","dateModified":"2022-06-15T01:20:09.584Z","keywords":"网络","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Barry Yan's Blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/07/11/一文搞懂Go1.18泛型新特性/","name":"一文搞懂Go1.18泛型新特性"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Barry Yan's Blog","url":"http://example.com/","keywords":"Java,Go,SQL","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"一文搞懂Go1.18泛型新特性","description":"关于Go1.18版本的发布，当然不只有泛型（Generics）这一个新特性，具体的发布文档可以看下Go官方博客","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/07/11/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82Go1.18%E6%B3%9B%E5%9E%8B%E6%96%B0%E7%89%B9%E6%80%A7/"},"author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/07/11/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82Go1.18%E6%B3%9B%E5%9E%8B%E6%96%B0%E7%89%B9%E6%80%A7/","wordCount":55,"datePublished":"2022-07-11T04:33:28.000Z","dateModified":"2022-07-11T12:47:00.653Z","keywords":"Go语言","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
