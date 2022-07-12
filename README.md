@@ -1,6 +1,6 @@
 ## Hello Everyone~
 
-:one:**基本信息**：Barry Yan:id:  |  99年男生:eyes: |  天蝎座:scorpius:  |  来自中国   :+1:
+:one:**简介**：Barry Yan:id:  |  99年男生:eyes: |  天蝎座:scorpius:  |  来自中国   :+1:
 
 :two:**爱好**：听音乐、敲代码、羽毛球、跑步:star:	
 
