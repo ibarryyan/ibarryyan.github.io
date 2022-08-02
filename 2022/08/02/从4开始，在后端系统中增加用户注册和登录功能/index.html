@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.3.2">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://example.com/tags/go语言/"/>
+  
+  <link rel="canonical" href="http://example.com/2022/08/02/从4开始，在后端系统中增加用户注册和登录功能/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,19 +31,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>标签：Go语言 - Barry Yan's Blog</title>
-  <meta name="keywords" content="Java,Go,SQL">
-  <meta desc name="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等 - Barry Yan - Barry Yan's Blog">
+  <title>从4开始，在后端系统中增加用户注册和登录功能 - Barry Yan's Blog</title>
+  <meta name="keywords" content="Go语言,Java,Go,SQL">
+  <meta desc name="description" content="本次我们接着上四篇文章进行讲解《从0开始，用Go语言搭建一个简单的后端业务系统》、《从1开始，扩展Go语言后端业务系统的RPC功能》、《从2开始，在Go语言后端业务系统中引入缓存》以及《从3开始，在业务系统中增加分页功能》，这次是系统中比较核心的功能——用户登录&amp;注册，这个功能其实本应该是最先实现的，但是... - Barry Yan - Barry Yan's Blog">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="Barry Yan&#39;s Blog">
-<meta property="og:url" content="http://example.com/tags/Go%E8%AF%AD%E8%A8%80/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从4开始，在后端系统中增加用户注册和登录功能">
+<meta property="og:url" content="http://example.com/2022/08/02/%E4%BB%8E4%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%9C%A8%E5%90%8E%E7%AB%AF%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%A2%9E%E5%8A%A0%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E5%92%8C%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/index.html">
 <meta property="og:site_name" content="Barry Yan&#39;s Blog">
-<meta property="og:description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
+<meta property="og:description" content="本次我们接着上四篇文章进行讲解《从0开始，用Go语言搭建一个简单的后端业务系统》、《从1开始，扩展Go语言后端业务系统的RPC功能》、《从2开始，在Go语言后端业务系统中引入缓存》以及《从3开始，在业务系统中增加分页功能》，这次是系统中比较核心的功能——用户登录&amp;注册，这个功能其实本应该是最先实现的，但是由于不同因素的影响，放到了本次进行实现，不过也无伤大雅，后期我们都会不断的进行查漏补缺">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2022-08-02T14:13:23.000Z">
+<meta property="article:modified_time" content="2022-08-02T14:45:54.428Z">
 <meta property="article:author" content="Barry Yan">
-<meta property="article:tag" content="Java,Go,SQL">
+<meta property="article:tag" content="Go语言">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2444,7 +2446,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper  dock' style="display: none;">
+      <div id="none" class='cover-wrapper post dock' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://images.wallpaperscraft.com/image/single/buildings_trees_city_314838_1280x720.jpg"></div>
 
@@ -2513,36 +2515,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-
 <div id="l_main" class=''>
-  
-    
-      
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
   <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/02/%E4%BB%8E4%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%9C%A8%E5%90%8E%E7%AB%AF%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%A2%9E%E5%8A%A0%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E5%92%8C%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Barry Yan's Blog">
@@ -2552,430 +2526,245 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/08/02/%E4%BB%8E4%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%9C%A8%E5%90%8E%E7%AB%AF%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%A2%9E%E5%8A%A0%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E5%92%8C%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/"  itemprop="url">
+    
+    
+      <h1 class="title" itemprop="name headline">
         从4开始，在后端系统中增加用户注册和登录功能
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p>本次我们接着上四篇文章进行讲解<a target="_blank" rel="noopener" href="https://blog.csdn.net/Mr_YanMingXin/article/details/125294855">《从0开始，用Go语言搭建一个简单的后端业务系统》</a>、<a target="_blank" rel="noopener" href="https://blog.csdn.net/Mr_YanMingXin/article/details/125317457">《从1开始，扩展Go语言后端业务系统的RPC功能》</a>、<a target="_blank" rel="noopener" href="https://blog.csdn.net/Mr_YanMingXin/article/details/125365686">《从2开始，在Go语言后端业务系统中引入缓存》</a>以及<a target="_blank" rel="noopener" href="http://t.csdn.cn/D2p3S">《从3开始，在业务系统中增加分页功能》</a>，这次是系统中比较核心的功能——<strong>用户登录&amp;注册</strong>，这个功能其实本应该是最先实现的，但是由于不同因素的影响，放到了本次进行实现，不过也无伤大雅，后期我们都会不断的进行查漏补缺和优化来使我们的项目总体上更加优雅，话不多说，我们开始正文：</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+      </h1>
+      <div class='new-meta-box'>
         
           
-          <a class='avatar' target="_blank" rel="noopener" href='https://blog.csdn.net/Mr_YanMingXin'><img src='https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg">
-            <meta itemprop="name" content="Barry Yan">
-            <meta itemprop="url" content="https://blog.csdn.net/Mr_YanMingXin">
-          </span>
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' target="_blank" href="https://blog.csdn.net/Mr_YanMingXin" rel="nofollow noopener">
+    <img itemprop="image" src="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg" class="lazyload" data-srcset="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">Barry Yan</p>
+  </a>
+</div>
+
+          
         
-        <time itemprop="dateCreated datePublished" datetime="2022-08-02T22:13:23+08:00">2022-08-02</time>
+          
+            
+
+          
         
-      </div>
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-08-02T22:13:23+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2022年8月2日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
       
-        <div>
-          <a class='readmore' href='/2022/08/02/%E4%BB%8E4%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%9C%A8%E5%90%8E%E7%AB%AF%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%A2%9E%E5%8A%A0%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E5%92%8C%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
+      <span>12412次浏览</span>
+    </p>
+  </a>
+</div>
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <p>本次我们接着上四篇文章进行讲解<a target="_blank" rel="noopener" href="https://blog.csdn.net/Mr_YanMingXin/article/details/125294855">《从0开始，用Go语言搭建一个简单的后端业务系统》</a>、<a target="_blank" rel="noopener" href="https://blog.csdn.net/Mr_YanMingXin/article/details/125317457">《从1开始，扩展Go语言后端业务系统的RPC功能》</a>、<a target="_blank" rel="noopener" href="https://blog.csdn.net/Mr_YanMingXin/article/details/125365686">《从2开始，在Go语言后端业务系统中引入缓存》</a>以及<a target="_blank" rel="noopener" href="http://t.csdn.cn/D2p3S">《从3开始，在业务系统中增加分页功能》</a>，这次是系统中比较核心的功能——<strong>用户登录&amp;注册</strong>，这个功能其实本应该是最先实现的，但是由于不同因素的影响，放到了本次进行实现，不过也无伤大雅，后期我们都会不断的进行查漏补缺和优化来使我们的项目总体上更加优雅，话不多说，我们开始正文：</p>
+<span id="more"></span>
+
+<h3 id="1-用户注册-amp-登录流程"><a href="#1-用户注册-amp-登录流程" class="headerlink" title="1 用户注册&amp;登录流程"></a>1 用户注册&amp;登录流程</h3><p>（1）注册流程<br><img src="https://img-blog.csdnimg.cn/88981d8ef33e4535bf47cca32c6faeae.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/88981d8ef33e4535bf47cca32c6faeae.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"><br>（2）登录流程<br><img src="https://img-blog.csdnimg.cn/d54af41a681f44eb88c066be69a76cf6.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/d54af41a681f44eb88c066be69a76cf6.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="在这里插入图片描述"></p>
+<h3 id="2-代码实现"><a href="#2-代码实现" class="headerlink" title="2 代码实现"></a>2 代码实现</h3><p>user结构：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> model</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">   <span class="string">&quot;encoding/json&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> User <span class="keyword">struct</span> &#123;</span><br><span class="line">   Id         <span class="type">int64</span>  <span class="string">`json:&quot;id&quot;`</span></span><br><span class="line">   Name       <span class="type">string</span> <span class="string">`json:&quot;name&quot;`</span></span><br><span class="line">   LoginName  <span class="type">string</span> <span class="string">`json:&quot;login_name&quot;`</span></span><br><span class="line">   Role       <span class="type">int64</span>  <span class="string">`json:&quot;role&quot;`</span></span><br><span class="line">   Pwd        <span class="type">string</span> <span class="string">`json:&quot;pwd&quot;`</span></span><br><span class="line">   CreateTime <span class="type">string</span> <span class="string">`json:&quot;create_time&quot;`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(user User)</span></span> TableName() <span class="type">string</span> &#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="string">&quot;user_info&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(user User)</span></span> MarshalJSON() ([]<span class="type">byte</span>, <span class="type">error</span>) &#123;</span><br><span class="line">   <span class="keyword">return</span> json.Marshal(<span class="keyword">map</span>[<span class="type">string</span>]<span class="keyword">interface</span>&#123;&#125;&#123;</span><br><span class="line">      <span class="string">&quot;id&quot;</span>:          user.Id,</span><br><span class="line">      <span class="string">&quot;name&quot;</span>:        user.Name,</span><br><span class="line">      <span class="string">&quot;login_name&quot;</span>:  user.LoginName,</span><br><span class="line">      <span class="string">&quot;role&quot;</span>:        user.Role,</span><br><span class="line">      <span class="string">&quot;pwd&quot;</span>:         user.Pwd,</span><br><span class="line">      <span class="string">&quot;create_time&quot;</span>: user.CreateTime,</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Redis类似序列化操作</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(user User)</span></span> MarshalBinary() ([]<span class="type">byte</span>, <span class="type">error</span>) &#123;</span><br><span class="line">   <span class="keyword">return</span> json.Marshal(user)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(user User)</span></span> UnmarshalBinary(data []<span class="type">byte</span>) <span class="type">error</span> &#123;</span><br><span class="line">   <span class="keyword">return</span> json.Unmarshal(data, &amp;user)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>dao层代码：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> dao</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">   <span class="string">&quot;context&quot;</span></span><br><span class="line">   <span class="string">&quot;count_num/pkg/model&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> UserDao <span class="keyword">interface</span> &#123;</span><br><span class="line">   <span class="comment">// 添加一个</span></span><br><span class="line">   CreateUser(ctx context.Context, user model.User) <span class="type">bool</span></span><br><span class="line">   <span class="comment">// 根据ID查找一个</span></span><br><span class="line">   GetUserByUid(ctx context.Context, uId <span class="type">int64</span>) model.User</span><br><span class="line">   <span class="comment">// 查找全部</span></span><br><span class="line">   GetAll(ctx context.Context, page <span class="type">int</span>, limit <span class="type">int</span>) []model.User</span><br><span class="line">   <span class="comment">// 根据ID修改一个</span></span><br><span class="line">   UpdateUserById(ctx context.Context, user model.User) <span class="type">bool</span></span><br><span class="line">   <span class="comment">// 根据登录名查找一个</span></span><br><span class="line">   GetUserByLoginName(ctx context.Context, loginName <span class="type">string</span>) model.User</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>dao层实现：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> impl</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">   <span class="string">&quot;context&quot;</span></span><br><span class="line">   <span class="string">&quot;count_num/pkg/cache&quot;</span></span><br><span class="line">   <span class="string">&quot;count_num/pkg/config&quot;</span></span><br><span class="line">   <span class="string">&quot;count_num/pkg/model&quot;</span></span><br><span class="line">   <span class="string">&quot;count_num/pkg/utils&quot;</span></span><br><span class="line">   <span class="string">&quot;gorm.io/gorm&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> UserDaoImpl <span class="keyword">struct</span> &#123;</span><br><span class="line">   db    *gorm.DB</span><br><span class="line">   cache *cache.CountNumCacheDAOImpl</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">NewUserDaoImpl</span><span class="params">()</span></span> *UserDaoImpl &#123;</span><br><span class="line">   <span class="keyword">return</span> &amp;UserDaoImpl&#123;db: config.DB, cache: cache.NewCountNumCacheDAOImpl()&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(impl *UserDaoImpl)</span></span> CreateUser(ctx context.Context, user model.User) <span class="type">bool</span> &#123;</span><br><span class="line">   <span class="keyword">var</span> u model.User</span><br><span class="line">   impl.db.First(&amp;u, <span class="string">&quot;login_name&quot;</span>, user.LoginName)</span><br><span class="line">   <span class="keyword">if</span> u.LoginName == user.LoginName &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">   &#125;</span><br><span class="line">   user.Pwd = utils.GetMd5Str(user.Pwd)</span><br><span class="line">   user.CreateTime = utils.NowTimeStr()</span><br><span class="line">   impl.db.Save(&amp;user)</span><br><span class="line">   <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(impl *UserDaoImpl)</span></span> GetUserByUid(ctx context.Context, uId <span class="type">int64</span>) model.User &#123;</span><br><span class="line">   <span class="keyword">var</span> user model.User</span><br><span class="line">   impl.db.First(&amp;user, <span class="string">&quot;id&quot;</span>, uId)</span><br><span class="line">   <span class="keyword">return</span> user</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(impl *UserDaoImpl)</span></span> GetAll(ctx context.Context, page <span class="type">int</span>, limit <span class="type">int</span>) []model.User &#123;</span><br><span class="line">   users := <span class="built_in">make</span>([]model.User, <span class="number">0</span>)</span><br><span class="line">   <span class="keyword">if</span> page &lt;= <span class="number">0</span> || limit &lt;= <span class="number">0</span> &#123;</span><br><span class="line">      impl.db.Find(&amp;users)</span><br><span class="line">   &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      impl.db.Limit(limit).Offset((page - <span class="number">1</span>) * limit).Find(&amp;users)</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> users</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(impl *UserDaoImpl)</span></span> UpdateUserById(ctx context.Context, user model.User) <span class="type">bool</span> &#123;</span><br><span class="line">   impl.db.Model(&amp;model.User&#123;&#125;).Where(<span class="string">&quot;id = ?&quot;</span>, user.Id).Updates(user)</span><br><span class="line">   <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(impl *UserDaoImpl)</span></span> GetUserByLoginName(ctx context.Context, loginName <span class="type">string</span>) model.User &#123;</span><br><span class="line">   <span class="keyword">var</span> user model.User</span><br><span class="line">   impl.db.First(&amp;user, <span class="string">&quot;login_name&quot;</span>, loginName)</span><br><span class="line">   <span class="keyword">return</span> user</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>工具方法，用于生成token和MD5加密：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> utils</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">   <span class="string">&quot;bytes&quot;</span></span><br><span class="line">   <span class="string">&quot;crypto/md5&quot;</span></span><br><span class="line">   <span class="string">&quot;encoding/gob&quot;</span></span><br><span class="line">   <span class="string">&quot;encoding/hex&quot;</span></span><br><span class="line">   <span class="string">&quot;math/rand&quot;</span></span><br><span class="line">   <span class="string">&quot;strings&quot;</span></span><br><span class="line">   <span class="string">&quot;time&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">GetMd5Str</span><span class="params">(str <span class="type">string</span>)</span></span> <span class="type">string</span> &#123;</span><br><span class="line">   md5 := md5.New()</span><br><span class="line">   <span class="keyword">var</span> buf bytes.Buffer</span><br><span class="line">   gob.NewEncoder(&amp;buf).Encode(str)</span><br><span class="line">   md5.Write(buf.Bytes())</span><br><span class="line">   <span class="keyword">return</span> hex.EncodeToString(md5.Sum(<span class="literal">nil</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">GetTokenStr</span><span class="params">()</span></span> <span class="type">string</span> &#123;</span><br><span class="line">   char := <span class="string">&quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&quot;</span></span><br><span class="line">   charArr := strings.Split(char, <span class="string">&quot;&quot;</span>)</span><br><span class="line">   c := <span class="built_in">len</span>(charArr)</span><br><span class="line">   ran := rand.New(rand.NewSource(time.Now().Unix()))</span><br><span class="line">   <span class="keyword">var</span> str <span class="type">string</span> = <span class="string">&quot;&quot;</span></span><br><span class="line">   <span class="keyword">for</span> i := <span class="number">1</span>; i &lt;= <span class="number">18</span>; i++ &#123;</span><br><span class="line">      str = str + charArr[ran.Intn(c)]</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> str</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>工具方法：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> utils</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">   <span class="string">&quot;time&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">// NowTimeStr return 2022-01-21 12:21:31</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">NowTimeStr</span><span class="params">()</span></span> <span class="type">string</span> &#123;</span><br><span class="line">   <span class="keyword">return</span> time.Unix(time.Now().Unix(), <span class="number">0</span>).Format(<span class="string">&quot;2006-01-02 15:04:05&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// NowTimeStamp return 1657255820</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">NowTimeStamp</span><span class="params">()</span></span> <span class="type">int64</span> &#123;</span><br><span class="line">   <span class="keyword">return</span> time.Now().Unix()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// TimeStamp2NowTimeStr  1657255820 -&gt; 2022-01-21 12:21:31</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TimeStamp2NowTimeStr</span><span class="params">(stamp <span class="type">int64</span>)</span></span> <span class="type">string</span> &#123;</span><br><span class="line">   format := time.Unix(stamp, <span class="number">0</span>).Format(<span class="string">&quot;2006-01-02 15:04:05&quot;</span>)</span><br><span class="line">   <span class="keyword">return</span> format</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// NowTimeStr2TimeStamp  2022-01-21 12:21:31 -&gt; 1657255820</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">NowTimeStr2TimeStamp</span><span class="params">(str <span class="type">string</span>)</span></span> <span class="type">int64</span> &#123;</span><br><span class="line">   <span class="keyword">var</span> LOC, _ = time.LoadLocation(<span class="string">&quot;Asia/Shanghai&quot;</span>)</span><br><span class="line">   tim, _ := time.ParseInLocation(<span class="string">&quot;2006-01-02 15:04:05&quot;</span>, str, LOC)</span><br><span class="line">   <span class="keyword">return</span> tim.Unix()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>controller层：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> controller</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">   <span class="string">&quot;count_num/pkg/dao/impl&quot;</span></span><br><span class="line">   <span class="string">&quot;count_num/pkg/model&quot;</span></span><br><span class="line">   <span class="string">&quot;count_num/pkg/utils&quot;</span></span><br><span class="line">   <span class="string">&quot;count_num/pkg/web/auth&quot;</span></span><br><span class="line">   <span class="string">&quot;encoding/json&quot;</span></span><br><span class="line">   <span class="string">&quot;github.com/gin-gonic/gin&quot;</span></span><br><span class="line">   <span class="string">&quot;io/ioutil&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> UserControllerImpl <span class="keyword">struct</span> &#123;</span><br><span class="line">   dao *impl.UserDaoImpl</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> UserController <span class="keyword">interface</span> &#123;</span><br><span class="line">   CreateUser(c *gin.Context)</span><br><span class="line">   FindUserByLoginNameAndPwd(c *gin.Context)</span><br><span class="line">   Register(c *gin.Context)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">NewUserController</span><span class="params">()</span></span> *UserControllerImpl &#123;</span><br><span class="line">   <span class="keyword">return</span> &amp;UserControllerImpl&#123;dao: impl.NewUserDaoImpl()&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(impl UserControllerImpl)</span></span> CreateUser(c *gin.Context) &#123;</span><br><span class="line">   body := c.Request.Body</span><br><span class="line">   bytes, err := ioutil.ReadAll(body)</span><br><span class="line">   user := model.User&#123;&#125;</span><br><span class="line">   json.Unmarshal(bytes, &amp;user)</span><br><span class="line">   <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">      <span class="built_in">panic</span>(err)</span><br><span class="line">   &#125;</span><br><span class="line">   res := impl.dao.CreateUser(c, user)</span><br><span class="line">   c.JSON(<span class="number">200</span>, <span class="keyword">map</span>[<span class="type">string</span>]<span class="keyword">interface</span>&#123;&#125;&#123;<span class="string">&quot;code&quot;</span>: <span class="number">0</span>, <span class="string">&quot;msg&quot;</span>: <span class="string">&quot;&quot;</span>, <span class="string">&quot;count&quot;</span>: <span class="number">0</span>, <span class="string">&quot;data&quot;</span>: res&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(impl UserControllerImpl)</span></span> FindUserByLoginNameAndPwd(c *gin.Context) &#123;</span><br><span class="line">   body := c.Request.Body</span><br><span class="line">   bytes, err := ioutil.ReadAll(body)</span><br><span class="line">   user := model.User&#123;&#125;</span><br><span class="line">   json.Unmarshal(bytes, &amp;user)</span><br><span class="line">   <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">      <span class="built_in">panic</span>(err)</span><br><span class="line">   &#125;</span><br><span class="line">   userByLoginName := impl.dao.GetUserByLoginName(c, user.LoginName)</span><br><span class="line">   <span class="comment">//密码通过</span></span><br><span class="line">   <span class="keyword">if</span> userByLoginName.Pwd == utils.GetMd5Str(user.Pwd) &#123;</span><br><span class="line">      setToken := auth.SetToken(c, utils.GetTokenStr(), user)</span><br><span class="line">      c.JSON(<span class="number">200</span>, <span class="keyword">map</span>[<span class="type">string</span>]<span class="keyword">interface</span>&#123;&#125;&#123;<span class="string">&quot;code&quot;</span>: <span class="number">0</span>, <span class="string">&quot;msg&quot;</span>: setToken, <span class="string">&quot;count&quot;</span>: <span class="number">0</span>, <span class="string">&quot;data&quot;</span>: utils.GetTokenStr()&#125;)</span><br><span class="line">   &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> userByLoginName.Id == <span class="number">0</span> &#123;</span><br><span class="line">         c.JSON(<span class="number">200</span>, <span class="keyword">map</span>[<span class="type">string</span>]<span class="keyword">interface</span>&#123;&#125;&#123;<span class="string">&quot;code&quot;</span>: <span class="number">0</span>, <span class="string">&quot;msg&quot;</span>: <span class="string">&quot;账号不存在&quot;</span>, <span class="string">&quot;count&quot;</span>: <span class="number">0</span>, <span class="string">&quot;data&quot;</span>: <span class="string">&quot;-1&quot;</span>&#125;)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">         c.JSON(<span class="number">200</span>, <span class="keyword">map</span>[<span class="type">string</span>]<span class="keyword">interface</span>&#123;&#125;&#123;<span class="string">&quot;code&quot;</span>: <span class="number">0</span>, <span class="string">&quot;msg&quot;</span>: <span class="string">&quot;密码错误&quot;</span>, <span class="string">&quot;count&quot;</span>: <span class="number">0</span>, <span class="string">&quot;data&quot;</span>: <span class="string">&quot;-1&quot;</span>&#125;)</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(impl UserControllerImpl)</span></span> Register(c *gin.Context) &#123;</span><br><span class="line">   body := c.Request.Body</span><br><span class="line">   bytes, err := ioutil.ReadAll(body)</span><br><span class="line">   user := model.User&#123;&#125;</span><br><span class="line">   json.Unmarshal(bytes, &amp;user)</span><br><span class="line">   <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">      <span class="built_in">panic</span>(err)</span><br><span class="line">   &#125;</span><br><span class="line">   user.Role = <span class="number">1</span></span><br><span class="line">   res := impl.dao.CreateUser(c, user)</span><br><span class="line">   c.JSON(<span class="number">200</span>, <span class="keyword">map</span>[<span class="type">string</span>]<span class="keyword">interface</span>&#123;&#125;&#123;<span class="string">&quot;code&quot;</span>: <span class="number">0</span>, <span class="string">&quot;msg&quot;</span>: <span class="string">&quot;&quot;</span>, <span class="string">&quot;count&quot;</span>: <span class="number">0</span>, <span class="string">&quot;data&quot;</span>: res&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>router增加URL：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">......</span><br><span class="line">userInfo := r.Group(<span class="string">&quot;/user&quot;</span>)</span><br><span class="line">&#123;</span><br><span class="line">   userInfo.POST(<span class="string">&quot;/save&quot;</span>, controller.NewUserController().CreateUser)</span><br><span class="line">   userInfo.POST(<span class="string">&quot;/login&quot;</span>, controller.NewUserController().FindUserByLoginNameAndPwd)</span><br><span class="line">   userInfo.POST(<span class="string">&quot;/register&quot;</span>, controller.NewUserController().Register)</span><br><span class="line">&#125;</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+
+<p>前端代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>登录/注册<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;./layui/css/layui.css&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">        <span class="selector-id">#form</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">width</span>: <span class="number">30%</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">margin-left</span>: <span class="number">35%</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">margin-top</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">padding</span>: <span class="number">30px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">border</span>: <span class="number">3px</span> solid <span class="number">#c5c5b0</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">border-radius</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">        <span class="selector-id">#form2</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">width</span>: <span class="number">30%</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">margin-left</span>: <span class="number">35%</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">margin-top</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">padding</span>: <span class="number">30px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">border</span>: <span class="number">3px</span> solid <span class="number">#c5c5b0</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">border-radius</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">        <span class="selector-class">.hidden</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">display</span>: none;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">        <span class="selector-class">.show</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">display</span>: block;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">&quot;layui-form&quot;</span> <span class="attr">id</span>=<span class="string">&quot;form&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span> <span class="attr">style</span>=<span class="string">&quot;font-size: 20px;text-align: center;margin-bottom: 30px;&quot;</span>&gt;</span>登录<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;layui-form-item&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">&quot;layui-form-label&quot;</span>&gt;</span>账号<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;layui-input-inline&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;loginName&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入账号&quot;</span> <span class="attr">autocomplete</span>=<span class="string">&quot;off&quot;</span></span></span><br><span class="line"><span class="tag">                   <span class="attr">class</span>=<span class="string">&quot;layui-input&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;layui-form-item&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">&quot;layui-form-label&quot;</span>&gt;</span>密码<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;layui-input-inline&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;password&quot;</span> <span class="attr">id</span>=<span class="string">&quot;loginPwd&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入密码&quot;</span> <span class="attr">autocomplete</span>=<span class="string">&quot;off&quot;</span></span></span><br><span class="line"><span class="tag">                   <span class="attr">class</span>=<span class="string">&quot;layui-input&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;layui-form-item&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;layui-input-block&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;layui-btn&quot;</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;login()&quot;</span>&gt;</span>立即提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;toRegister()&quot;</span> <span class="attr">class</span>=<span class="string">&quot;layui-btn layui-btn-primary&quot;</span>&gt;</span>注册<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">&quot;layui-form hidden&quot;</span> <span class="attr">id</span>=<span class="string">&quot;form2&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span> <span class="attr">style</span>=<span class="string">&quot;font-size: 20px;text-align: center;margin-bottom: 30px;&quot;</span>&gt;</span>注册<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;layui-form-item&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">&quot;layui-form-label&quot;</span>&gt;</span>昵称<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;layui-input-inline&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;regName&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入昵称&quot;</span> <span class="attr">autocomplete</span>=<span class="string">&quot;off&quot;</span></span></span><br><span class="line"><span class="tag">                   <span class="attr">class</span>=<span class="string">&quot;layui-input&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;layui-form-item&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">&quot;layui-form-label&quot;</span>&gt;</span>账号<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;layui-input-inline&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;regLoginName&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入账号&quot;</span> <span class="attr">autocomplete</span>=<span class="string">&quot;off&quot;</span></span></span><br><span class="line"><span class="tag">                   <span class="attr">class</span>=<span class="string">&quot;layui-input&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;layui-form-item&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">&quot;layui-form-label&quot;</span>&gt;</span>密码<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;layui-input-inline&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;password&quot;</span> <span class="attr">id</span>=<span class="string">&quot;regPwd&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入密码&quot;</span> <span class="attr">autocomplete</span>=<span class="string">&quot;off&quot;</span></span></span><br><span class="line"><span class="tag">                   <span class="attr">class</span>=<span class="string">&quot;layui-input&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;layui-form-item&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">&quot;layui-form-label&quot;</span>&gt;</span>确认密码<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;layui-input-inline&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;password&quot;</span> <span class="attr">id</span>=<span class="string">&quot;regPwd2&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请再次输入密码&quot;</span></span></span><br><span class="line"><span class="tag">                   <span class="attr">autocomplete</span>=<span class="string">&quot;off&quot;</span></span></span><br><span class="line"><span class="tag">                   <span class="attr">class</span>=<span class="string">&quot;layui-input&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;layui-form-item&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">&quot;layui-form-label&quot;</span>&gt;</span>身份<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;layui-input-block&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">id</span>=<span class="string">&quot;role&quot;</span> <span class="attr">value</span>=<span class="string">&quot;user&quot;</span> <span class="attr">title</span>=<span class="string">&quot;用户&quot;</span> <span class="attr">checked</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;layui-form-item&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;layui-input-block&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;layui-btn&quot;</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;register()&quot;</span>&gt;</span>立即提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;toLogin()&quot;</span> <span class="attr">class</span>=<span class="string">&quot;layui-btn layui-btn-primary&quot;</span>&gt;</span>登录<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./layui/layui.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./layui/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> base_url = <span class="string">&#x27;http://localhost:9888&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">login</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> loginName = $(<span class="string">&quot;#loginName&quot;</span>).<span class="title function_">val</span>()</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> loginPwd = $(<span class="string">&quot;#loginPwd&quot;</span>).<span class="title function_">val</span>()</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> data = &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="string">&#x27;login_name&#x27;</span>: loginName,</span></span><br><span class="line"><span class="language-javascript">            <span class="string">&#x27;pwd&#x27;</span>: loginPwd</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">        $.<span class="title function_">ajax</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">url</span>: base_url + <span class="string">&quot;/user/login&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">type</span>: <span class="string">&quot;POST&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">data</span>: <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(data),</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">success</span>: <span class="keyword">function</span> (<span class="params">res</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="keyword">if</span> (res.<span class="property">data</span>.<span class="property">length</span> &gt;= <span class="number">10</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="variable language_">localStorage</span>.<span class="title function_">setItem</span>(<span class="string">&quot;token&quot;</span>, res.<span class="property">data</span>)</span></span><br><span class="line"><span class="language-javascript">                    <span class="keyword">return</span>;</span></span><br><span class="line"><span class="language-javascript">                &#125;</span></span><br><span class="line"><span class="language-javascript">                <span class="title function_">alert</span>(res.<span class="property">msg</span>)</span></span><br><span class="line"><span class="language-javascript">                <span class="keyword">return</span></span></span><br><span class="line"><span class="language-javascript">            &#125;,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">error</span>: <span class="keyword">function</span> (<span class="params">err</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="title function_">alert</span>(err)</span></span><br><span class="line"><span class="language-javascript">                <span class="keyword">return</span></span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">register</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> regName = $(<span class="string">&quot;#regName&quot;</span>).<span class="title function_">val</span>()</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> regLoginName = $(<span class="string">&quot;#regLoginName&quot;</span>).<span class="title function_">val</span>()</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> regPwd = $(<span class="string">&quot;#regPwd&quot;</span>).<span class="title function_">val</span>()</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> regPwd2 = $(<span class="string">&quot;#regPwd2&quot;</span>).<span class="title function_">val</span>()</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">if</span> (regPwd != regPwd2) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="title function_">alert</span>(<span class="string">&quot;密码不一致鸭&quot;</span>)</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">return</span></span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> data = &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="string">&#x27;name&#x27;</span>: regName,</span></span><br><span class="line"><span class="language-javascript">            <span class="string">&#x27;login_name&#x27;</span>: regLoginName,</span></span><br><span class="line"><span class="language-javascript">            <span class="string">&#x27;pwd&#x27;</span>: regPwd</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">        $.<span class="title function_">ajax</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">url</span>: base_url + <span class="string">&quot;/user/register&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">type</span>: <span class="string">&quot;POST&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">data</span>: <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(data),</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">success</span>: <span class="keyword">function</span> (<span class="params">res</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="keyword">if</span> (res.<span class="property">data</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="title function_">alert</span>(<span class="string">&quot;注册成功&quot;</span>)</span></span><br><span class="line"><span class="language-javascript">                &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="title function_">alert</span>(<span class="string">&quot;注册失败&quot;</span>)</span></span><br><span class="line"><span class="language-javascript">                &#125;</span></span><br><span class="line"><span class="language-javascript">            &#125;,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">error</span>: <span class="keyword">function</span> (<span class="params">err</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="variable language_">console</span>.<span class="title function_">log</span>(err)</span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">toLogin</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        $(<span class="string">&quot;#form2&quot;</span>).<span class="title function_">addClass</span>(<span class="string">&quot;hidden&quot;</span>)</span></span><br><span class="line"><span class="language-javascript">        $(<span class="string">&quot;#form&quot;</span>).<span class="title function_">removeClass</span>(<span class="string">&quot;hidden&quot;</span>)</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">toRegister</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        $(<span class="string">&quot;#form&quot;</span>).<span class="title function_">addClass</span>(<span class="string">&quot;hidden&quot;</span>)</span></span><br><span class="line"><span class="language-javascript">        $(<span class="string">&quot;#form2&quot;</span>).<span class="title function_">removeClass</span>(<span class="string">&quot;hidden&quot;</span>)</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-小结"><a href="#3-小结" class="headerlink" title="3 小结"></a>3 小结</h3><p>用户的登录和注册功能在一般情况下会使用到验证码，所以这里准备了一篇文章：<a target="_blank" rel="noopener" href="http://t.csdn.cn/WAJLt">一文搞懂Go整合captcha实现验证码功能</a>，大家可以自行设计和补充哈。</p>
+<p>除此之外，在系统的注册&amp;登录功能背后，往往都会有系统的认证和授权，所以请大家耐心等待我的下一篇文章！</p>
+
+
+  </div>
+  
+  
+    
+    <div class='footer'>
+      
+      
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-08-02T22:45:54+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2022年8月2日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/11/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82Go1.18%E6%B3%9B%E5%9E%8B%E6%96%B0%E7%89%B9%E6%80%A7/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Go%E8%AF%AD%E8%A8%80/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>Go语言</p></a></div>
+  <span hidden itemprop="keywords">Go语言</span>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/08/02/%E4%BB%8E4%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%9C%A8%E5%90%8E%E7%AB%AF%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%A2%9E%E5%8A%A0%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E5%92%8C%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/&title=从4开始，在后端系统中增加用户注册和登录功能 - Barry Yan's Blog&summary=本次我们接着上四篇文章进行讲解《从0开始，用Go语言搭建一个简单的后端业务系统》、《从1开始，扩展Go语言后端业务系统的RPC功能》、《从2开始，在Go语言后端业务系统中引入缓存》以及《从3开始，在业务系统中增加分页功能》，这次是系统中比较核心的功能——用户登录&amp;注册，这个功能其实本应该是最先实现的，但是由于不同因素的影响，放到了本次进行实现，不过也无伤大雅，后期我们都会不断的进行查漏补缺和优化来使我们的项目总体上更加优雅，话不多说，我们开始正文："
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/08/02/%E4%BB%8E4%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%9C%A8%E5%90%8E%E7%AB%AF%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%A2%9E%E5%8A%A0%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E5%92%8C%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/&title=从4开始，在后端系统中增加用户注册和登录功能 - Barry Yan's Blog&summary=本次我们接着上四篇文章进行讲解《从0开始，用Go语言搭建一个简单的后端业务系统》、《从1开始，扩展Go语言后端业务系统的RPC功能》、《从2开始，在Go语言后端业务系统中引入缓存》以及《从3开始，在业务系统中增加分页功能》，这次是系统中比较核心的功能——用户登录&amp;注册，这个功能其实本应该是最先实现的，但是由于不同因素的影响，放到了本次进行实现，不过也无伤大雅，后期我们都会不断的进行查漏补缺和优化来使我们的项目总体上更加优雅，话不多说，我们开始正文："
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/08/02/%E4%BB%8E4%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%9C%A8%E5%90%8E%E7%AB%AF%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%A2%9E%E5%8A%A0%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E5%92%8C%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/&title=从4开始，在后端系统中增加用户注册和登录功能 - Barry Yan's Blog&summary=本次我们接着上四篇文章进行讲解《从0开始，用Go语言搭建一个简单的后端业务系统》、《从1开始，扩展Go语言后端业务系统的RPC功能》、《从2开始，在Go语言后端业务系统中引入缓存》以及《从3开始，在业务系统中增加分页功能》，这次是系统中比较核心的功能——用户登录&amp;注册，这个功能其实本应该是最先实现的，但是由于不同因素的影响，放到了本次进行实现，不过也无伤大雅，后期我们都会不断的进行查漏补缺和优化来使我们的项目总体上更加优雅，话不多说，我们开始正文："
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
   
   
+
   
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2022/07/11/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82Go1.18%E6%B3%9B%E5%9E%8B%E6%96%B0%E7%89%B9%E6%80%A7/'>
+          <p class='title'>一文搞懂Go1.18泛型新特性<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>关于Go1.18版本的发布，当然不只有泛型（Generics）这一个新特性，具体的发布文档可以看下Go官方博客
+
+
+关于Go1.18版本的发布，当然不只有泛型（Generics）这一个新特性，具...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="discussionUrl" content="/2022/08/02/%E4%BB%8E4%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%9C%A8%E5%90%8E%E7%AB%AF%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%A2%9E%E5%8A%A0%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E5%92%8C%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/index.html#comments">
     </span>
-  
-  
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/11/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82Go1.18%E6%B3%9B%E5%9E%8B%E6%96%B0%E7%89%B9%E6%80%A7/"  itemprop="url">
-        一文搞懂Go1.18泛型新特性
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p>关于Go1.18版本的发布，当然不只有泛型（Generics）这一个新特性，具体的发布文档可以看下Go官方博客</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://blog.csdn.net/Mr_YanMingXin'><img src='https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg">
-            <meta itemprop="name" content="Barry Yan">
-            <meta itemprop="url" content="https://blog.csdn.net/Mr_YanMingXin">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-07-11T12:33:28+08:00">2022-07-11</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/11/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82Go1.18%E6%B3%9B%E5%9E%8B%E6%96%B0%E7%89%B9%E6%80%A7/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
 
-</div>
+    <div id="layoutHelper-comments"></div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/27/%E4%BB%8E3%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%9C%A8%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%A2%9E%E5%8A%A0%E5%88%86%E9%A1%B5%E5%8A%9F%E8%83%BD/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/06/27/%E4%BB%8E3%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%9C%A8%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%A2%9E%E5%8A%A0%E5%88%86%E9%A1%B5%E5%8A%9F%E8%83%BD/"  itemprop="url">
-        从3开始，在业务系统中增加分页功能
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p>本次我们接着上三篇文章进行讲解<a target="_blank" rel="noopener" href="https://blog.csdn.net/Mr_YanMingXin/article/details/125294855">《从0开始，用Go语言搭建一个简单的后端业务系统》</a>、<a target="_blank" rel="noopener" href="https://blog.csdn.net/Mr_YanMingXin/article/details/125317457">《从1开始，扩展Go语言后端业务系统的RPC功能》</a>和<a target="_blank" rel="noopener" href="https://blog.csdn.net/Mr_YanMingXin/article/details/125365686">《从2开始，在Go语言后端业务系统中引入缓存》</a>：</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://blog.csdn.net/Mr_YanMingXin'><img src='https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg">
-            <meta itemprop="name" content="Barry Yan">
-            <meta itemprop="url" content="https://blog.csdn.net/Mr_YanMingXin">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-06-27T17:13:23+08:00">2022-06-27</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/06/27/%E4%BB%8E3%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%9C%A8%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%A2%9E%E5%8A%A0%E5%88%86%E9%A1%B5%E5%8A%9F%E8%83%BD/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/25/%E4%BB%8E2%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%9C%A8Go%E8%AF%AD%E8%A8%80%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%BC%95%E5%85%A5%E7%BC%93%E5%AD%98/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/06/25/%E4%BB%8E2%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%9C%A8Go%E8%AF%AD%E8%A8%80%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%BC%95%E5%85%A5%E7%BC%93%E5%AD%98/"  itemprop="url">
-        从2开始，在Go语言后端业务系统中引入缓存
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p>本次我们接着上两篇文章进行讲解<a target="_blank" rel="noopener" href="https://blog.csdn.net/Mr_YanMingXin/article/details/125294855">《从0开始，用Go语言搭建一个简单的后端业务系统》</a>和<a target="_blank" rel="noopener" href="https://blog.csdn.net/Mr_YanMingXin/article/details/125317457">《从1开始，扩展Go语言后端业务系统的RPC功能》</a>，如题，需求就是为了应对查询时的高qps，我们引入Redis缓存，让查询数据时不直接将请求发送到数据库，而是先通过一层缓存来抵挡qps，下面我们开始今天的分享：</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://blog.csdn.net/Mr_YanMingXin'><img src='https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg">
-            <meta itemprop="name" content="Barry Yan">
-            <meta itemprop="url" content="https://blog.csdn.net/Mr_YanMingXin">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-06-25T12:53:43+08:00">2022-06-25</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/06/25/%E4%BB%8E2%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%9C%A8Go%E8%AF%AD%E8%A8%80%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%BC%95%E5%85%A5%E7%BC%93%E5%AD%98/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/17/%E4%BB%8E1%E5%BC%80%E5%A7%8B%EF%BC%8C%E6%89%A9%E5%B1%95Go%E8%AF%AD%E8%A8%80%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E7%9A%84RPC%E5%8A%9F%E8%83%BD/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/06/17/%E4%BB%8E1%E5%BC%80%E5%A7%8B%EF%BC%8C%E6%89%A9%E5%B1%95Go%E8%AF%AD%E8%A8%80%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E7%9A%84RPC%E5%8A%9F%E8%83%BD/"  itemprop="url">
-        从1开始，扩展Go语言后端业务系统的RPC功能
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p>这次我们接上一篇文章《从0开始，用Go语言搭建一个简单的后端业务系统》，利用Google开源的RPC框架—gRPC来进行对接口的RPC功能横向扩展，也就是用RPC协议将restful的HTTP协议重写一遍。</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://blog.csdn.net/Mr_YanMingXin'><img src='https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg">
-            <meta itemprop="name" content="Barry Yan">
-            <meta itemprop="url" content="https://blog.csdn.net/Mr_YanMingXin">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-06-17T14:33:28+08:00">2022-06-17</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/06/17/%E4%BB%8E1%E5%BC%80%E5%A7%8B%EF%BC%8C%E6%89%A9%E5%B1%95Go%E8%AF%AD%E8%A8%80%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E7%9A%84RPC%E5%8A%9F%E8%83%BD/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/16/%E4%BB%8E0%E5%BC%80%E5%A7%8B%EF%BC%8C%E7%94%A8Go%E8%AF%AD%E8%A8%80%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/06/16/%E4%BB%8E0%E5%BC%80%E5%A7%8B%EF%BC%8C%E7%94%A8Go%E8%AF%AD%E8%A8%80%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F/"  itemprop="url">
-        从0开始，用Go语言搭建一个简单的后端业务系统
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p>Hello 小伙伴们，今天给大家带来了一份Go语言搭建后端业务系统的教程，restful风格哦</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://blog.csdn.net/Mr_YanMingXin'><img src='https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg">
-            <meta itemprop="name" content="Barry Yan">
-            <meta itemprop="url" content="https://blog.csdn.net/Mr_YanMingXin">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-06-16T14:33:28+08:00">2022-06-16</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/06/16/%E4%BB%8E0%E5%BC%80%E5%A7%8B%EF%BC%8C%E7%94%A8Go%E8%AF%AD%E8%A8%80%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/30/%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8Gin%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BAHTTP%E6%9C%8D%E5%8A%A1/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
-    <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/05/30/%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8Gin%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BAHTTP%E6%9C%8D%E5%8A%A1/"  itemprop="url">
-        快速入门Gin框架搭建HTTP服务
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p>What is Gin?</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://blog.csdn.net/Mr_YanMingXin'><img src='https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg">
-            <meta itemprop="name" content="Barry Yan">
-            <meta itemprop="url" content="https://blog.csdn.net/Mr_YanMingXin">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-05-30T17:33:28+08:00">2022-05-30</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/05/30/%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8Gin%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BAHTTP%E6%9C%8D%E5%8A%A1/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
+  </article>
 
 
-    
-  
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2983,76 +2772,29 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
 
-<section class="widget blogger shadow floatable blur desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/mmexport1626774819021.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Barry Yan</h2>
-        
-        
-          <p>请不要叫我程序员，叫我工程师或Programmer</p>
 
-        
-        
-      </div>
+
+  <section class="widget toc-wrapper shadow floatable blur desktop mobile pjax" id="toc-div" >
     
+  <header>
     
-      <div class="social-wrapper">
-        
-          
-            <a href="https://blog.csdn.net/Mr_YanMingXin"
-              class="social fa-solid fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:1712229564@qq.com"
-              class="social fa-solid fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/ibarryyan"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fa-solid fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
-  </div>
-</section>
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C-amp-%E7%99%BB%E5%BD%95%E6%B5%81%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">1 用户注册&amp;登录流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">2.</span> <span class="toc-text">2 代码实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%B0%8F%E7%BB%93"><span class="toc-number">3.</span> <span class="toc-text">3 小结</span></a></li></ol>
+    </div>
+  </section>
 
   
 
   
     
     
+
+
 
   
 
@@ -3075,8 +2817,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     </div>
   </section>
 
-
-  
 
   
 
@@ -3110,13 +2850,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -4272,7 +4013,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Barry Yan's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/tags/Go语言/","name":"Go语言"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Barry Yan's Blog","url":"http://example.com/","keywords":"Java,Go,SQL","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Barry Yan's Blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/08/02/从4开始，在后端系统中增加用户注册和登录功能/","name":"从4开始，在后端系统中增加用户注册和登录功能"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Barry Yan's Blog","url":"http://example.com/","keywords":"Java,Go,SQL","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"从4开始，在后端系统中增加用户注册和登录功能","description":"本次我们接着上四篇文章进行讲解《从0开始，用Go语言搭建一个简单的后端业务系统》、《从1开始，扩展Go语言后端业务系统的RPC功能》、《从2开始，在Go语言后端业务系统中引入缓存》以及《从3开始，在业务系统中增加分页功能》，这次是系统中比较核心的功能——用户登录&amp;注册，这个功能其实本应该是最先实现的，但是由于不同因素的影响，放到了本次进行实现，不过也无伤大雅，后期我们都会不断的进行查漏补缺和优化来使我们的项目总体上更加优雅，话不多说，我们开始正文：","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/08/02/%E4%BB%8E4%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%9C%A8%E5%90%8E%E7%AB%AF%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%A2%9E%E5%8A%A0%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E5%92%8C%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/"},"author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/08/02/%E4%BB%8E4%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%9C%A8%E5%90%8E%E7%AB%AF%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%A2%9E%E5%8A%A0%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E5%92%8C%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/","wordCount":230,"datePublished":"2022-08-02T14:13:23.000Z","dateModified":"2022-08-02T14:45:54.428Z","keywords":"Go语言","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
