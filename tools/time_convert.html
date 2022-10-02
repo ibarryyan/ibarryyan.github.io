@@ -1,10 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>时间转换器</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/jquery.jsonview.min.css"/>
+    <link href="//unpkg.com/layui@2.7.6/dist/css/layui.css" rel="stylesheet">
+    <title>Time Convertor</title>
 </head>
 <body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <h1 style="margin-top: 3rem;margin-bottom: 3rem;">Time Convertor<small
+                    style="margin-left: 1rem;font-size: 18px;">一款优雅的日期格式转换工具</small>
+            </h1>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
 
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <ul class="nav nav-tabs">
+                <li id="navigation1" onclick="changeNavigation(1)" role="presentation" class="active"><a
+                        href="#">日期格式转换</a>
+                </li>
+                <li id="navigation2" onclick="changeNavigation(2)" role="presentation"><a href="#">相关语言方法</a></li>
+            </ul>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+
+    <div class="row" style="padding-top: 20px;">
+        <div class="col-md-1"></div>
+        <!--日期转时间戳-->
+        <div class="col-md-8" id="json_div">
+            <h4 style="font-size: 20px; margin-bottom: 20px;"><strong>日期转时间戳</strong></h4>
+            <div class="layui-inline" style="margin-bottom: 20px;">
+                <input type="text" class="layui-input" id="test1" style="float: left;width: 25%;" placeholder="选择日期">
+                <input type="text" class="layui-input" id="test2" style="float: left;width: 25%;margin-left: 10px;"
+                       placeholder="选择时间">
+                <input type="button" class="layui-btn layui-btn-radius layui-btn-normal" value="转换>"
+                       onclick="convertUnix()" style="margin-left: 10px;">
+                <span style="float: right;margin-top: 20px;  color: #747267;margin-left: 5px; ">单位:秒</span>
+                <input type="text" class="layui-input" id="test4" style="float: right; width: 25%;">
+            </div>
+            <div class="layui-inline" style="margin-bottom: 20px;">
+                <input type="button" class="layui-btn layui-btn-radius layui-btn-normal" value="获取当前时间戳"
+                       onclick="getUnix()">
+                <span style="float: right;margin-top: 20px;  color: #747267;margin-left: 5px; ">单位:秒</span>
+                <input type="text" class="layui-input" id="test6" style="float: right; width: 25%;margin-left: 20px;">
+                <span style="float: right;margin-top: 20px;  color: #747267;margin-left: 5px; ">单位:毫秒</span>
+                <input type="text" class="layui-input" id="test7" style="float: right; width: 25%;margin-right: 10px;">
+            </div>
+            <hr class="layui-border-orange">
+            <h4 style="font-size: 20px; margin-bottom: 20px;margin-top: 30px;"><strong>时间戳转日期</strong></h4>
+            <div class="layui-inline" style="margin-bottom: 20px;">
+                <input type="text" class="layui-input" id="test8" style="float: left;width: 40%;margin-right: 10px;"
+                       placeholder="输入时间戳(单位：毫秒)">
+                <input type="button" class="layui-btn layui-btn-radius layui-btn-normal" value="转换>"
+                       onclick="convertTime1()">
+                <input type="text" class="layui-input" id="test9" style="float: right; width: 40%;">
+            </div>
+            <div class="layui-inline" style="margin-bottom: 20px;">
+                <input type="text" class="layui-input" id="test10" style="float: left;width: 40%;margin-right: 10px;"
+                       placeholder="输入时间戳(单位：秒)">
+                <input type="button" class="layui-btn layui-btn-radius layui-btn-normal" value="转换>"
+                       onclick="convertTime2()">
+                <input type="text" class="layui-input" id="test11" style="float: right; width: 40%;">
+            </div>
+
+            <div class="layui-inline">
+                <input type="button" class="layui-btn layui-btn-radius layui-btn-normal" value="获取当前日期"
+                       onclick="getTime()">
+                <span style="float: right;margin-top: 20px;  color: #747267;margin-left: 5px; ">格式2</span>
+                <input type="text" class="layui-input" id="test12" style="float: right; width: 25%;margin-left: 20px;">
+                <span style="float: right;margin-top: 20px;  color: #747267;margin-left: 5px; ">格式1</span>
+                <input type="text" class="layui-input" id="test13" style="float: right; width: 25%;margin-right: 10px;">
+            </div>
+            <hr class="layui-border-orange">
+            <h4 style="font-size: 20px; margin-bottom: 20px;margin-top: 30px;"><strong>计算差值</strong></h4>
+
+            <br>
+            TODO
+
+        </div>
+        <div class="col-md-10" id="sql_div" style="display: none;">
+            <table class="layui-table">
+                <thead>
+                <tr>
+                    <th>语言</th>
+                    <th>获取时间(YYYY-MM-DD HH:MM:SS)</th>
+                    <th>获取时间戳(单位:秒)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Go</td>
+                    <td></td>
+                    <td>time.Now().Unix()</td>
+                </tr>
+                <tr>
+                    <td>Java</td>
+                    <td></td>
+                    <td>System.currentTimeMillis() / 1000</td>
+                </tr>
+
+                <tr>
+                    <td>Python</td>
+                    <td></td>
+                    <td>time.time()</td>
+                </tr>
+
+                <tr>
+                    <td>JavaScript</td>
+                    <td></td>
+                    <td>Math.round(new Date() / 1000)</td>
+                </tr>
+
+                <tr>
+                    <td>SQL(MySQL)</td>
+                    <td></td>
+                    <td>SELECT unix_timestamp(now())</td>
+                </tr>
+
+                <tr>
+                    <td>C</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>C++</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>Rust</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>Swift</td>
+                    <td></td>
+                    <td>NSDate().timeIntervalSince1970</td>
+                </tr>
+
+                <tr>
+                    <td>Objective-C</td>
+                    <td></td>
+                    <td>[[NSDate date] timeIntervalSince1970]</td>
+                </tr>
+
+                <tr>
+                    <td>Erlang</td>
+                    <td></td>
+                    <td>calendar:datetime_to_gregorian_seconds(calendar:universal_time())-719528*24*3600.</td>
+                </tr>
+
+                <tr>
+                    <td>PHP</td>
+                    <td></td>
+                    <td>time()</td>
+                </tr>
+
+                <tr>
+                    <td>Shell</td>
+                    <td></td>
+                    <td>date +%s</td>
+                </tr>
+
+                <tr>
+                    <td>.NET/C#</td>
+                    <td></td>
+                    <td>(DateTime.Now.ToUniversalTime().Ticks - 621355968000000000) / 10000000</td>
+                </tr>
+
+                <tr>
+                    <td>Lua</td>
+                    <td></td>
+                    <td>os.time()</td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<footer id="foo" style="height: 50px;margin-top: 30px;margin-bottom: 20px;">
+    <p style="text-align: center;">
+        author&nbsp;:&nbsp;<a href="https://github.com/ibarryyan"> Barry Yan</a>
+    </p>
+    <p style="text-align: center;">版权所有&nbsp;2022</p>
+</footer>
 </body>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/jquery.jsonview.js"></script>
+<script src="./js/sql-formatter.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="//unpkg.com/layui@2.7.6/dist/layui.js"></script>
+<script>
+
+
+    layui.use('laydate', function () {
+        var laydate = layui.laydate;
+        laydate.render({
+            elem: '#test1'
+        });
+        laydate.render({
+            elem: '#test2'
+            , type: 'time'
+        });
+    });
+
+    function convertUnix() {
+        var d = $("#test1").val()
+        var t = $("#test2").val()
+        var timeStamp = Date.parse(d + ' ' + t)
+        $("#test4").attr("value", timeStamp / 1000);
+    }
+
+    function convertTime1() {
+        var d = $("#test8").val()
+        console.log(d)
+        var num = Number(d)
+        var date = new Date(num)
+
+        var Y = date.getFullYear() + '-';
+        var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+        var D = (date.getDate() < 10 ? '0' + (date.getDate()) : date.getDate()) + ' ';
+
+        var h = (date.getHours() < 10 ? '0' + (date.getHours()) : date.getHours()) + ':';
+        var m = (date.getMinutes() < 10 ? '0' + (date.getMinutes()) : date.getMinutes()) + ':';
+        var s = (date.getSeconds() < 10 ? '0' + (date.getSeconds()) : date.getSeconds());
+        var strDate = Y + M + D + h + m + s;
+        $("#test9").attr("value", strDate);
+    }
+
+    function convertTime2() {
+        var d = $("#test10").val()
+        var num = Number(d + '000')
+        var date = new Date(num)
+
+        var Y = date.getFullYear() + '-';
+        var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+        var D = (date.getDate() < 10 ? '0' + (date.getDate()) : date.getDate()) + ' ';
+
+        var h = (date.getHours() < 10 ? '0' + (date.getHours()) : date.getHours()) + ':';
+        var m = (date.getMinutes() < 10 ? '0' + (date.getMinutes()) : date.getMinutes()) + ':';
+        var s = (date.getSeconds() < 10 ? '0' + (date.getSeconds()) : date.getSeconds());
+        var strDate = Y + M + D + h + m + s;
+        $("#test11").attr("value", strDate);
+    }
+
+    function getUnix() {
+        var time_unix_second = Math.round(new Date().getTime() / 1000) // getTime()返回数值的单位是毫秒
+        var time_unix_millisecond = Math.round(new Date().getTime()) // getTime()返回数值的单位是毫秒
+
+        $("#test6").attr("value", time_unix_second);
+        $("#test7").attr("value", time_unix_millisecond);
+    }
+
+
+    function getTime() {
+        var time_unix_second = Math.round(new Date().getTime())
+        var date = new Date(time_unix_second)
+
+        var Y = date.getFullYear() + '-';
+        var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+        var D = (date.getDate() < 10 ? '0' + (date.getDate()) : date.getDate()) + ' ';
+
+        var h = (date.getHours() < 10 ? '0' + (date.getHours()) : date.getHours()) + ':';
+        var m = (date.getMinutes() < 10 ? '0' + (date.getMinutes()) : date.getMinutes()) + ':';
+        var s = (date.getSeconds() < 10 ? '0' + (date.getSeconds()) : date.getSeconds());
+        var strDate1 = Y + M + D + h + m + s;
+        var strDate2 = strDate1.slice(0, 11)
+        $("#test12").attr("value", strDate2);
+        $("#test13").attr("value", strDate1);
+    }
+
+    function changeNavigation(cur) {
+        $('.nav-tabs').find('li').removeClass();
+        $("#navigation" + cur).attr("class", "active");
+        switch (cur) {
+            case 1:
+                $("#json_div").show();
+                $("#sql_div").hide();
+                break;
+            case 2:
+                $("#sql_div").show();
+                $("#json_div").hide();
+                break;
+        }
+    }
+
+</script>
 </html>
+
+
+
