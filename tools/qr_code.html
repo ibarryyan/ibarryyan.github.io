@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/jquery.jsonview.min.css"/>
+    <title>Hello Coder</title>
+    <style>
+        #output {
+            width: 100%;
+            height: 80%;
+            padding: 10px;
+            border: 0;
+            box-sizing: border-box;
+            font-size: 1.1em;
+            resize: none;
+            outline: none;
+            line-height: 1.3;
+            font-family: 'JetBrains Mono';
+        }
+
+        #show_div2 {
+            border: 0.125rem solid rgb(196, 191, 191);
+            border-radius: 0.5rem;
+            height: 47.6rem;
+            overflow: auto;
+            margin-top: 20px;
+        }
+
+        body{
+            /*background-image: url("https://images.unsplash.com/photo-1468276311594-df7cb65d8df6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");*/
+            background-size: cover;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <h1 style="margin-top: 3rem;margin-bottom: 3rem;">Hello Coder<small
+                    style="margin-left: 1rem;font-size: 18px;">一款极简轻便好用的二维码生成解析工具</small>
+            </h1>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <ul class="nav nav-tabs">
+                <li id="navigation1" onclick="changeNavigation(1)" role="presentation" class="active"><a
+                        href="#">文字转二维码</a>
+                </li>
+                <li id="navigation2" onclick="changeNavigation(2)" role="presentation"><a href="#">二维码转文字</a></li>
+            </ul>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-5" id="json_div">
+            <div style="width: 100%;height:100%;margin: 0 auto;margin-top: 2rem;">
+                <textarea style="width: 100%;height:36.5rem;" class="form-control" rows="3" id="content"></textarea>
+                <div class="btn-group" style="width: 100%;margin-top: 1rem;" role="group">
+                    <button onclick="chooseLogo()" type="button" style="width: 100%;" class="btn btn-default">
+                        点击上传二维码Logo(可选)
+                    </button>
+                </div>
+                <div style="text-align: center;">
+                    <div class="btn-group" style="width: 48%;margin-top: 1rem;">
+                        <select class="form-control" id="type">
+                            <option value="jpg" selected>jpg格式</option>
+                            <option value="png">png格式</option>
+                            <option value="gif">gif格式</option>
+                        </select>
+                    </div>
+                    <div class="btn-group" style="width: 48%;margin-top: 1rem;margin-left: 2%;">
+                        <select class="form-control" id="size">
+                            <option value="MINI">迷你尺寸(80 x 80)</option>
+                            <option value="SMALL">小尺寸(120 x 120)</option>
+                            <option value="MIDDLE" selected>中等尺寸(200 x 200)</option>
+                            <option value="BIG">大尺寸(500 x 500)</option>
+                        </select>
+                    </div>
+                </div>
+                <button id="submit" type="button" style="width: 60%;margin: 0 auto;margin-top: 1rem;"
+                        onclick="createCode()"
+                        class="btn btn-success btn-lg btn-block">生成二维码
+                </button>
+            </div>
+        </div>
+        <!--        -->
+        <div class="col-md-5" id="sql_div" style="display: none;">
+            <div style="width: 100%;height:100%;margin: 0 auto;margin-top: 2rem;">
+                <div style="width: 90%;height:90%;margin: 0 auto;margin-top: 2rem;">
+                    <div id="qrcodeDiv_" style="border: 0.125rem solid rgb(196, 191, 191);border-radius: 0.5rem;">
+                        <img id="qrcodeImg_" style="width: 100%;height:100%;"
+                             src="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/1.png"
+                             class="img-rounded">
+                    </div>
+                </div>
+                <button id="submit2" type="button" style="width: 60%;margin: 0 auto;margin-top: 1rem;"
+                        class="btn btn-warning btn-lg btn-block" onclick="chooseImg()">上传图片
+                </button>
+            </div>
+        </div>
+        <div id="j_div" class="col-md-5" style="display: block;">
+            <div style="width: 95%;height:90%;margin: 0 auto;margin-top: 2rem;">
+                <div style="width: 90%;height:90%;margin: 0 auto;margin-top: 2rem;">
+                    <div id="qrcodeDiv" style="border: 0.125rem solid rgb(196, 191, 191);border-radius: 0.5rem;">
+                        <img id="qrcodeImg" style="width: 100%;height:100%;"
+                             src="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/1.png"
+                             class="img-rounded">
+                    </div>
+                    <button id="download_" type="button"
+                            style="width: 100%;margin: 0 auto;margin-top: 1rem;" onclick="saveImg()"
+                            class="btn btn-primary btn-lg btn-block">保存图片
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="s_div" class="col-md-5" style="display: none;">
+            <div style="width: 95%;height:90%;margin: 0 auto;margin-top: 2rem;">
+                <div id="show_div2">
+                    <textarea id="output" wrap="off" style="display: block;"></textarea>
+                </div>
+                <button id="download" type="button"
+                        style="width: 100%;margin: 0 auto;margin-top:1rem;" onclick="copyRes()"
+                        class="btn btn-success btn-lg btn-block">复制文字
+                </button>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+        <form method="post" enctype="multipart/form-data" style="display: none;">
+            <input type="file" accept="image/*" name="logo" id="logoChoose" onchange="uploadLogo()"
+                   style="display: none;">
+            <input type="file" accept="image/*" name="img" id="logoImg" onchange="uploadImg()"
+                   style="display: none;">
+            <input id="logoPath" style="display: none;">
+        </form>
+    </div>
+</div>
+<footer id="foo" style="height: 50px;margin-top: 30px;margin-bottom: 20px;">
+    <p style="text-align: center;">
+        Author&nbsp;:&nbsp;<a href="https://github.com/ibarryyan"> Barry Yan</a>&nbsp;&nbsp;&nbsp;<a
+            href="https://gitee.com/chenyuhao001">马克北</a>
+    </p>
+    <p style="text-align: center;">
+        反馈&nbsp;:&nbsp;1712229564@qq.com
+    </p>
+    <p style="text-align: center;">版权所有&nbsp;2022</p>
+</footer>
+</body>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/jquery.jsonview.js"></script>
+<script src="./js/sql-formatter.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script>
+    var dev = "http://127.0.0.1:8080";
+    var pro = "http://59.110.25.8:6379";
+    var root_url = pro;
+    var hasLogo = false;
+
+    function changeNavigation(cur) {
+        $('.nav-tabs').find('li').removeClass();
+        $("#navigation" + cur).attr("class", "active");
+        switch (cur) {
+            case 1:
+                $("#json_div").show();
+                $("#sql_div").hide();
+                $("#j_div").show();
+                $("#s_div").hide();
+                break;
+            case 2:
+                $("#sql_div").show();
+                $("#json_div").hide();
+                $("#s_div").show();
+                $("#j_div").hide();
+                break;
+        }
+    }
+
+    function chooseLogo() {
+        $('#logoChoose').click()
+    }
+
+    function chooseImg() {
+        $('#logoImg').click()
+    }
+
+    // 解析二维码
+    function uploadImg() {
+        var myform = new FormData();
+        myform.append('file', $("#logoImg")[0].files[0]);
+        var file = $("#logoImg")[0].files[0];
+        if (file == null) {
+            alert("请选择文件");
+            return false;
+        } else {
+            $.ajax({
+                url: root_url + "/decodeImg",
+                type: "POST",
+                data: myform,
+                async: false,
+                contentType: false,
+                processData: false,
+                success: function (result) {
+                    $("#output").val(result.res);
+                    $("#qrcodeImg_").attr("src", root_url + "/images/" + result.img)
+                },
+                error: function (data) {
+                    alert("系统错误");
+                }
+            });
+        }
+    }
+
+    //上传logo
+    function uploadLogo() {
+        var myform = new FormData();
+        myform.append('file', $("#logoChoose")[0].files[0]);
+        var file = $("#logoChoose")[0].files[0];
+        if (file == null) {
+            alert("请选择文件");
+            return false;
+        } else {
+            $.ajax({
+                url: root_url + "/uploadLogo",
+                type: "POST",
+                data: myform,
+                async: false,
+                contentType: false,
+                processData: false,
+                success: function (result) {
+                    alert("上传成功！");
+                    $("#qrcodeImg").attr("src", root_url + "/images/" + result)
+                    $("#logoPath").attr("value", result);
+                    hasLogo = true;
+                },
+                error: function (data) {
+                    alert("系统错误");
+                }
+            });
+        }
+    }
+
+    // 生成二维码
+    function createCode() {
+        var logo = $("#logoPath").val()
+        var content = $("#content").val()
+        var size = $('#size').val()
+        var type = $('#type').val()
+        if (!hasLogo) {
+            logo = "";
+        }
+        $.ajax({
+            url: root_url + "/encodeImg",
+            type: "POST",
+            data: {
+                "content": content,
+                "format": type,
+                "logo": logo,
+                "size": size
+            },
+            success: function (result) {
+                hasLogo = false;
+                $("#qrcodeImg").attr("src", root_url + "/images/" + result)
+                $("#logoPath").attr("value", result);
+            },
+            error: function (data) {
+                alert("系统错误");
+            }
+        });
+    }
+    //复制
+    function copyRes() {
+        var t = $("#output").val()
+        var aux = document.createElement("input");
+        aux.setAttribute("value", t);
+        document.body.appendChild(aux);
+        aux.select();
+        document.execCommand("copy");
+        document.body.removeChild(aux);
+    }
+
+    function saveImg() {
+        if ($("#logoPath").val().length == 0) {
+            alert("您还未上传图片")
+            return
+        }
+        location.href = root_url + "/images/" + $("#logoPath").val();
+    }
+
+</script>
+</html>
