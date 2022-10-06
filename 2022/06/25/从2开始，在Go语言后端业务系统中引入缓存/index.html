@@ -31,14 +31,14 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>从2开始，在Go语言后端业务系统中引入缓存 - Barry Yan's Blog</title>
+  <title>从2开始，在Go语言后端业务系统中引入缓存 - Barry Yan的博客</title>
   <meta name="keywords" content="Go语言,Java,Go,SQL">
-  <meta desc name="description" content="本次我们接着上两篇文章进行讲解《从0开始，用Go语言搭建一个简单的后端业务系统》和《从1开始，扩展Go语言后端业务系统的RPC功能》，如题，需求就是为了应对查询时的高qps，我们引入Redis缓存，让查询数据时不直接将请求发送到数据库，而是先通过一层缓存来抵挡qps，下面我们开始今天的分享： - Barry Yan - Barry Yan's Blog">
+  <meta desc name="description" content="本次我们接着上两篇文章进行讲解《从0开始，用Go语言搭建一个简单的后端业务系统》和《从1开始，扩展Go语言后端业务系统的RPC功能》，如题，需求就是为了应对查询时的高qps，我们引入Redis缓存，让查询数据时不直接将请求发送到数据库，而是先通过一层缓存来抵挡qps，下面我们开始今天的分享： - Barry Yan - Barry Yan的博客">
   
 <meta property="og:type" content="article">
 <meta property="og:title" content="从2开始，在Go语言后端业务系统中引入缓存">
 <meta property="og:url" content="http://example.com/2022/06/25/%E4%BB%8E2%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%9C%A8Go%E8%AF%AD%E8%A8%80%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%BC%95%E5%85%A5%E7%BC%93%E5%AD%98/index.html">
-<meta property="og:site_name" content="Barry Yan&#39;s Blog">
+<meta property="og:site_name" content="Barry Yan的博客">
 <meta property="og:description" content="本次我们接着上两篇文章进行讲解《从0开始，用Go语言搭建一个简单的后端业务系统》和《从1开始，扩展Go语言后端业务系统的RPC功能》，如题，需求就是为了应对查询时的高qps，我们引入Redis缓存，让查询数据时不直接将请求发送到数据库，而是先通过一层缓存来抵挡qps，下面我们开始今天的分享：">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -1751,7 +1751,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.cbfd0700.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.311803bb.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1665023921104),
+    lastupdate: new Date(1665024222865),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc","music","tagcloud"],
@@ -2521,10 +2521,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
   <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/25/%E4%BB%8E2%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%9C%A8Go%E8%AF%AD%E8%A8%80%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%BC%95%E5%85%A5%E7%BC%93%E5%AD%98/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Barry Yan's Blog">
+    <meta itemprop="name" content="Barry Yan的博客">
   </span>
   <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Barry Yan's Blog">
+    <meta itemprop="name" content="Barry Yan的博客">
     <meta itemprop="description" content="IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等">
   </span>
   
@@ -2674,7 +2674,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/06/25/%E4%BB%8E2%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%9C%A8Go%E8%AF%AD%E8%A8%80%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%BC%95%E5%85%A5%E7%BC%93%E5%AD%98/&title=从2开始，在Go语言后端业务系统中引入缓存 - Barry Yan's Blog&summary=本次我们接着上两篇文章进行讲解《从0开始，用Go语言搭建一个简单的后端业务系统》和《从1开始，扩展Go语言后端业务系统的RPC功能》，如题，需求就是为了应对查询时的高qps，我们引入Redis缓存，让查询数据时不直接将请求发送到数据库，而是先通过一层缓存来抵挡qps，下面我们开始今天的分享："
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/06/25/%E4%BB%8E2%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%9C%A8Go%E8%AF%AD%E8%A8%80%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%BC%95%E5%85%A5%E7%BC%93%E5%AD%98/&title=从2开始，在Go语言后端业务系统中引入缓存 - Barry Yan的博客&summary=本次我们接着上两篇文章进行讲解《从0开始，用Go语言搭建一个简单的后端业务系统》和《从1开始，扩展Go语言后端业务系统的RPC功能》，如题，需求就是为了应对查询时的高qps，我们引入Redis缓存，让查询数据时不直接将请求发送到数据库，而是先通过一层缓存来抵挡qps，下面我们开始今天的分享："
           
           >
           
@@ -2686,7 +2686,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/06/25/%E4%BB%8E2%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%9C%A8Go%E8%AF%AD%E8%A8%80%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%BC%95%E5%85%A5%E7%BC%93%E5%AD%98/&title=从2开始，在Go语言后端业务系统中引入缓存 - Barry Yan's Blog&summary=本次我们接着上两篇文章进行讲解《从0开始，用Go语言搭建一个简单的后端业务系统》和《从1开始，扩展Go语言后端业务系统的RPC功能》，如题，需求就是为了应对查询时的高qps，我们引入Redis缓存，让查询数据时不直接将请求发送到数据库，而是先通过一层缓存来抵挡qps，下面我们开始今天的分享："
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/06/25/%E4%BB%8E2%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%9C%A8Go%E8%AF%AD%E8%A8%80%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%BC%95%E5%85%A5%E7%BC%93%E5%AD%98/&title=从2开始，在Go语言后端业务系统中引入缓存 - Barry Yan的博客&summary=本次我们接着上两篇文章进行讲解《从0开始，用Go语言搭建一个简单的后端业务系统》和《从1开始，扩展Go语言后端业务系统的RPC功能》，如题，需求就是为了应对查询时的高qps，我们引入Redis缓存，让查询数据时不直接将请求发送到数据库，而是先通过一层缓存来抵挡qps，下面我们开始今天的分享："
           
           >
           
@@ -2698,7 +2698,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/06/25/%E4%BB%8E2%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%9C%A8Go%E8%AF%AD%E8%A8%80%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%BC%95%E5%85%A5%E7%BC%93%E5%AD%98/&title=从2开始，在Go语言后端业务系统中引入缓存 - Barry Yan's Blog&summary=本次我们接着上两篇文章进行讲解《从0开始，用Go语言搭建一个简单的后端业务系统》和《从1开始，扩展Go语言后端业务系统的RPC功能》，如题，需求就是为了应对查询时的高qps，我们引入Redis缓存，让查询数据时不直接将请求发送到数据库，而是先通过一层缓存来抵挡qps，下面我们开始今天的分享："
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/06/25/%E4%BB%8E2%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%9C%A8Go%E8%AF%AD%E8%A8%80%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%BC%95%E5%85%A5%E7%BC%93%E5%AD%98/&title=从2开始，在Go语言后端业务系统中引入缓存 - Barry Yan的博客&summary=本次我们接着上两篇文章进行讲解《从0开始，用Go语言搭建一个简单的后端业务系统》和《从1开始，扩展Go语言后端业务系统的RPC功能》，如题，需求就是为了应对查询时的高qps，我们引入Redis缓存，让查询数据时不直接将请求发送到数据库，而是先通过一层缓存来抵挡qps，下面我们开始今天的分享："
           
           >
           
@@ -4020,7 +4020,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Barry Yan's Blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/06/25/从2开始，在Go语言后端业务系统中引入缓存/","name":"从2开始，在Go语言后端业务系统中引入缓存"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Barry Yan's Blog","url":"http://example.com/","keywords":"Java,Go,SQL","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"从2开始，在Go语言后端业务系统中引入缓存","description":"本次我们接着上两篇文章进行讲解《从0开始，用Go语言搭建一个简单的后端业务系统》和《从1开始，扩展Go语言后端业务系统的RPC功能》，如题，需求就是为了应对查询时的高qps，我们引入Redis缓存，让查询数据时不直接将请求发送到数据库，而是先通过一层缓存来抵挡qps，下面我们开始今天的分享：","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/06/25/%E4%BB%8E2%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%9C%A8Go%E8%AF%AD%E8%A8%80%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%BC%95%E5%85%A5%E7%BC%93%E5%AD%98/"},"author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Barry Yan's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/06/25/%E4%BB%8E2%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%9C%A8Go%E8%AF%AD%E8%A8%80%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%BC%95%E5%85%A5%E7%BC%93%E5%AD%98/","wordCount":146,"datePublished":"2022-06-25T04:53:43.000Z","dateModified":"2022-06-29T10:00:59.432Z","keywords":"Go语言","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Barry Yan的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Barry Yan的博客"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/06/25/从2开始，在Go语言后端业务系统中引入缓存/","name":"从2开始，在Go语言后端业务系统中引入缓存"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Barry Yan的博客","url":"http://example.com/","keywords":"Java,Go,SQL","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等","author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"IT新人一枚，后端开发领域狂热爱好者，CSDN优质创作者，阿里云技术社区乘风者计划专家博主，擅长Java、Go等"},"publisher":{"@type":"Organization","name":"Barry Yan的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"从2开始，在Go语言后端业务系统中引入缓存","description":"本次我们接着上两篇文章进行讲解《从0开始，用Go语言搭建一个简单的后端业务系统》和《从1开始，扩展Go语言后端业务系统的RPC功能》，如题，需求就是为了应对查询时的高qps，我们引入Redis缓存，让查询数据时不直接将请求发送到数据库，而是先通过一层缓存来抵挡qps，下面我们开始今天的分享：","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/06/25/%E4%BB%8E2%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%9C%A8Go%E8%AF%AD%E8%A8%80%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%BC%95%E5%85%A5%E7%BC%93%E5%AD%98/"},"author":{"@type":"Person","name":"Barry Yan","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Barry Yan的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/06/25/%E4%BB%8E2%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%9C%A8Go%E8%AF%AD%E8%A8%80%E5%90%8E%E7%AB%AF%E4%B8%9A%E5%8A%A1%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%BC%95%E5%85%A5%E7%BC%93%E5%AD%98/","wordCount":146,"datePublished":"2022-06-25T04:53:43.000Z","dateModified":"2022-06-29T10:00:59.432Z","keywords":"Go语言","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
