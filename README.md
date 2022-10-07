@@ -15,6 +15,7 @@
 :seven:**E-mail**：1712229564@qq.com:love_letter:
 
 ---
+### 其他主站：
 
 **:monkey_face:CSDN**：https://blog.csdn.net/Mr_YanMingXin
 
@@ -26,6 +27,8 @@
 
 **:koala:Gitee**：https://gitee.com/yan_mingxin
 
+:camel:**InfoQ写作社区**：https://www.infoq.cn/u/barryyan/publish
+
 **:cat:GitHub**：https://github.com/ibarryyan
 
 :rabbit:**GitHub博客**：https://ibarryyan.github.io/
@@ -33,25 +36,5 @@
 **:penguin:公众号**：扯编程的淡
 
 <img src="https://ibarryyan.oss-cn-hangzhou.aliyuncs.com/1.jpg" alt="img.png" style="zoom:50%;" />
-
----
-
-**:bamboo:**：**《基于云服务的高校毕业生就业管理平台》**：（服务器带宽较低，首次访问较慢）：
-
-**地址**：http://59.110.25.8:8080/
-
-**账号密码**：
-
-- 学校招生就业办部门：admin/123
-- 院/系毕业生办公室：jsjls123456/123456
-- 应/往届毕业生：201601010101/010101
-
-:school_satchel:：**《Hello Coder二维码生成和解析工具》**：
-
-**地址**：http://59.110.25.8:8080/tools
-
-:sparkler:：开发中...
-
----
 
 Thanks!
