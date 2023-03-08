@@ -6,7 +6,7 @@
 
 :three:**爱好**：听音乐、敲代码、羽毛球、跑步:star:	
 
-:four:**擅长领域**：Go、Java、数据存储、网络协议、后端:star2:
+:four:**擅长领域**：Go、Java :star2:
 
 :five:**座右铭**：做兴趣使然的Hero:rocket:
 
