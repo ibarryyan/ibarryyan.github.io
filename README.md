@@ -1,6 +1,6 @@
 ## 自我介绍 - Hello Everyone~
 
-:one:**基本信息**：Barry Yan:id:  |  99年男生:eyes: |  天蝎座:scorpius:  |  来自中国   :+1:
+:one:**基本信息**：Barry Yan 中文名：海风极客 :id:  |  99年男生:eyes: |  天蝎座:scorpius:  |  来自中国   :+1:
 
 :two:**工作经历**：Gopher :moon:	
 
